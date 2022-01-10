@@ -1,7 +1,7 @@
 FROM ruby:3.0.3
 
-ENV PORT 3000
-EXPOSE 3000
+ENV PORT 8080
+EXPOSE 8080
 
 # Ref: https://www.engineyard.com/blog/using-docker-for-rails
 RUN mkdir -p /usr/src/app
@@ -26,4 +26,4 @@ COPY . /usr/src/app
 # ENV RAILS_SERVE_STATIC_FILES true
 # RUN bundle exec rake DATABASE_URL=postgresql:does_not_exist assets:precompile
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "8080"]
