@@ -29,7 +29,7 @@ spec:
         - image: ghcr.io/jenkins-x/jx-registry:0.1.1
           name: check-registry
           resources: {}
-        - image: uses:tektoncd/catalog/blob/main/task/ruby-lint/0.1/ruby-lint.yaml
+        - image: ubuntu
           name: ruby-lint-run-rubocop #lint ruby script
           resources: {}
           script: |
