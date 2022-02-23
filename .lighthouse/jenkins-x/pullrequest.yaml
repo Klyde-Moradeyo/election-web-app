@@ -29,6 +29,13 @@ spec:
         - image: ghcr.io/jenkins-x/jx-registry:0.1.1
           name: check-registry
           resources: {}
+        - image: uses:tektoncd/catalog/blob/main/task/ruby-lint/0.1/ruby-lint.yaml
+          name: ruby-lint-run-rubocop #lint ruby script
+          resources: {}
+          script: |
+            cd $SUBDIR
+            gem install rubocop
+            rubocop
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
