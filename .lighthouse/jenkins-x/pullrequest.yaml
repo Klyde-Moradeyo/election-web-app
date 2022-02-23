@@ -33,6 +33,7 @@ spec:
           name: ruby-lint-run-rubocop #lint ruby script
           resources: {}
           script: |
+            ls
             cd $SUBDIR
             gem install rubocop
             rubocop
