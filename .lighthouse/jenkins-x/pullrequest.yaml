@@ -19,17 +19,31 @@ spec:
               memory: 512Mi
           workingDir: /workspace/source
         steps:
-        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-pr.yaml@versionStream
-          name: ""
+        - image: ghcr.io/jenkins-x/jx-boot:3.2.256
+          name: jx-variables
           resources: {}
-        - name: jx-variables
+          script: |
+            #!/usr/bin/env sh
+            jx gitops variables
+            jx gitops pr variables
+        - image: ghcr.io/jenkins-x/jx-registry:0.1.1
+          name: check-registry
           resources: {}
-        - name: check-registry
+        - image: gcr.io/kaniko-project/executor:v1.6.0-debug
+          name: build-container-build
           resources: {}
-        - name: build-container-build
+          script: |
+            #!/busybox/sh
+            source .jx/variables.sh
+            cp /tekton/creds-secrets/tekton-container-registry-auth/.dockerconfigjson /kaniko/.docker/config.json
+            /kaniko/executor $KANIKO_FLAGS --context=/workspace/source --dockerfile=${DOCKERFILE_PATH:-Dockerfile} --destination=$PUSH_CONTAINER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME:$VERSION
+        - image: ghcr.io/jenkins-x-plugins/jx-preview:0.0.192
+          name: promote-jx-preview
           resources: {}
-        - name: promote-jx-preview
-          resources: {}
+          script: |
+            #!/usr/bin/env sh
+            source .jx/variables.sh
+            jx preview create
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 12h0m0s
