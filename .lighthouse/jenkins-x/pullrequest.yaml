@@ -19,6 +19,9 @@ spec:
               memory: 512Mi
           workingDir: /workspace/source
         steps:
+        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-pr.yaml@versionStream
+          name: ""
+          resources: {}
         - image: ghcr.io/jenkins-x/jx-boot:3.2.256
           name: jx-variables
           resources: {}
@@ -29,11 +32,14 @@ spec:
         - image: ghcr.io/jenkins-x/jx-registry:0.1.1
           name: check-registry
           resources: {}
-        - image: ruby:3.0.3
-          name: ruby-lint-run-rubocop #lint ruby script
+        - name: ruby-lint-run-rubocop #lint ruby script
           resources: {}
           script: |
-            cd /workspace
+            #!/bin/sh
+            export SUBDIR="source"
+            ls
+            cd $SUBDIR
+            ls
             gem install rubocop
             rubocop
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
