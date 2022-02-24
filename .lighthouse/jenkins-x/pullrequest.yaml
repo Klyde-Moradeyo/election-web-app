@@ -29,12 +29,11 @@ spec:
         - image: ghcr.io/jenkins-x/jx-registry:0.1.1
           name: check-registry
           resources: {}
-        - image: ubuntu
+        - image: ruby:3.0.3
           name: ruby-lint-run-rubocop #lint ruby script
           resources: {}
           script: |
-            ls
-            cd $SUBDIR
+            cd /workspace
             gem install rubocop
             rubocop
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
