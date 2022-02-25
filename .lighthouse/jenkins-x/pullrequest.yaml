@@ -52,6 +52,13 @@ spec:
             npm run fix-code 
             npm run fix-styles
             echo "-------- Prettier - ESLint - stylelint END --------"
+        - image: ruby:3.0.3
+          name: Ruby Security Checks #lint ruby script
+          resources: {}
+          script: |
+            #!/bin/bash
+            gem install brakeman
+            brakeman -a
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
