@@ -52,7 +52,8 @@ spec:
             npm run fix-code 
             npm run fix-styles
             echo "-------- Prettier - ESLint - stylelint END --------"
-        - name: Ruby Security Checks # Brakeman security test
+        - image: ruby:3.0.3
+          name: Ruby Security Checks # Brakeman security test
           resources: {}
           script: |
             #!/bin/bash
