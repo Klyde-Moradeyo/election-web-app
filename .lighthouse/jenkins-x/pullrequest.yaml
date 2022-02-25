@@ -46,8 +46,7 @@ spec:
             rubocop --parallel
             if [[ $? != 0 ]]
             then 
-              echo error code: $?
-              exit $?
+              exit 1
             fi
             echo "-------- RUBOCOP END --------"
             echo "-------- stylelint START --------"
