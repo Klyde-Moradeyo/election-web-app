@@ -37,9 +37,13 @@ spec:
           resources: {}
           script: |
             #!/bin/sh
+            sudo apt update
+            sudo apt install nodejs
+            node -v
+            sudo apt install npm
             echo "-------- RUBOCOP START --------"
-            gem install rubocop --parallel
-            rubocop
+            gem install rubocop 
+            rubocop --parallel
             echo "-------- RUBOCOP END --------"
             echo "-------- stylelint START --------"
             npm install --save-dev stylelint stylelint-config-standard
