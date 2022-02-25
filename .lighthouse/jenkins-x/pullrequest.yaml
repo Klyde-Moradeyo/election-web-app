@@ -45,12 +45,13 @@ spec:
             gem install rubocop 
             rubocop --parallel
             echo "-------- RUBOCOP END --------"
-            echo "-------- stylelint START --------"
-            npm install --save-dev stylelint stylelint-config-standard stylelint-config-prettier
-            npm install stylelint-order --save-dev
-            npx stylelint "**/*.scss" "**/*.css"
-            echo "-------- stylelint END --------"
-            echo "-------- stylelint START --------"
+            echo "-------- Prettier - ESLint - stylelint START --------"
+            npm install --save-dev prettier-eslint
+            npm install --save-dev prettier-eslint-cli
+            npm install prettier-stylelint --save-dev
+            npm run fix-code 
+            npm run fix-styles
+            echo "-------- Prettier - ESLint - stylelint END --------"
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
