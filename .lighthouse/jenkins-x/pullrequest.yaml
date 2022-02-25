@@ -37,10 +37,10 @@ spec:
           resources: {}
           script: |
             #!/bin/sh
-            sudo apt update
-            sudo apt install nodejs
+            apt update
+            apt install nodejs
             node -v
-            sudo apt install npm
+            apt install npm
             echo "-------- RUBOCOP START --------"
             gem install rubocop 
             rubocop --parallel
