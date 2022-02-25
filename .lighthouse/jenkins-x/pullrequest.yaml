@@ -38,9 +38,9 @@ spec:
           script: |
             #!/bin/sh
             apt update
-            apt install nodejs
+            apt install nodejs -y
             node -v
-            apt install npm
+            apt install npm -y
             echo "-------- RUBOCOP START --------"
             gem install rubocop 
             rubocop --parallel
