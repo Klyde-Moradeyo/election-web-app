@@ -33,16 +33,16 @@ spec:
           name: check-registry
           resources: {}
         - image: ruby:3.0.3
-          name: ruby-lint-run-rubocop #lint ruby script
+          name: ruby-lint #lint ruby script
           resources: {}
           script: |
             #!/bin/sh
-            export SUBDIR="source"
-            ls
-            cd $SUBDIR
-            ls
+            echo "-------- RUBOCOP START --------"
             gem install rubocop
             rubocop
+            echo "-------- RUBOCOP END --------"
+            echo "-------- stylelint START --------"
+            npm install --save-dev stylelint stylelint-config-standard
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
