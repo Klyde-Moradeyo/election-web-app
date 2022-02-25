@@ -36,7 +36,7 @@ spec:
           name: ruby-lint #lint ruby script
           resources: {}
           script: |
-            #!/bin/sh
+            #!/bin/bash
             apt update
             apt install nodejs -y
             node -v
@@ -56,8 +56,7 @@ spec:
             npx stylelint "**/*.scss" "**/*.css"
             if [[ $? != 0 ]]
             then 
-              echo error code: $?
-              exit $?
+              exit 1
             fi
             echo "-------- stylelint END --------"
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
