@@ -32,7 +32,8 @@ spec:
         - image: ghcr.io/jenkins-x/jx-registry:0.1.1
           name: check-registry
           resources: {}
-        - name: ruby-lint-run-rubocop #lint ruby script
+        - image: ruby:3.0.3
+          name: ruby-lint-run-rubocop #lint ruby script
           resources: {}
           script: |
             #!/bin/sh
