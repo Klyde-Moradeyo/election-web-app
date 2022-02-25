@@ -44,20 +44,13 @@ spec:
             echo "-------- RUBOCOP START --------"
             gem install rubocop 
             rubocop --parallel
-            if [[ $? != 0 ]]
-            then 
-              exit 1
-            fi
             echo "-------- RUBOCOP END --------"
             echo "-------- stylelint START --------"
             npm install --save-dev stylelint stylelint-config-standard stylelint-config-prettier
             npm install stylelint-order --save-dev
             npx stylelint "**/*.scss" "**/*.css"
-            if [[ $? != 0 ]]
-            then 
-              exit 1
-            fi
             echo "-------- stylelint END --------"
+            echo "-------- stylelint START --------"
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
