@@ -58,7 +58,7 @@ spec:
           script: |
             #!/bin/bash
             gem install brakeman
-            brakeman -a
+            brakeman -a -q
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
