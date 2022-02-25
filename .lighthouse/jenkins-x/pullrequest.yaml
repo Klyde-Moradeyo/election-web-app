@@ -38,11 +38,14 @@ spec:
           script: |
             #!/bin/sh
             echo "-------- RUBOCOP START --------"
-            gem install rubocop
+            gem install rubocop --parallel
             rubocop
             echo "-------- RUBOCOP END --------"
             echo "-------- stylelint START --------"
             npm install --save-dev stylelint stylelint-config-standard
+            npm install stylelint-order --save-dev
+            npx stylelint "**/*.scss" "**/*.css"
+            echo "-------- stylelint END --------"
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
