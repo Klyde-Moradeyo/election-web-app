@@ -41,17 +41,24 @@ spec:
             apt install nodejs -y
             node -v
             apt install npm -y
-            echo "-------- RUBOCOP START --------"
+            echo "-------- RUBOCOP | START --------"
             gem install rubocop 
             rubocop --parallel
-            echo "-------- RUBOCOP END --------"
-            echo "-------- Prettier - ESLint - stylelint START --------"
+            echo "-------- RUBOCOP | END --------"
+            echo "-------- Prettier - ESLint - stylelint | START --------"
             npm install --save-dev prettier-eslint
             npm install --save-dev prettier-eslint-cli
             npm install prettier-stylelint --save-dev
             npm run fix-code 
             npm run fix-styles
-            echo "-------- Prettier - ESLint - stylelint END --------"
+            echo "-------- Prettier - ESLint - stylelint | END --------"
+        - image: ruby:3.0.3
+          name: ruby-security-checks # Brakeman security test
+          resources: {}
+          script: |
+            #!/bin/bash
+            gem install brakeman
+            brakeman -aq
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
