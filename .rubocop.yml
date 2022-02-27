@@ -3,6 +3,17 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
+AllCops:
+  Includes:
+    - Rakefile
+    - config.ru
+  Excludes:
+    - db/**
+    - config/**
+    - script/**
+  Documentation:
+    Enabled: false
+
 # Style Cops
 
 Style/StringLiterals:
