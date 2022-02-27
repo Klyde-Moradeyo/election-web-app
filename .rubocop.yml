@@ -9,8 +9,10 @@ AllCops:
     - config.ru
   Excludes:
     - db/**
+    - bin/{rails,rake}'
     - config/**
     - script/**
+    - 'tmp/**'
   Documentation:
     Enabled: false
 
@@ -26,6 +28,15 @@ Style/StringLiterals:
 # from a regular assignment.
 Layout/SpaceAroundEqualsInParameterDefault:
   EnforcedStyle: no_space
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
 
 Style/CollectionMethods:
   Enabled: true
