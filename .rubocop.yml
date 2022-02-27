@@ -9,10 +9,10 @@ AllCops:
     - config.ru
   Excludes:
     - db/**
-    - bin/{rails,rake}'
+    - bin/{rails,rake,bundle,setup,importmap}
     - config/**
     - script/**
-    - 'tmp/**'
+    - tmp/**
   Documentation:
     Enabled: false
 
