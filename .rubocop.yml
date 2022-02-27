@@ -3,8 +3,26 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
-# Metrics Cops
+# Style Cops
 
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+# No space makes the method definition shorter and differentiates
+# from a regular assignment.
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    # inject seems more common in the community.
+    reduce: "inject"
+
+# Metrics Cops
 Metrics/ClassLength:
   Description: 'Avoid classes longer than 100 lines of code.'
   Max: 100
