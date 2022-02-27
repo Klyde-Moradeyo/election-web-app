@@ -69,5 +69,10 @@ group :test do
   gem "capybara", ">= 3.26"
   gem "selenium-webdriver", ">= 4.0.0"
   gem "webdrivers"
+  gem "rubocop"
+  gem "rubocop-rails"
+  gem "rubocop-performance"
+  gem "rubocop-rspec"
   gem "rspec" # https://semaphoreci.com/community/tutorials/getting-started-with-rspec
+  gem "brakeman" # https://brakemanscanner.org/docs/install/
 end
