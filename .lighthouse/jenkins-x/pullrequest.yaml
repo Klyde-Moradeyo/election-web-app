@@ -43,14 +43,16 @@ spec:
             apt install npm -y
             echo "-------- RUBOCOP | START --------"
             gem install rubocop 
-            rubocop --parallel
+            cd ./bin; ./error_handler.sh "rubocop --parallel"; cd ..
             echo "-------- RUBOCOP | END --------"
             echo "-------- Prettier - ESLint - stylelint | START --------"
             npm install --save-dev prettier-eslint
             npm install --save-dev prettier-eslint-cli
             npm install prettier-stylelint --save-dev
-            npm run fix-code 
-            npm run fix-styles
+            cd ./bin 
+            ./error_handler.sh "npm run fix-code"
+            ./error_handler.sh "npm run fix-styles"
+            cd ..
             echo "-------- Prettier - ESLint - stylelint | END --------"
         - image: ruby:3.0.3
           name: ruby-security-checks # Brakeman security test
