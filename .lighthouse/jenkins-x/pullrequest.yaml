@@ -37,21 +37,28 @@ spec:
           resources: {}
           script: |
             #!/bin/bash
-            set -e
+
+            set -e # Makes terminal exit on error
             apt update
             apt install nodejs -y
             node -v
             apt install npm -y
+
+            # For Prettier - ESLint - stylelint
+            npm install --save-dev prettier-eslint
+            npm install --save-dev prettier-eslint-cli
+            npm install prettier-stylelint --save-dev
+
+            # Standrd Ruby on Rails bundle install
+            bundle install
+
             echo "-------- RUBOCOP | START --------"
-            gem install rubocop 
             cd ./bin
             chmod u+r+x error_handler.sh
             ./error_handler.sh "rubocop --parallel"; cd ..
             echo "-------- RUBOCOP | END --------"
+            
             echo "-------- Prettier - ESLint - stylelint | START --------"
-            npm install --save-dev prettier-eslint
-            npm install --save-dev prettier-eslint-cli
-            npm install prettier-stylelint --save-dev
             cd ./bin 
             ./error_handler.sh "npm run fix-code"
             ./error_handler.sh "npm run fix-styles"
