@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -37,7 +39,7 @@ gem "jbuilder", "~> 2.11"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
@@ -50,7 +52,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 
 group :development, :test do
   # See https://edgeguides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", ">= 1.0.0", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -66,8 +68,13 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "brakeman" # https://brakemanscanner.org/docs/install/
   gem "capybara", ">= 3.26"
+  gem "rspec" # https://semaphoreci.com/community/tutorials/getting-started-with-rspec
+  gem "rubocop"
+  gem "rubocop-performance"
+  gem "rubocop-rails"
+  gem "rubocop-rspec"
   gem "selenium-webdriver", ">= 4.0.0"
   gem "webdrivers"
-  gem "rspec" # https://semaphoreci.com/community/tutorials/getting-started-with-rspec
 end
