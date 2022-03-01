@@ -48,7 +48,7 @@ spec:
             echo "-------- RUBOCOP | END --------"
             echo "-------- Prettier - ESLint - stylelint | START --------"
             npm install --save-dev prettier-eslint
-            npm install --save-dev prettier-eslint-cli$
+            npm install --save-dev prettier-eslint-cli
             npm install prettier-stylelint --save-dev
             cd ./bin 
             ./error_handler.sh "npm run fix-code"
