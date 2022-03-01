@@ -43,7 +43,7 @@ spec:
             apt install npm -y
             echo "-------- RUBOCOP | START --------"
             gem install rubocop 
-            cd ./bin; ./error_handler.sh "rubocop --parallel"; cd ..
+            cd ./bin; chmod u+r+x error_handler.sh; ./error_handler.sh "rubocop --parallel"; cd ..
             echo "-------- RUBOCOP | END --------"
             echo "-------- Prettier - ESLint - stylelint | START --------"
             npm install --save-dev prettier-eslint
