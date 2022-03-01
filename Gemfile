@@ -71,7 +71,7 @@ group :test do
   gem "webdrivers"
   gem "rspec" # https://semaphoreci.com/community/tutorials/getting-started-with-rspec
 end
-=======
+
 # frozen_string_literal: true
 
 source "https://rubygems.org"
