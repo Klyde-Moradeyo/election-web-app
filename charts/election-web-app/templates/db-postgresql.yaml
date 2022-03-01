@@ -1,0 +1,22 @@
+{{- if .Values.db.createOperatorCRD }}
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: "{{ .Values.db.team }}-{{ .Values.db.name }}"
+spec:
+  teamId: "{{ .Values.db.team }}"
+  volume:
+    size: {{ .Values.db.volumeSize }}
+  numberOfInstances: {{ .Values.db.numberOfInstances }}
+  users:
+    {{ .Values.db.owner }}:  # database owner
+    - superuser
+    - createdb
+    foo_user: []  # role for application foo
+  databases:
+    {{ .Values.db.name }}: {{ .Values.db.owner }}  # dbname: owner
+  preparedDatabases:
+    bar: {}
+  postgresql:
+    version: "13"
+{{- end }}
