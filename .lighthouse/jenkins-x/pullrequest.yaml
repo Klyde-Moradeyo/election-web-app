@@ -37,20 +37,25 @@ spec:
           resources: {}
           script: |
             #!/bin/bash
+            set -e
             apt update
             apt install nodejs -y
             node -v
             apt install npm -y
             echo "-------- RUBOCOP | START --------"
             gem install rubocop 
-            rubocop --parallel
+            cd ./bin
+            chmod u+r+x error_handler.sh
+            ./error_handler.sh "rubocop --parallel"; cd ..
             echo "-------- RUBOCOP | END --------"
             echo "-------- Prettier - ESLint - stylelint | START --------"
             npm install --save-dev prettier-eslint
             npm install --save-dev prettier-eslint-cli
             npm install prettier-stylelint --save-dev
-            npm run fix-code 
-            npm run fix-styles
+            cd ./bin 
+            ./error_handler.sh "npm run fix-code"
+            ./error_handler.sh "npm run fix-styles"
+            cd ..
             echo "-------- Prettier - ESLint - stylelint | END --------"
         - image: ruby:3.0.3
           name: ruby-security-checks # Brakeman security test
