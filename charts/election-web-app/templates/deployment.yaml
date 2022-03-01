@@ -38,6 +38,23 @@ spec:
       serviceAccountName: {{ template "fullname" . }}
 {{- end }}
 {{- end }}
+      initContainers:
+      - name: init-db
+        image: {{ .Values.db.image }}
+        command: [ "bin/sh", "-c", "psql -a -U $DB_USER -h $DB_HOST -d $DB_NAME -f /data/init.sql" ]
+        env:
+{{- range $pkey, $pval := .Values.env }}
+        - name: {{ $pkey }}
+          value: {{ quote $pval }}
+{{- end }}
+        - name: PGPASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: {{ .Values.db.owner }}.{{ .Values.db.team }}-{{ .Values.db.name }}.credentials.postgresql.acid.zalan.do
+        volumeMounts:
+          - mountPath: /data
+            name: init-sql
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
