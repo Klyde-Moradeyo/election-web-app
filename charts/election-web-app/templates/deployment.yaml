@@ -93,4 +93,8 @@ spec:
 {{- range $pval := .Values.jx.imagePullSecrets }}
       - name: {{ quote $pval }}
 {{- end }}
+      volumes:
+        - name: init-sql
+          configMap:
+            name: demo-db-init-sql
 {{- end }}
