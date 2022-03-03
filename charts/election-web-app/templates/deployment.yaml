@@ -66,6 +66,11 @@ spec:
         - name: {{ $pkey }}
           value: {{ quote $pval }}
 {{- end }}
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: {{ .Values.db.owner }}.{{ .Values.db.team }}-{{ .Values.db.name }}.credentials.postgresql.acid.zalan.do
         envFrom:
 {{ toYaml .Values.envFrom | indent 10 }}
         ports:
