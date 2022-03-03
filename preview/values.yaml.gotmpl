@@ -1,3 +1,11 @@
+env:
+  # lets point at the staging db
+  DB_HOST: myteam-demodb.jx-staging.svc.cluster.local
+
+db:
+  # disable creating a new db for the preview
+  createOperatorCRD: false
+
 jxRequirements:
   ingress:
     namespaceSubDomain: "-pr{{ requiredEnv "PULL_NUMBER" }}."
