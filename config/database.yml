@@ -21,9 +21,20 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+# development:
+#   <<: *default
+#   database: ElectionWebApp_development
 development:
-  <<: *default
-  database: ElectionWebApp_development
+  adapter: postgresql
+  encoding: utf8
+  #database: demodb
+  #username: myowner
+  database: myteam-demodb
+  username: myowner
+  password: demodb
+  host: myteam-demodb.jx-staging.svc.cluster.local
+  port: 5432
+  pool: 5
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -55,9 +66,20 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+# test:
+#   <<: *default
+#   database: ElectionWebApp_test
 test:
-  <<: *default
-  database: ElectionWebApp_test
+  adapter: postgresql
+  encoding: utf8
+  #database: demodb
+  #username: myowner
+  database: <%= ENV["DB_HOST"] %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["ELECTIONWEBAPP_DATABASE_PASSWORD"] %>
+  host: <%= ENV["STAGING_DB_HOST"] %>
+  port: 5432
+  pool: 5
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -79,8 +101,19 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# production:
+#   <<: *default
+#   database: ElectionWebApp_production
+#   username: ElectionWebApp
+#   password: <%= ENV["ELECTIONWEBAPP_DATABASE_PASSWORD"] %>
 production:
-  <<: *default
-  database: ElectionWebApp_production
-  username: ElectionWebApp
+  adapter: postgresql
+  encoding: utf8
+  #database: demodb
+  #username: myowner
+  database: <%= ENV["DB_HOST"] %>
+  username: <%= ENV["DB_USER"] %>
   password: <%= ENV["ELECTIONWEBAPP_DATABASE_PASSWORD"] %>
+  host: <%= ENV["STAGING_DB_HOST"] %>
+  port: 5432
+  pool: 5
