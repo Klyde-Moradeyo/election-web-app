@@ -123,4 +123,15 @@ Rails.application.configure do
   # in a proc. See guides for an example.
   # config.active_record.shard_selector = { lock: true }
   # config.active_record.shard_resolver = ->(request) { Tenant.find_by!(host: request.host).shard }
+    # Config Host
+    config.hosts << /[a-z0-9-.]+\.nip\.io/
+
+    # You can store your secrets either in your Rails configuration or using Kubernetes secrets. 
+    # I suggest that you use the Rails credentials to store your secrets:
+    # we will use Kubernetes secrets only to store the master key. 
+    # Basically we store all our credentials in the Git repository, along with our application, 
+    # but this is safe because we encrypt them with a master key. Then we use the master key, 
+    # not stored in the Git repository, to access those secrets.
+    # Enable this option inside config/environments/production.rb:
+    config.require_master_key = true
 end

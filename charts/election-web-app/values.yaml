@@ -40,7 +40,7 @@ env:
   DB_USER: myowner
   DB_NAME: demodb
   STAGING_DB_HOST: myteam-demodb.jx-staging.svc.cluster.local
-  #PRODUCTION_DB_HOST:
+  PRODUCTION_DB_HOST: myteam-demodb.jx-production.svc.cluster.local
 
 # enable this flag to use knative serve to deploy the app
 knativeDeploy: false
