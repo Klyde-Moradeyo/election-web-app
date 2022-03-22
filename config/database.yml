@@ -33,7 +33,7 @@ development:
   username: <%= ENV["db_user"] %>
   password: <%= ENV["db_secret"] %>
   #host: <%= ENV["staging_db_host"] %>
-  host: 10.0.3.145
+  host: 172.20.157.250
   port: 5432
   pool: 5
 
@@ -114,6 +114,6 @@ production:
   username: <%= ENV["db_user"] %>
   password: <%= ENV["db_secret"] %>
   #host: <%= ENV["production_db_host"] %>
-  host: 10.0.3.145
+  host: 172.20.157.250
   port: 5432
   pool: 5
