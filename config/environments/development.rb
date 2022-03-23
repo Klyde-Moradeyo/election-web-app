@@ -72,4 +72,14 @@ Rails.application.configure do
 
   # Config Host
   config.hosts << /[a-z0-9-.]+\.nip\.io/
+
+  # You can store your secrets either in your Rails configuration or using Kubernetes secrets. 
+  # I suggest that you use the Rails credentials to store your secrets:
+  # we will use Kubernetes secrets only to store the master key. 
+  # Basically we store all our credentials in the Git repository, along with our application, 
+  # but this is safe because we encrypt them with a master key. Then we use the master key, 
+  # not stored in the Git repository, to access those secrets.
+  # Enable this option inside config/environments/production.rb:
+  config.require_master_key = true
+  config.web_console.whiny_requests = false
 end
