@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "test1#application"
+  root "home#index"
 end
