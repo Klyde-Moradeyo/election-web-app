@@ -29,11 +29,10 @@ development:
   encoding: utf8
   #database: demodb
   #username: myowner
-  database: <%= ENV["db_name"] %>
-  username: <%= ENV["db_user"] %>
+  database: demodb
+  username: myowner
   password: <%= ENV["db_secret"] %>
-  host: <%= ENV["staging_db_host"] %>
-  host: 10.0.3.194
+  host: myteam-demodb
   port: 5432
   pool: 5
 
@@ -110,9 +109,9 @@ production:
   encoding: utf8
   #database: demodb
   #username: myowner
-  database: <%= ENV["db_name"] %>
-  username: <%= ENV["db_user"] %>
+  database: demodb
+  username: myowner
   password: <%= ENV["db_secret"] %>
-  host: 10.0.3.194
+  host: myteam-demodb
   port: 5432
   pool: 5
