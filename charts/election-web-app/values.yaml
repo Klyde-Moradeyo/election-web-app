@@ -10,6 +10,7 @@ podsLabels: {}
 deploymentLabels: {}
 image:
   repository: 847399026905.dkr.ecr.eu-west-2.amazonaws.com/surreyfyp/election-web-app
+  tag: 0.0.13
   pullPolicy: IfNotPresent
 # optional list of image pull secrets to use to pull images
 jx:
@@ -30,7 +31,9 @@ db:
   numberOfInstances: 2
 # define environment variables here as a map of key: value
 env:
-
+  DB_HOST: myteam-demodb
+  DB_USER: myowner
+  DB_NAME: demodb
 # enable this flag to use knative serve to deploy the app
 knativeDeploy: false
 # HorizontalPodAutoscaler
