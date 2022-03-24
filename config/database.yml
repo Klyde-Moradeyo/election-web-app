@@ -27,10 +27,10 @@ default: &default
 development:
   adapter: postgresql
   encoding: utf8
-  database: <%= ENV["db_name"] %>
-  username: <%= ENV["db_username"] %>
-  password: <%= ENV["db_secret"] %>
-  host: <%= ENV["staging_db_host"] %>
+  database: <%= Rails.application.credentials.db_name %>
+  username: <%= Rails.application.credentials.db_username %>
+  password: <%= Rails.application.credentials.db_secret %>
+  host: <%= Rails.application.credentials.staging_db_host %> 
   port: 5432
   pool: 5
 
@@ -70,9 +70,9 @@ test:
   <<: *default
   adapter: postgresql
   encoding: utf8
-  database: <%= ENV["db_name"] %>
-  username: <%= ENV["db_username"] %>
-  password: <%= ENV["db_secret"] %>
+  database: <%= Rails.application.credentials.db_name %>
+  username: <%= Rails.application.credentials.db_username %>
+  password: <%= Rails.application.credentials.db_secret %>
   host: localhost
   port: 5432
   pool: 5
@@ -105,9 +105,9 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: <%= ENV["db_name"] %>
-  username: <%= ENV["db_username"] %>
-  password: <%= ENV["db_secret"] %>
-  host: <%= ENV["production_db_host"] %>
+  database: <%= Rails.application.credentials.db_name %>
+  username: <%= Rails.application.credentials.db_username %>
+  password: <%= Rails.application.credentials.db_secret %>
+  host: <%= Rails.application.credentials.production_db_host %> 
   port: 5432
   pool: 5
