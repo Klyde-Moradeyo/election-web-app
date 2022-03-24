@@ -31,7 +31,7 @@ development:
   #username: myowner
   database: demodb
   username: myowner
-  password: <%= ENV["db_secret"] %>
+  password: VrybT2KXVpR6IpDcH8ZUa7m0T1g7xuiZQ8Jy69q4AQLILnXWYnC9YUbzzfZRpgVX
   host: myteam-demodb.jx-staging.svc.cluster.local
   port: 5432
   pool: 5
@@ -70,12 +70,12 @@ development:
 # 
 test:
   <<: *default
-  #database: demodb
-  #username: myowner
+  adapter: postgresql
+  encoding: utf8
   database: <%= ENV["db_name"] %>
-  username: <%= ENV["db_user"] %>
+  username: <%= ENV["db_username"] %>
   password: <%= ENV["db_secret"] %>
-  host: localhost
+  host: <%= ENV["staging_db_host"] %>
   port: 5432
   pool: 5
 
@@ -107,11 +107,9 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  #database: demodb
-  #username: myowner
-  database: demodb
-  username: myowner
+  database: <%= ENV["db_name"] %>
+  username: <%= ENV["db_username"] %>
   password: <%= ENV["db_secret"] %>
-  host: myteam-demodb.jx-staging.svc.cluster.local
+  host: <%= ENV["production_db_host"] %>
   port: 5432
   pool: 5
