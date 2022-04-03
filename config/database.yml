@@ -69,13 +69,24 @@ development:
 #   pool: 5
 
 test:
+  <<: *default
   adapter: postgresql
-  encoding: unicode
-  database: myapp_test
-  pool: 5
+  encoding: utf8
+  database: <%= Rails.application.credentials.db_name %>
+  username: <%= Rails.application.credentials.db_username %>
+  password: VrybT2KXVpR6IpDcH8ZUa7m0T1g7xuiZQ8Jy69q4AQLILnXWYnC9YUbzzfZRpgVX
   host: localhost
-  username: myapp
-  password: password1
+  port: 5432
+  pool: 5
+
+# test:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: myapp_test
+#   pool: 5
+#   host: localhost
+#   username: myapp
+#   password: password1
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
