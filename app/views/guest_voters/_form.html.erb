@@ -1,0 +1,42 @@
+<%= form_with(model: guest_voter) do |form| %>
+  <% if guest_voter.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(guest_voter.errors.count, "error") %> prohibited this guest_voter from being saved:</h2>
+
+      <ul>
+        <% guest_voter.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :username, style: "display: block" %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div>
+    <%= form.label :password, style: "display: block" %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div>
+    <%= form.label :vote_weight, style: "display: block" %>
+    <%= form.number_field :vote_weight %>
+  </div>
+
+  <div>
+    <%= form.label :record_updated_at, style: "display: block" %>
+    <%= form.datetime_field :record_updated_at %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,47 @@
+<%= form_with(model: ballot) do |form| %>
+  <% if ballot.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ballot.errors.count, "error") %> prohibited this ballot from being saved:</h2>
+
+      <ul>
+        <% ballot.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :URL, style: "display: block" %>
+    <%= form.text_area :URL %>
+  </div>
+
+  <div>
+    <%= form.label :ballot_type, style: "display: block" %>
+    <%= form.text_field :ballot_type %>
+  </div>
+
+  <div>
+    <%= form.label :record_updated_at, style: "display: block" %>
+    <%= form.datetime_field :record_updated_at %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
