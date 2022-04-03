@@ -3,6 +3,17 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  # resources
+  resources :users
+  resources :voters
+  resources :guest_voters
+  resources :permissions
+  resources :ballots
+  resources :ballot_results
+  resources :questions
+  resources :question_results
+  resources :options
+
   # Defines the root path route ("/")
   #root "home#index"
 end
