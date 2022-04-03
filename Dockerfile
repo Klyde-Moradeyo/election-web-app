@@ -26,5 +26,4 @@ COPY . /usr/src/app
 # ENV RAILS_SERVE_STATIC_FILES true
 # RUN bundle exec rake DATABASE_URL=postgresql:does_not_exist assets:precompile
 
-RUN ["rake", "db:migrate"]
 CMD ["rails", "server", "-b", "0.0.0.0", "-p", "80"]
