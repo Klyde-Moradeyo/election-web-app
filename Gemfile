@@ -145,6 +145,7 @@ group :test do
   gem "brakeman" # https://brakemanscanner.org/docs/install/
   gem "capybara", ">= 3.26"
   gem "rspec" # https://semaphoreci.com/community/tutorials/getting-started-with-rspec
+  gem "rspec-rails"
   gem "rubocop"
   gem "rubocop-performance"
   gem "rubocop-rails"
