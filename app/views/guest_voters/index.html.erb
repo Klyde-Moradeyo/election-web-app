@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Guest voters</h1>
+
+<div id="guest_voters">
+  <% @guest_voters.each do |guest_voter| %>
+    <%= render guest_voter %>
+    <p>
+      <%= link_to "Show this guest voter", guest_voter %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New guest voter", new_guest_voter_path %>
