@@ -60,13 +60,13 @@ spec:
             # Standrd Ruby on Rails bundle install
             bundle install
 
-            echo "-------- Migrate Staging | START --------"
-            RAILS_ENV=development rake db:migrate
-            echo "-------- Migrate Staging | END --------"
-            
-            echo "-------- Migrate Production | START --------"
-            RAILS_ENV=production rake db:migrate
-            echo "-------- Migrate Production | END --------"
+            echo "-------- Migrate Staging DB | START --------"
+            RACK_ENV=RAILS_ENV=development RAILS_ENV=development rake db:migrate
+            echo "-------- Migrate Staging DB | END --------"
+             
+            echo "-------- Migrate Production DB | START --------"
+            RACK_ENV=production RAILS_ENV=production bundle exec rake db:migrate
+            echo "-------- Migrate Production DB  | END --------"
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
