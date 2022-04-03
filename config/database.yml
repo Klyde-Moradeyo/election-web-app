@@ -65,17 +65,26 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 # to use test enviornment: kubectl port-forward -n jx-staging myteam-demodb-0 5432:5432 && rails s -e test
-# 
+# connect to postgre running on localhost:5432
+# test:
+#   <<: *default
+#   adapter: postgresql
+#   encoding: utf8
+#   database: <%= Rails.application.credentials.db_name %>
+#   username: <%= Rails.application.credentials.db_username %>
+#   password: <%= Rails.application.credentials.db_secret %>
+#   host: localhost
+#   port: 5432
+#   pool: 5
+
 test:
-  <<: *default
   adapter: postgresql
-  encoding: utf8
-  database: <%= Rails.application.credentials.db_name %>
-  username: <%= Rails.application.credentials.db_username %>
-  password: <%= Rails.application.credentials.db_secret %>
-  host: localhost
-  port: 5432
+  encoding: unicode
+  database: myapp_test
   pool: 5
+  host: localhost
+  username: myapp
+  password: password1
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
