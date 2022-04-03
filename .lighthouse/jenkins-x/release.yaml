@@ -59,14 +59,15 @@ spec:
             apt-get install -y postgresql
             # Standrd Ruby on Rails bundle install
             bundle install
+            unset VERSION
 
-            echo "-------- Migrate Staging | START --------"
+            echo "-------- Migrate Staging DB | START --------"
             RAILS_ENV=development rake db:migrate
-            echo "-------- Migrate Staging | END --------"
+            echo "-------- Migrate Staging DB | END --------"
             
-            echo "-------- Migrate Production | START --------"
+            echo "-------- Migrate Production DB | START --------"
             RAILS_ENV=production rake db:migrate
-            echo "-------- Migrate Production | END --------"
+            echo "-------- Migrate Production DB  | END --------"
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
