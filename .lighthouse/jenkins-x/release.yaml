@@ -66,6 +66,8 @@ spec:
             echo "-------- Migrate Staging DB | END --------"
              
             echo "-------- Migrate Production DB | START --------"
+            RAKE_SECRET=$(RAILS_ENV=production rake secret)
+            export SECRET_KEY_BASE=$RAKE_SECRET
             RACK_ENV=production RAILS_ENV=production bundle exec rake db:migrate
             echo "-------- Migrate Production DB  | END --------"
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
