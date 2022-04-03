@@ -28,7 +28,7 @@ default: &default
 #   database: ElectionWebApp_development
 development:
   <<: *default
-  host: <%= Rails.application.credentials.staging_db_host %> 
+  host: <%= Rails.application.credentials.db_host %> 
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -115,5 +115,5 @@ test:
 #   password: <%= ENV["ELECTIONWEBAPP_DATABASE_PASSWORD"] %>
 production:
   <<: *default
-  host: <%= Rails.application.credentials.production_db_host %> 
+  host: <%= Rails.application.credentials.db_host %> 
   pool: 5
