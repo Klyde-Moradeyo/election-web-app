@@ -48,12 +48,12 @@ spec:
         - image: ghcr.io/jenkins-x/jx-registry:0.1.1
           name: check-registry
           resources: {}
-          - image: ruby:3.0.3
+        - image: ruby:3.0.3
           name: ruby-db-migrations 
           resources: {}
           script: |
             #!/bin/bash
-
+            source .jx/variables.sh
             set -e # Makes terminal exit on error
             apt update
             apt-get install -y postgresql
@@ -72,6 +72,7 @@ spec:
           resources: {}
           script: |
             #!/busybox/sh
+            source .jx/variables.sh
             cp /tekton/creds-secrets/tekton-container-registry-auth/.dockerconfigjson /kaniko/.docker/config.json
             sed -i 's/ENV RAILS_ENV development/ENV RAILS_ENV production/g' $DOCKERFILE_PATH
             /kaniko/executor $KANIKO_FLAGS --context=/workspace/source --dockerfile=${DOCKERFILE_PATH:-Dockerfile} --destination=$PUSH_CONTAINER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME:$VERSION
