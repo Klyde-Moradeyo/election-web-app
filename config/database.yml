@@ -17,7 +17,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: new_db
+  database: <%= Rails.application.credentials.db_name %>
   username: <%= Rails.application.credentials.db_username %>
   password: <%= Rails.application.credentials.db_secret %>
   port: 5432
