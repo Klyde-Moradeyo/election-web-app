@@ -59,6 +59,7 @@ spec:
             apt-get install -y postgresql
             # Standrd Ruby on Rails bundle install
             bundle install
+            unset VERSION
 
             echo "-------- Migrate Staging DB | START --------"
             RACK_ENV=RAILS_ENV=development RAILS_ENV=development rake db:migrate
