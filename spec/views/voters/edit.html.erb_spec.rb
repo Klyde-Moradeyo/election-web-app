@@ -6,6 +6,7 @@ RSpec.describe "voters/edit", type: :view do
       user: nil,
       username: "MyString",
       password: "MyString",
+      email: "MyString",
       vote_weight: 1,
       store_voter: false
     ))
@@ -21,6 +22,8 @@ RSpec.describe "voters/edit", type: :view do
       assert_select "input[name=?]", "voter[username]"
 
       assert_select "input[name=?]", "voter[password]"
+
+      assert_select "input[name=?]", "voter[email]"
 
       assert_select "input[name=?]", "voter[vote_weight]"
 

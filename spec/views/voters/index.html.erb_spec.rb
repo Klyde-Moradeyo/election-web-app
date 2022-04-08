@@ -7,6 +7,7 @@ RSpec.describe "voters/index", type: :view do
         user: nil,
         username: "Username",
         password: "Password",
+        email: "Email",
         vote_weight: 2,
         store_voter: false
       ),
@@ -14,6 +15,7 @@ RSpec.describe "voters/index", type: :view do
         user: nil,
         username: "Username",
         password: "Password",
+        email: "Email",
         vote_weight: 2,
         store_voter: false
       )
@@ -25,6 +27,7 @@ RSpec.describe "voters/index", type: :view do
     assert_select "tr>td", text: nil.to_s, count: 2
     assert_select "tr>td", text: "Username".to_s, count: 2
     assert_select "tr>td", text: "Password".to_s, count: 2
+    assert_select "tr>td", text: "Email".to_s, count: 2
     assert_select "tr>td", text: 2.to_s, count: 2
     assert_select "tr>td", text: false.to_s, count: 2
   end
