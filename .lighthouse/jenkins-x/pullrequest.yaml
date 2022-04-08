@@ -91,10 +91,6 @@ spec:
           script: |
             #!/bin/bash
             bundle install 
-            su - postgres
-            psql
-            create role test_db with createdb login password 'password1';
-            bundle exec rake db:setup
             bundle exec rspec spec/features
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
