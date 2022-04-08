@@ -77,10 +77,6 @@ spec:
           script: |
             #!/bin/bash
             bundle install 
-            su - postgres
-            psql
-            create role test_db with createdb login password 'password1';
-            bundle exec rake db:setup
             bundle exec rspec spec/models
         - image: ruby:3.0.3
           name: unit-test-controller-tests
@@ -88,10 +84,6 @@ spec:
           script: |
             #!/bin/bash
             bundle install 
-            su - postgres
-            psql
-            create role test_db with createdb login password 'password1';
-            bundle exec rake db:setup
             bundle exec rspec spec/requests
         - image: ruby:3.0.3
           name: integration-test-features-tests
