@@ -92,7 +92,7 @@ spec:
             psql
             create role test_db with createdb login password 'password1';
             bundle exec rake db:setup
-            bundle exec rspec spec/controllers
+            bundle exec rspec spec/requests
         - image: ruby:3.0.3
           name: "Integration Test: RSPEC-features-tests"  
           resources: {}
