@@ -7,7 +7,6 @@ class CreateQuestions < ActiveRecord::Migration[7.0]
       t.text :description
       t.boolean :randomize_selection
       t.boolean :voter_abstain
-      t.datetime :record_updated_at
 
       t.timestamps
     end
