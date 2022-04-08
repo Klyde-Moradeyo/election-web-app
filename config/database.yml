@@ -72,7 +72,7 @@ test:
   <<: *default
   adapter: postgresql
   encoding: utf8
-  dhost: <%= Rails.application.credentials.staging_db_host %> 
+  host: <%= Rails.application.credentials.staging_db_host %> 
   password: <%= Rails.application.credentials.staging_db_secret %> 
   port: 5432
   pool: 5
