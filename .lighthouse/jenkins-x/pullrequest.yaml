@@ -33,7 +33,7 @@ spec:
           name: check-registry
           resources: {}
         - image: ruby:3.0.3
-          name: "Code Scanning: ruby-lint" # to improve these Code Scanning steps should be in parallel
+          name: code-scanning-ruby-lint # to improve these Code Scanning steps should be in parallel
           resources: {}
           script: |
             #!/bin/bash
@@ -65,14 +65,14 @@ spec:
             cd ..
             echo "-------- Prettier - ESLint - stylelint | END --------"
         - image: ruby:3.0.3
-          name: "Code Scanning: ruby-security-checks" # Brakeman security test
+          name: code-scanning-ruby-security-checks # Brakeman security test
           resources: {}
           script: |
             #!/bin/bash
             gem install brakeman
             brakeman -aq
         - image: ruby:3.0.3
-          name: "Unit Test: RSPEC-models-test" # to improve these RSPEC checks should be in parallel
+          name: unit-test-models-test # to improve these RSPEC checks should be in parallel
           resources: {}
           script: |
             #!/bin/bash
@@ -83,7 +83,7 @@ spec:
             bundle exec rake db:setup
             bundle exec rspec spec/models
         - image: ruby:3.0.3
-          name: "Unit Test: RSPEC-controller-tests"  
+          name: unit-test-controller-tests
           resources: {}
           script: |
             #!/bin/bash
@@ -94,7 +94,7 @@ spec:
             bundle exec rake db:setup
             bundle exec rspec spec/requests
         - image: ruby:3.0.3
-          name: "Integration Test: RSPEC-features-tests"  
+          name: integration-test-features-tests
           resources: {}
           script: |
             #!/bin/bash
