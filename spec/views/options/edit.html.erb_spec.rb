@@ -5,6 +5,7 @@ RSpec.describe "options/edit", type: :view do
     @option = assign(:option, Option.create!(
       question: nil,
       ballot: nil,
+      party: nil,
       title: "MyString",
       description: "MyText"
     ))
@@ -18,6 +19,8 @@ RSpec.describe "options/edit", type: :view do
       assert_select "input[name=?]", "option[question_id]"
 
       assert_select "input[name=?]", "option[ballot_id]"
+
+      assert_select "input[name=?]", "option[party_id]"
 
       assert_select "input[name=?]", "option[title]"
 
