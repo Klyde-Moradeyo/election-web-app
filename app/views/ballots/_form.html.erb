@@ -37,8 +37,23 @@
   </div>
 
   <div>
-    <%= form.label :record_updated_at, style: "display: block" %>
-    <%= form.datetime_field :record_updated_at %>
+    <%= form.label :start_date, style: "display: block" %>
+    <%= form.datetime_field :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :end_date, style: "display: block" %>
+    <%= form.datetime_field :end_date %>
+  </div>
+
+  <div>
+    <%= form.label :weighted_voting, style: "display: block" %>
+    <%= form.check_box :weighted_voting %>
+  </div>
+
+  <div>
+    <%= form.label :show_results, style: "display: block" %>
+    <%= form.check_box :show_results %>
   </div>
 
   <div>

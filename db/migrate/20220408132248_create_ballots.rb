@@ -6,7 +6,10 @@ class CreateBallots < ActiveRecord::Migration[7.0]
       t.text :description
       t.text :URL
       t.string :ballot_type
-      t.datetime :record_updated_at
+      t.datetime :start_date
+      t.datetime :end_date
+      t.boolean :weighted_voting
+      t.boolean :show_results
 
       t.timestamps
     end
