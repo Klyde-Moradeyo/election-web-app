@@ -78,15 +78,6 @@ test:
 ltest:
   adapter: postgresql
   encoding: unicode
-  database: myapp_test_test
-  pool: 5
-  host: localhost
-  username: myapp
-  password: password1
-
-ltest:
-  adapter: postgresql
-  encoding: unicode
   database: myapp_test
   pool: 5
   host: localhost
