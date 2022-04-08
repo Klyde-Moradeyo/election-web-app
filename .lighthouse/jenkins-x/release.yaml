@@ -48,28 +48,28 @@ spec:
         - image: ghcr.io/jenkins-x/jx-registry:0.1.1
           name: check-registry
           resources: {}
-        # - image: ruby:3.0.3
-        #   name: ruby-db-migrations 
-        #   resources: {}
-        #   script: |
-        #     #!/bin/bash
-        #     source .jx/variables.sh
-        #     set -e # Makes terminal exit on error
-        #     apt update
-        #     apt-get install -y postgresql
-        #     # Standrd Ruby on Rails bundle install
-        #     bundle install
-        #     unset VERSION
+        - image: ruby:3.0.3
+          name: ruby-db-migrations 
+          resources: {}
+          script: |
+            #!/bin/bash
+            source .jx/variables.sh
+            set -e # Makes terminal exit on error
+            apt update
+            apt-get install -y postgresql
+            # Standrd Ruby on Rails bundle install
+            bundle install
+            unset VERSION
 
-        #     echo "-------- Migrate Staging DB | START --------"
-        #     RACK_ENV=RAILS_ENV=development RAILS_ENV=development rake db:migrate
-        #     echo "-------- Migrate Staging DB | END --------"
+            echo "-------- Migrate Staging DB | START --------"
+            RACK_ENV=RAILS_ENV=development RAILS_ENV=development rake db:migrate
+            echo "-------- Migrate Staging DB | END --------"
              
-        #     echo "-------- Migrate Production DB | START --------"
-        #     RAKE_SECRET=$(RAILS_ENV=production rake secret)
-        #     export SECRET_KEY_BASE=$RAKE_SECRET
-        #     RACK_ENV=production RAILS_ENV=production bundle exec rake db:migrate
-        #     echo "-------- Migrate Production DB  | END --------"
+            echo "-------- Migrate Production DB | START --------"
+            #RAKE_SECRET=$(RAILS_ENV=production rake secret)
+            #export SECRET_KEY_BASE=$RAKE_SECRET
+            #RACK_ENV=production RAILS_ENV=production bundle exec rake db:migrate
+            echo "-------- Migrate Production DB  | END --------"
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
