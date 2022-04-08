@@ -7,7 +7,9 @@ RSpec.describe "ballots/show", type: :view do
       title: "Title",
       description: "MyText",
       URL: "MyText",
-      ballot_type: "Ballot Type"
+      ballot_type: "Ballot Type",
+      weighted_voting: false,
+      show_results: false
     ))
   end
 
@@ -18,5 +20,7 @@ RSpec.describe "ballots/show", type: :view do
     expect(rendered).to match(/MyText/)
     expect(rendered).to match(/MyText/)
     expect(rendered).to match(/Ballot Type/)
+    expect(rendered).to match(/false/)
+    expect(rendered).to match(/false/)
   end
 end

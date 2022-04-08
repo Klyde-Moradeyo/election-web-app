@@ -5,6 +5,7 @@ RSpec.describe "options/new", type: :view do
     assign(:option, Option.new(
       question: nil,
       ballot: nil,
+      party: nil,
       title: "MyString",
       description: "MyText"
     ))
@@ -18,6 +19,8 @@ RSpec.describe "options/new", type: :view do
       assert_select "input[name=?]", "option[question_id]"
 
       assert_select "input[name=?]", "option[ballot_id]"
+
+      assert_select "input[name=?]", "option[party_id]"
 
       assert_select "input[name=?]", "option[title]"
 

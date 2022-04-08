@@ -7,7 +7,9 @@ RSpec.describe "ballots/edit", type: :view do
       title: "MyString",
       description: "MyText",
       URL: "MyText",
-      ballot_type: "MyString"
+      ballot_type: "MyString",
+      weighted_voting: false,
+      show_results: false
     ))
   end
 
@@ -25,6 +27,10 @@ RSpec.describe "ballots/edit", type: :view do
       assert_select "textarea[name=?]", "ballot[URL]"
 
       assert_select "input[name=?]", "ballot[ballot_type]"
+
+      assert_select "input[name=?]", "ballot[weighted_voting]"
+
+      assert_select "input[name=?]", "ballot[show_results]"
     end
   end
 end

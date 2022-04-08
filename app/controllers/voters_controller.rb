@@ -65,6 +65,6 @@ class VotersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def voter_params
-      params.require(:voter).permit(:user_id, :username, :password, :vote_weight, :record_updated_at, :store_voter)
+      params.require(:voter).permit(:user_id, :username, :password, :email, :vote_weight, :store_voter)
     end
 end

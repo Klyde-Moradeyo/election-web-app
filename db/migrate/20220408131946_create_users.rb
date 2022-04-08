@@ -7,7 +7,6 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :username
       t.string :password
       t.datetime :last_login
-      t.datetime :record_updated_at
 
       t.timestamps
     end

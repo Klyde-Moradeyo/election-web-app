@@ -5,6 +5,8 @@ RSpec.describe "question_results/edit", type: :view do
     @question_result = assign(:question_result, QuestionResult.create!(
       question: nil,
       ballot: nil,
+      voter: nil,
+      option: nil,
       content: "MyText"
     ))
   end
@@ -17,6 +19,10 @@ RSpec.describe "question_results/edit", type: :view do
       assert_select "input[name=?]", "question_result[question_id]"
 
       assert_select "input[name=?]", "question_result[ballot_id]"
+
+      assert_select "input[name=?]", "question_result[voter_id]"
+
+      assert_select "input[name=?]", "question_result[option_id]"
 
       assert_select "textarea[name=?]", "question_result[content]"
     end
