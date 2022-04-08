@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Stored voters</h1>
+
+<div id="stored_voters">
+  <% @stored_voters.each do |stored_voter| %>
+    <%= render stored_voter %>
+    <p>
+      <%= link_to "Show this stored voter", stored_voter %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New stored voter", new_stored_voter_path %>
