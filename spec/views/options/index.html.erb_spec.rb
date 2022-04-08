@@ -6,12 +6,14 @@ RSpec.describe "options/index", type: :view do
       Option.create!(
         question: nil,
         ballot: nil,
+        party: nil,
         title: "Title",
         description: "MyText"
       ),
       Option.create!(
         question: nil,
         ballot: nil,
+        party: nil,
         title: "Title",
         description: "MyText"
       )
@@ -20,6 +22,7 @@ RSpec.describe "options/index", type: :view do
 
   it "renders a list of options" do
     render
+    assert_select "tr>td", text: nil.to_s, count: 2
     assert_select "tr>td", text: nil.to_s, count: 2
     assert_select "tr>td", text: nil.to_s, count: 2
     assert_select "tr>td", text: "Title".to_s, count: 2

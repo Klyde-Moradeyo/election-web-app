@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   # resources
   resources :users
   resources :voters
-  resources :guest_voters
+  resources :stored_voters
   resources :permissions
   resources :ballots
+  resources :partys
   resources :ballot_results
   resources :questions
   resources :question_results

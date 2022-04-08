@@ -8,14 +8,18 @@ RSpec.describe "ballots/index", type: :view do
         title: "Title",
         description: "MyText",
         URL: "MyText",
-        ballot_type: "Ballot Type"
+        ballot_type: "Ballot Type",
+        weighted_voting: false,
+        show_results: false
       ),
       Ballot.create!(
         user: nil,
         title: "Title",
         description: "MyText",
         URL: "MyText",
-        ballot_type: "Ballot Type"
+        ballot_type: "Ballot Type",
+        weighted_voting: false,
+        show_results: false
       )
     ])
   end
@@ -27,5 +31,7 @@ RSpec.describe "ballots/index", type: :view do
     assert_select "tr>td", text: "MyText".to_s, count: 2
     assert_select "tr>td", text: "MyText".to_s, count: 2
     assert_select "tr>td", text: "Ballot Type".to_s, count: 2
+    assert_select "tr>td", text: false.to_s, count: 2
+    assert_select "tr>td", text: false.to_s, count: 2
   end
 end

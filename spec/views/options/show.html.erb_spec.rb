@@ -5,6 +5,7 @@ RSpec.describe "options/show", type: :view do
     @option = assign(:option, Option.create!(
       question: nil,
       ballot: nil,
+      party: nil,
       title: "Title",
       description: "MyText"
     ))
@@ -12,6 +13,7 @@ RSpec.describe "options/show", type: :view do
 
   it "renders attributes in <p>" do
     render
+    expect(rendered).to match(//)
     expect(rendered).to match(//)
     expect(rendered).to match(//)
     expect(rendered).to match(/Title/)
