@@ -77,21 +77,27 @@ spec:
           script: |
             #!/bin/bash
             bundle install 
+            echo "-------- RSPEC | START --------"
             bundle exec rspec spec/models
+            echo "-------- RSPEC | END --------"
         - image: ruby:3.0.3
           name: unit-test-controller-tests
           resources: {}
           script: |
             #!/bin/bash
             bundle install 
+            echo "-------- RSPEC | START --------"
             bundle exec rspec spec/requests
+            echo "-------- RSPEC | END --------"
         - image: ruby:3.0.3
           name: integration-test-features-tests
           resources: {}
           script: |
             #!/bin/bash
             bundle install 
+            echo "-------- RSPEC | START --------"
             bundle exec rspec spec/features
+            echo "-------- RSPEC | END --------"
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
