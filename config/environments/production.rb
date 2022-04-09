@@ -30,7 +30,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
@@ -124,7 +124,7 @@ Rails.application.configure do
   # config.active_record.shard_selector = { lock: true }
   # config.active_record.shard_resolver = ->(request) { Tenant.find_by!(host: request.host).shard }
     # Config Host
-    config.hosts << /[a-z0-9-.]+\.nip\.io/
+   # config.hosts << /[a-z0-9-.]+\.nip\.io/
 
     # You can store your secrets either in your Rails configuration or using Kubernetes secrets. 
     # I suggest that you use the Rails credentials to store your secrets:
