@@ -41,7 +41,7 @@ group :development, :test do
   gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw]
 end
 
-group :development do
+group :development, :ltest do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console", ">= 4.1.0"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
