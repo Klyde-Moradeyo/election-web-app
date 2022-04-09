@@ -82,6 +82,4 @@ Rails.application.configure do
   # Enable this option inside config/environments/production.rb:
   config.require_master_key = true
   config.web_console.whiny_requests = false
-
-  config.assets.paths << "#{Rails.root}/app/assets/videos"
 end

@@ -83,5 +83,4 @@ Rails.application.configure do
   config.require_master_key = true
   config.web_console.whiny_requests = false
   config.web_console.development_only = false
-  config.assets.paths << "#{Rails.root}/app/assets/videos"
 end

@@ -134,6 +134,5 @@ Rails.application.configure do
     # not stored in the Git repository, to access those secrets.
     # Enable this option inside config/environments/production.rb:
     config.require_master_key = true
-    config.assets.paths << "#{Rails.root}/app/assets/videos"
     # config.web_console.whiny_requests = false
 end
