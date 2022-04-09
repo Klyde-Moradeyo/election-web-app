@@ -20,5 +20,8 @@ module ElectionWebApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.sass.preferred_syntax = :sass # allow to use sass over scss
+    #config.generators.stylesheet_engine = :sass
   end
 end
