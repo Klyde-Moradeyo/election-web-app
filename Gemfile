@@ -17,10 +17,10 @@ gem "bootsnap", ">= 1.4.4", require: false # Reduces boot times through caching;
 gem "pg" # Use postgre as the database for Active Record
 gem "haml-rails" # Use haml rails https://haml.info/
 gem "bootstrap-scss" # https://getbootstrap.com/docs/5.0/customize/sass/
+gem "sassc-rails", "~> 2.1" # Use Sass to process CSS # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images] # gem "image_processing", "~> 1.2"
 # gem "redis", "~> 4.0" # Use Redis adapter to run Action Cable in production
 # gem "kredis" # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "bcrypt", "~> 3.1.7" # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "sassc-rails", "~> 2.1" # Use Sass to process CSS # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images] # gem "image_processing", "~> 1.2"
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
