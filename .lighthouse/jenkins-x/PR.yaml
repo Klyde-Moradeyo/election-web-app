@@ -1,0 +1,108 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  creationTimestamp: null
+  name: pullrequest
+spec:
+  tasks:
+    - name: prepare-environment
+      taskRef:
+        name: task-prepare-environment
+      resources: {}
+      taskSpec:
+        metadata: {}
+        stepTemplate:
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/ruby/pullrequest.yaml@versionStream
+          name: ""
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+          workingDir: /workspace/source
+    - name: code-scanning
+      runAfter:
+        - prepare-environment
+      taskRef:
+        name: task-code-scanning
+      resources: {}
+      taskSpec:
+        metadata: {}
+        stepTemplate:
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/ruby/pullrequest.yaml@versionStream
+          name: ""
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+          workingDir: /workspace/source
+    - name: unit-test
+      runAfter:
+        - prepare-environment
+      taskRef:
+        name: task-unit-test
+      resources: {}
+      taskSpec:
+        metadata: {}
+        stepTemplate:
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/ruby/pullrequest.yaml@versionStream
+          name: ""
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+          workingDir: /workspace/source
+    - name: integration-test
+      runAfter:
+        - prepare-environment
+      taskRef:
+        name: task-integration-test
+      resources: {}
+      taskSpec:
+        metadata: {}
+        stepTemplate:
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/ruby/pullrequest.yaml@versionStream
+          name: ""
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+          workingDir: /workspace/source
+    - name: build-container-build
+      runAfter:
+        - prepare-environment
+        - code-scanning
+        - unit-test
+        - integration-test
+      taskRef:
+        name: task-build-container-build
+      resources: {}
+      taskSpec:
+        metadata: {}
+        stepTemplate:
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/ruby/pullrequest.yaml@versionStream
+          name: ""
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+          workingDir: /workspace/source
+    - name: build-promote-jx-preview
+      runAfter:
+        - prepare-environment
+        - code-scanning
+        - unit-test
+        - integration-test
+      taskRef:
+        name: task-build-container-build
+      resources: {}
+      taskSpec:
+        metadata: {}
+        stepTemplate:
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/ruby/pullrequest.yaml@versionStream
+          name: ""
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+          workingDir: /workspace/source
+        
