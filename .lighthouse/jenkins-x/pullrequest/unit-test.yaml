@@ -1,0 +1,58 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  creationTimestamp: null
+  name: pullrequest
+spec:
+  pipelineSpec:
+    tasks:
+    - name: unit-test
+      resources: {}
+      taskSpec:
+        metadata: {}
+        stepTemplate:
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/ruby/pullrequest.yaml@versionStream
+          name: ""
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+          workingDir: /workspace/source
+        steps:
+        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-pr.yaml@versionStream
+          name: ""
+          resources: {}
+        - image: ghcr.io/jenkins-x/jx-boot:3.2.256
+          name: jx-variables
+          resources: {}
+          script: |
+            #!/usr/bin/env sh
+            jx gitops variables
+            jx gitops pr variables
+        - image: ghcr.io/jenkins-x/jx-registry:0.1.1
+          name: check-registry
+          resources: {}
+        - image: ruby:3.0.3
+          name: unit-test-models-test 
+          resources: {}
+          script: |
+            #!/bin/bash
+            set -e # Makes terminal exit on error
+            bundle install 
+            echo "-------- RSPEC | START --------"
+            bundle exec rspec spec/models
+            echo "-------- RSPEC | END --------"
+        - image: ruby:3.0.3
+          name: unit-test-controller-test
+          resources: {}
+          script: |
+            #!/bin/bash
+            set -e # Makes terminal exit on error
+            bundle install 
+            echo "-------- RSPEC | START --------"
+            bundle exec rspec spec/requests
+            echo "-------- RSPEC | END --------"
+  podTemplate: {}
+  serviceAccountName: tekton-bot
+  timeout: 12h0m0s
+status: {}
