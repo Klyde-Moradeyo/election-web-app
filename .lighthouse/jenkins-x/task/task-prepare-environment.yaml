@@ -4,9 +4,6 @@ metadata:
   creationTimestamp: null
   name: task-prepare-environment
 spec:
-  workspaces:
-    - name: shared-workspace
-      description: A workspace that contains the fetched git repository.
   stepTemplate:
     env:
     - name: HOME
@@ -17,8 +14,13 @@ spec:
         optional: true
     name: ""
     resources: {}
+    workingDir: /workspace/source
   steps:
-  - image: gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.27.0
+  - envFrom:
+    - secretRef:
+        name: jx-boot-job-env-vars
+        optional: true
+    image: gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.27.0
     name: git-clone
     resources: {}
     script: |
@@ -32,15 +34,8 @@ spec:
       cd $SUBDIR
       git reset --hard $PULL_BASE_SHA
       echo "checked out revision: $PULL_BASE_REF@$PULL_BASE_SHA to dir: $SUBDIR"
-  - image: ghcr.io/jenkins-x/jx-boot:3.2.256
-    name: jx-variables
-    resources: {}
-    script: |
-      #!/usr/bin/env sh
-      jx gitops variables
-      jx gitops pr variables
-    # timeout: 5s
-  - image: ghcr.io/jenkins-x/jx-registry:0.1.1
-    name: check-registry
-    resources: {}
     workingDir: /workspace
+  workspaces:
+  - description: The git repo will be cloned onto the volume backing this workspace
+    mountPath: /workspace
+    name: output
