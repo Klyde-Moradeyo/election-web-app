@@ -1,0 +1,28 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  creationTimestamp: null
+  name: task-code-scanning
+spec:
+  stepTemplate:
+    env:
+    - name: HOME
+      value: /tekton/home
+    envFrom:
+    - secretRef:
+        name: jx-boot-job-env-vars
+        optional: true
+    name: ""
+    resources: {}
+  steps:
+  - image: ghcr.io/jenkins-x-plugins/jx-preview:0.0.192
+    name: promote-jx-preview
+    resources: {}
+    script: |
+      #!/usr/bin/env sh
+      source .jx/variables.sh
+      jx preview create       
+  workspaces:
+  - description: The git repo will be cloned onto the volume backing this workspace
+    mountPath: /workspace
+    name: output
