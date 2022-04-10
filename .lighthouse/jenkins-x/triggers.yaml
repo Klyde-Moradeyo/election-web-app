@@ -2,12 +2,26 @@ apiVersion: config.lighthouse.jenkins-x.io/v1alpha1
 kind: TriggerConfig
 spec:
   presubmits:
+  - name: code-scanning
+    context: "code-scanning"
+    always_run: true
+    optional: false
+    source: "pullrequest/code-scanning.yaml" 
+  - name: unit-test
+    context: "unit-test"
+    always_run: true
+    optional: false
+    source: "pullrequest/unit-test.yaml"
   - name: pr
     context: "pr"
     always_run: true
     optional: false
-    source: "PR.yaml"
-    # source: "pullrequest.yaml"
+    source: "pullrequest/integration-test.yaml"
+  - name: preview
+    context: "preview"
+    always_run: true
+    optional: false
+    source: "pullrequest/preview.yaml"
   postsubmits:
   - name: release
     context: "release"
