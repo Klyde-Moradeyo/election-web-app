@@ -22,7 +22,7 @@ gem "sassc-rails", "~> 2.1" # Use Sass to process CSS # Use Active Storage varia
 # gem "kredis" # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "bcrypt", "~> 3.1.7" # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 
-group :test do
+group :test, :ltest do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "brakeman" # https://brakemanscanner.org/docs/install/
   gem "capybara", ">= 3.26"
@@ -34,6 +34,8 @@ group :test do
   gem "rubocop-rspec"
   gem "selenium-webdriver", ">= 4.0.0"
   gem "webdrivers"
+  gem "shoulda-matchers" # for RSPEC
+  gem "parallel_tests" # RSPEC parallel threads
 end
 
 group :development, :test do
