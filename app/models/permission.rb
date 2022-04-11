@@ -1,7 +1,7 @@
 class Permission < ApplicationRecord
-  validates_presence_of :user_id
+  validates_presence_of :user_id, :isAdmin
   # ==========================
   # RELATIONSHIPS
   # ==========================
-  belongs_to :user
+  belongs_to :users
 end
