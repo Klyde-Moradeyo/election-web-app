@@ -91,4 +91,23 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  # SimpleCov gem
+  # This makes it ignore files in your test, config and vendor folders and 
+  # groups controllers, models, helpers and mailers under their own tabs in 
+  # the HTML report.
+  SimpleCov.start do
+    add_filter '/test/'
+    add_filter '/config/'
+    add_filter '/vendor/'
+    
+    add_group 'Controllers', 'app/controllers'
+    add_group 'Models', 'app/models'
+    add_group 'Helpers', 'app/helpers'
+    add_group 'Mailers', 'app/mailers'
+  end
+  # OPTIONAL
+  # This outputs the report to your public folder
+  # You will want to add this to .gitignore
+  SimpleCov.coverage_dir 'public/coverage'
 end
