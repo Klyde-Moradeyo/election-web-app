@@ -11295,7 +11295,7 @@ body {
   height: 100%;
   position: relative;
 }
-body:before {
+.b:before {
   content: "";
   position: fixed;
   top: 0;
