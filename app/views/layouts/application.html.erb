@@ -32,12 +32,12 @@
           <% if user_signed_in? %>
             <a class="nav-item nav-link" href="#">Hello, <%= current_user.email %></a>
             <%= link_to destroy_user_session_path, method: :delete do %>
-              <a class="nav-item nav-link" href="#">Log out</a>
+              <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
             <% end %>
 
           <% else %>
             <%= link_to new_user_session_path do %>
-              <a class="nav-item nav-link" href="users/sign_in">Sign In</a>
+              <%= link_to "Sign In", new_user_session_path, :controller => "devise/session", :method => "get" %>
             <% end %>
           <% end %>
           <!-- check for user sign in | END -->
