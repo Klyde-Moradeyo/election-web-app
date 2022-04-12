@@ -19,8 +19,31 @@
   </head>
 
   <body>
-  <div class="container">
+    <!-- Nav bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          <!-- check for user sign in | Start -->
+          <% if user_signed_in? %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <a class="nav-item nav-link" href="users/kig_in">Log out</a>
+            <% end %>
+              <a class="nav-item nav-link" href="#">Hello, <%= current_user.email %></a>
+          <% else %>
+            <%= link_to new_user_session_path do %>
+              <a class="nav-item nav-link" href="users/sign_in">Sign In</a>
+            <% end %>
+          <% end %>
+          <!-- check for user sign in | END -->
+        </div>
+      </div>
+    </nav>
+    <!-- Nav end -->
     <%= yield %>
-  </div>
   </body>
 </html>
