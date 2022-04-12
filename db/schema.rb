@@ -10,12 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_09_145610) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_12_163720) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_stat_kcache"
-  enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
-  enable_extension "set_user"
 
   create_table "ballot_results", force: :cascade do |t|
     t.bigint "ballot_id", null: false
@@ -98,14 +95,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_09_145610) do
     t.index ["ballot_id"], name: "index_questions_on_ballot_id"
   end
 
-  create_table "quote", id: :serial, force: :cascade do |t|
-    t.string "quote", limit: 255, null: false
-    t.string "author", limit: 255, null: false
-    t.timestamptz "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-    t.timestamptz "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-    t.index ["quote"], name: "quote_quote_key", unique: true
-  end
-
   create_table "stored_voters", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "username"
@@ -120,12 +109,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_09_145610) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "email"
+    t.string "email", default: "", null: false
     t.string "username"
     t.string "password"
     t.datetime "last_login"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "voters", force: :cascade do |t|
