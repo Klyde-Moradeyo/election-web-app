@@ -30,10 +30,11 @@
           <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
           <!-- check for user sign in | Start -->
           <% if user_signed_in? %>
+            <a class="nav-item nav-link" href="#">Hello, <%= current_user.email %></a>
             <%= link_to destroy_user_session_path, method: :delete do %>
-              <a class="nav-item nav-link" href="users/kig_in">Log out</a>
+              <a class="nav-item nav-link" href="#">Log out</a>
             <% end %>
-              <a class="nav-item nav-link" href="#">Hello, <%= current_user.email %></a>
+
           <% else %>
             <%= link_to new_user_session_path do %>
               <a class="nav-item nav-link" href="users/sign_in">Sign In</a>
