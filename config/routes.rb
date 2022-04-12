@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :questions
   resources :question_results
   resources :options
+  resources :home
 
   # Defines the root path route ("/")
   root "home#index"
