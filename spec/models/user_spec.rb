@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
   user = User.create(
     first_name: "first_name",
     last_name: "last_name",
-    email: "email",
+    email: "email@email.com",
     username: "username",
     password: "password",
     # start_date: DateTime.now,
@@ -53,6 +53,6 @@ RSpec.describe User, type: :model do
     it { should have_many(:voters).without_validating_presence }
     it { should have_many(:stored_voters).without_validating_presence }
     it { should have_many(:ballots).without_validating_presence }
-    it { should have_one(:permissions) }
+    # it { should have_one(:permissions) }
   end
 end
