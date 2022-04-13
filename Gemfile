@@ -36,6 +36,7 @@ group :test, :ltest do
   gem "webdrivers"
   gem "shoulda-matchers" # for RSPEC
   gem "parallel_tests" # RSPEC parallel threads
+  gem 'simplecov'
 end
 
 group :development, :test do

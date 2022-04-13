@@ -11,7 +11,7 @@
 # a separate helper file that requires the additional dependencies and performs
 # the additional setup, and require it from the spec files that actually need
 # it.
-#
+require 'simplecov'
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -91,4 +91,23 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  # SimpleCov gem
+  # This makes it ignore files in your test, config and vendor folders and 
+  # groups controllers, models, helpers and mailers under their own tabs in 
+  # the HTML report.
+  SimpleCov.start do
+    add_filter '/test/'
+    add_filter '/config/'
+    add_filter '/vendor/'
+    
+    add_group 'Controllers', 'app/controllers'
+    add_group 'Models', 'app/models'
+    add_group 'Helpers', 'app/helpers'
+    add_group 'Mailers', 'app/mailers'
+  end
+  # OPTIONAL
+  # This outputs the report to your public folder
+  # You will want to add this to .gitignore
+  SimpleCov.coverage_dir 'public/coverage'
 end
