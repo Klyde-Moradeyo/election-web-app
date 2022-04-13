@@ -1,4 +1,5 @@
 class BallotsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_ballot, only: %i[ show edit update destroy ]
 
   # GET /ballots or /ballots.json
