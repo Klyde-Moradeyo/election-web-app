@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :stored_voters
   resources :permissions
   resources :ballots
-  resources :partys
+  resources :parties
   resources :ballot_results
   resources :questions
   resources :question_results
