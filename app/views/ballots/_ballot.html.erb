@@ -1,47 +1,33 @@
 <div id="<%= dom_id ballot %>">
-  <p>
-    <strong>User:</strong>
-    <%= ballot.user_id %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= ballot.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= ballot.description %>
-  </p>
-
-  <p>
-    <strong>Url:</strong>
-    <%= ballot.URL %>
-  </p>
-
-  <p>
-    <strong>Ballot type:</strong>
-    <%= ballot.ballot_type %>
-  </p>
-
-  <p>
-    <strong>Start date:</strong>
-    <%= ballot.start_date %>
-  </p>
-
-  <p>
-    <strong>End date:</strong>
-    <%= ballot.end_date %>
-  </p>
-
-  <p>
-    <strong>Weighted voting:</strong>
-    <%= ballot.weighted_voting %>
-  </p>
-
-  <p>
-    <strong>Show results:</strong>
-    <%= ballot.show_results %>
-  </p>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">User ID</th>
+      <th scope="col">Ballot ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Url</th>
+      <th scope="col">ballot_type</th>
+      <th scope="col">start_date</th>
+      <th scope="col">end_date</th>
+      <th scope="col">weighted_voting</th>
+      <th scope="col">show_results</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= ballot.user_id %></td>
+      <td><%= ballot.id %></td>
+      <td><%= ballot.title %></td>
+      <td><%= ballot.description %></td>
+      <td><%= ballot.URL %></td>
+      <td><%= ballot.ballot_type %></td>
+      <td><%= ballot.start_date %></td>
+      <td><%= ballot.end_date %></td>
+      <td><%= ballot.weighted_voting %></td>
+      <td><%= ballot.show_results %></td>
+    </tr>
+  </tbody>
+</table>
 
 </div>

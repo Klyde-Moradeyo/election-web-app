@@ -6,9 +6,10 @@
   <% @ballots.each do |ballot| %>
     <%= render ballot %>
     <p>
-      <%= link_to "Show this ballot", ballot %>
+      <%= link_to "Show this ballot", user_ballot_path(current_user.id, ballot) %> | 
+      <%= link_to "New ballot", new_user_ballot_path %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New ballot", new_ballot_path %>
+
