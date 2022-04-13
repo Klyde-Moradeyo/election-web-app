@@ -50,6 +50,7 @@ spec:
 
             echo "-------- Prettier - ESLint - stylelint | START --------"
             cd ./bin 
+            chmod u+r+x error_handler.sh
             ./error_handler.sh "npm run fix-code"
             ./error_handler.sh "npm run fix-styles"
             cd ..
