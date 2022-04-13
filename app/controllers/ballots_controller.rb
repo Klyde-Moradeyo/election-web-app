@@ -18,6 +18,7 @@ class BallotsController < ApplicationController
 
   # GET /ballots/1/edit
   def edit
+    @ballot = Ballot.find(params[:id])
   end
 
   # POST /ballots or /ballots.json
@@ -26,7 +27,7 @@ class BallotsController < ApplicationController
 
     respond_to do |format|
       if @ballot.save
-        format.html { redirect_to ballot_url(@ballot), notice: "Ballot was successfully created." }
+        format.html { redirect_to user_ballots_url(@ballot), notice: "Ballot was successfully created." }
         format.json { render :show, status: :created, location: @ballot }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -53,7 +54,7 @@ class BallotsController < ApplicationController
     @ballot.destroy
 
     respond_to do |format|
-      format.html { redirect_to ballots_url, notice: "Ballot was successfully destroyed." }
+      format.html { redirect_to user_ballots_url, notice: "Ballot was successfully destroyed." }
       format.json { head :no_content }
     end
   end
