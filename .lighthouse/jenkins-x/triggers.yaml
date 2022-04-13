@@ -12,8 +12,8 @@ spec:
     always_run: true
     optional: false
     source: "pullrequest/unit-test.yaml"
-  - name: pr
-    context: "pr"
+  - name: integration-test
+    context: "integration-test"
     always_run: true
     optional: false
     source: "pullrequest/integration-test.yaml"
