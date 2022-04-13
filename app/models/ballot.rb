@@ -5,9 +5,13 @@ class Ballot < ApplicationRecord
   # RELATIONSHIPS
   # ==========================
   belongs_to :user
-  has_many :questions
-  has_many :partys
+  has_many :questions, dependent: :destroy
+  has_many :partys, dependent: :destroy
   has_many :options, through: :questions
-  has_many :ballot_results
+  has_many :ballot_results, dependent: :destroy
   has_many :question_results, through: :questions
+
+  def self.get_all
+    ballot.all
+  end
 end
