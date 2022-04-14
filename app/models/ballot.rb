@@ -11,7 +11,5 @@ class Ballot < ApplicationRecord
   has_many :ballot_results, dependent: :destroy
   has_many :question_results, through: :questions
 
-  def self.get_all
-    ballot.all
-  end
+  accepts_nested_attributes_for :questions
 end
