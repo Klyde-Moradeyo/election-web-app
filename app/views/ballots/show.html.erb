@@ -1,11 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @ballot %>
-
+<p>
+  <strong>Ballot Title:</strong>
+  <%= @ballot.title %>
+  <%= render @ballot %>
+</p>
 <div>
   <%= link_to "Edit this ballot", edit_user_ballot_path(@ballot) %> |
-  <%= link_to "Back to ballots", user_ballot_url %> |
-  <%= link_to "Add new Question", new_user_ballot_question_path(current_user.id, @ballot) %>
-  
-  <%= button_to "Destroy this ballot", user_ballot_path(@ballot), method: :delete %>
+  <%= link_to "Back to ballots", user_ballots_path %> |
+  <%= link_to "Destroy this ballot", user_ballot_path(@ballot), method: :delete %>
 </div>
+
+<% if @ballot.questions.any? %>
+  <hr>
+  <h2>Questions:</h2>
+  <%= render @ballot.questions %>
+  
+<% end %>
+<hr>
+
+
+<h2>Add a new Question:</h2>
+<%= render "questions/form", question: @ballot.questions.build %>
+
