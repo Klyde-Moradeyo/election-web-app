@@ -1,8 +1,7 @@
-<%= form_with(model: question) do |form| %>
+<%= form_with(model: question, url: questions_path ) do |form| %>
   <% if question.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
       <ul>
         <% question.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -12,8 +11,7 @@
   <% end %>
 
   <div>
-    <%= form.label :ballot_id, style: "display: block" %>
-    <%= form.text_field :ballot_id %>
+    <%= form.hidden_field :ballot_id %>
   </div>
 
   <div>

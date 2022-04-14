@@ -3,8 +3,12 @@
 <%= render @question %>
 
 <div>
-  <%= link_to "Edit this question", edit_question_path(@question) %> |
-  <%= link_to "Back to questions", questions_path %>
+  <%= link_to "Edit this question", edit_ballots_question_path(@question) %> |
+  <%
+=begin%>
+ <%= link_to "Back to ballot", user_ballot_path(current_user.id, @ballot) %> 
+<%
+=end%>
 
-  <%= button_to "Destroy this question", @question, method: :delete %>
+  <%= button_to "Destroy this question", ballots_question_path(@question), method: :delete %>
 </div>
