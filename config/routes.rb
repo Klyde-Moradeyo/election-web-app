@@ -10,16 +10,14 @@ Rails.application.routes.draw do
   # resources
   resources :home
   resources :users do
+    resources :ballots
+    resources :questions 
+    resources :options
     resources :stored_voters
     # resources :stored_parties
-    resources :ballots do
-      resources :parties
-      resources :voters
-      resources :ballot_results
-      resources :questions do
-        resources :options
-        resources :question_results
-      end
-    end
+    resources :parties
+    resources :voters
+    resources :ballot_results
+    resources :question_results
   end
 end
