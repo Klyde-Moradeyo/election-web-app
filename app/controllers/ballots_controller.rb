@@ -14,6 +14,7 @@ class BallotsController < ApplicationController
   # GET /ballots/new
   def new
     @ballot = Ballot.new
+    # @question = @ballot.questions.build
   end
 
   # GET /ballots/1/edit

@@ -1,31 +1,35 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
+  before_action :set_ballot
 
-  # GET /questions or /questions.json
+  # GET /ballots/1/questions or /ballots/1/questions.json
   def index
     @questions = Question.all
   end
 
-  # GET /questions/1 or /questions/1.json
+  # GET /questions/1  or /ballots/1/questions/1.json
   def show
   end
 
-  # GET /questions/new
+  # GET /ballots/1/questions/new
   def new
-    @question = Question.new
+    # @question = Question.new
+    @question = @ballot.questions.new
+    5.times { @question.options.new } # 5 different options 
   end
-
+  
   # GET /questions/1/edit
   def edit
   end
 
-  # POST /questions or /questions.json
+  # POST /polls/1/questions or /polls/1/questions.json
   def create
-    @question = Question.new(question_params)
+    @question = @ballot.questions.new(question_params)
+    
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to ballots_question_url(@question), notice: "Question was successfully created." }
+        format.html { redirect_to @question, notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +42,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to ballots_question_url(@question), notice: "Question was successfully updated." }
+        format.html { redirect_to @question, notice: "Question was successfully updated." }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -47,9 +51,9 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # DELETE /questions/1 or /questions/1.json
+  # DELETE /questions/1 or /questions/2.json
   def destroy
-    # ballot_id = Question.find(params[:ballot_id])
+    ballot_id = Question.find_by(params[:ballot_id])
     session[:return_to] ||= request.referer
     @question.destroy
 
@@ -67,6 +71,25 @@ class QuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:ballot_id, :question_type, :title, :description, :randomize_selection, :voter_abstain)
+      # do not write this in a single unreadable line
+      params.require(:question).permit(
+        :question_type, 
+        :title, 
+        :description,
+        :randomize_selection, 
+        :voter_abstain, 
+        # do not wrap hash arguments in brackets 
+        # as it will break if/when the `permit` method is changed to use real keyword arguments 
+        # for has_many assocations the key naming convention is also plural_attributes
+        options_attributes: [
+          :party_id, 
+          :title, 
+          :description
+        ]
+      )
+    end
+
+    def set_ballot
+      @ballot = Ballot.find_by(params[:ballot_id])
     end
 end
