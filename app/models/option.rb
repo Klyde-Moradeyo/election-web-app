@@ -6,4 +6,5 @@ class Option < ApplicationRecord
   # ==========================
   belongs_to :question
   belongs_to :ballot
+  has_one :poll, through: :question
 end
