@@ -27,6 +27,8 @@
     <strong>Voter abstain:</strong>
     <%= question.voter_abstain %>
   </p>
-  <%= button_to "Destroy Question",  ballots_question_path(question), method: :delete %>
+  <%= link_to "Edit", edit_ballots_question_path(question) %> |
+  <%= link_to "Add Option", edit_ballots_question_path(question) %>
+  <%= button_to "Delete",  ballots_question_path(question), method: :delete %>
 <hr>
 </div>
