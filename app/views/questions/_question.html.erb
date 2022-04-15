@@ -27,8 +27,20 @@
     <strong>Voter abstain:</strong>
     <%= question.voter_abstain %>
   </p>
-  <%= link_to "Edit", edit_ballots_question_path(question) %> |
-  <%= link_to "Add Option", edit_ballots_question_path(question) %>
-  <%= button_to "Delete",  ballots_question_path(question), method: :delete %>
-<hr>
+
+  <strong>Options:</strong>
+  <%= fields_for :options do |o| %>
+    <div>
+      <%= @option %>
+    </div>
+  <% end %>
+
+  
+  <%= link_to "Edit", edit_question_path(question), question: question  %> |
+  <%
+=begin%>
+ <%= link_to "Add Option", new_questions_option_path, option: question.options.build(:question_id => question.id, :ballot_id => question.ballot_id)  %> 
+<%
+=end%>
+  <%= button_to "Delete",  question_path(question), method: :delete %>
 </div>
