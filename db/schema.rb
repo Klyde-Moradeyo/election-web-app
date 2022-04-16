@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_12_163720) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_16_163857) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,13 +41,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_163720) do
 
   create_table "options", force: :cascade do |t|
     t.bigint "question_id", null: false
-    t.bigint "ballot_id", null: false
-    t.bigint "party_id", null: false
+    t.bigint "party_id"
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ballot_id"], name: "index_options_on_ballot_id"
     t.index ["party_id"], name: "index_options_on_party_id"
     t.index ["question_id"], name: "index_options_on_question_id"
   end
@@ -138,7 +136,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_163720) do
   add_foreign_key "ballot_results", "ballots"
   add_foreign_key "ballot_results", "question_results"
   add_foreign_key "ballots", "users"
-  add_foreign_key "options", "ballots"
   add_foreign_key "options", "parties"
   add_foreign_key "options", "questions"
   add_foreign_key "parties", "ballots"
