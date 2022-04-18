@@ -1,9 +1,9 @@
 class Option < ApplicationRecord
-  validates_presence_of :ballot_id, :title
+  validates_presence_of :title
 
   # ==========================
   # RELATIONSHIPS
   # ==========================
   belongs_to :question
-  belongs_to :ballot
+  has_one :ballot, through: :question
 end

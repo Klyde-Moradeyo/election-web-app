@@ -1,17 +1,16 @@
 <div id="<%= dom_id question %>">
+  <!-- <p> <strong>Ballot:</strong> <%= question.ballot_id %></p> --> 
+
   <p>
-    <strong>Ballot:</strong>
-    <%= question.ballot_id %>
+    <strong>ID:</strong>
+    <%= question.id %> |
+    <strong>Title:</strong>
+    <%= question.title %>
   </p>
 
   <p>
     <strong>Question type:</strong>
     <%= question.question_type %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= question.title %>
   </p>
 
   <p>
@@ -29,4 +28,10 @@
     <%= question.voter_abstain %>
   </p>
 
+  <strong>Options:</strong>
+  <div></div>
+
+  
+  <%= link_to "Edit", edit_question_path%> |
+  <%= button_to "Delete",  question_path(question.id ||= @ballot), method: :delete %> <!-- temp fix -->
 </div>
