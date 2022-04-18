@@ -42,16 +42,16 @@ spec:
             echo "-------- RSPEC | START --------"
             bundle exec rspec spec/models
             echo "-------- RSPEC | END --------"
-        - image: ruby:3.0.3
-          name: unit-test-controller-test
-          resources: {}
-          script: |
-            #!/bin/bash
-            set -e # Makes terminal exit on error
-            bundle install 
-            echo "-------- RSPEC | START --------"
-            bundle exec rspec spec/requests
-            echo "-------- RSPEC | END --------"
+        # - image: ruby:3.0.3
+        #   name: unit-test-controller-test
+        #   resources: {}
+        #   script: |
+        #     #!/bin/bash
+        #     set -e # Makes terminal exit on error
+        #     bundle install 
+        #     echo "-------- RSPEC | START --------"
+        #     bundle exec rspec spec/requests
+        #     echo "-------- RSPEC | END --------"
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 12h0m0s
