@@ -1,12 +1,13 @@
 class HomeController < ApplicationController
-    before_action :render
+    before_action :index
+    before_action :render_layout
     def index
         if user_signed_in?
             redirect_to ballots_path
         end
     end
 
-    def render
+    def render_layout
         render layout: false
     end
 
