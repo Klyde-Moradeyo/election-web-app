@@ -58,7 +58,7 @@ spec:
             apt update
             apt-get install -y postgresql
             # Standrd Ruby on Rails bundle install
-            bundle install
+            bundle install --without test
             unset VERSION
 
             echo "-------- Migrate Staging DB | START --------"
