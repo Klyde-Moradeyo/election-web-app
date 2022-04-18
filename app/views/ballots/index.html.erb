@@ -1,15 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Ballots</h1>
-
+<%= link_to "New ballot", new_user_ballot_path %>
 <div id="ballots">
   <% @ballots.each do |ballot| %>
     <%= render ballot %>
     <p>
       <%= link_to "Show this ballot", user_ballot_path(current_user.id, ballot) %> | 
-      <%= link_to "New ballot", new_user_ballot_path %>
+      
     </p>
   <% end %>
+  
 </div>
 
 
