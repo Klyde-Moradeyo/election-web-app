@@ -38,6 +38,7 @@ spec:
           script: |
             #!/bin/bash
             bundle install 
+            set -e
             echo "-------- RSPEC | START --------"
             bundle exec rspec spec/features
             echo "-------- RSPEC | END --------"
