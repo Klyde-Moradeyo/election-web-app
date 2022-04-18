@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-  
+  x = Random.rand(11)
   user = User.create(
     first_name: "first_name",
     last_name: "last_name",
-    email: "email@email.com",
+    email: "email#{x}@email.com",
     username: "username",
-    password: "password",
+    password: "password", 
     # start_date: DateTime.now,
     # end_date: DateTime.now + 1.week,
   )
