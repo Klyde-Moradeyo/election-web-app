@@ -28,9 +28,12 @@
     <%= question.voter_abstain %>
   </p>
 
-  <strong>Options:</strong>
-  <div></div>
-
+  <p>
+  <% if @question.options.any? %>
+    <strong>Options:</strong>
+    <%= render @question.options %>
+  <% end %>
+  </p>
   
   <%= link_to "Edit", edit_question_path%> |
   <%= button_to "Delete",  question_path(question.id ||= @ballot), method: :delete %> <!-- temp fix -->
