@@ -5,6 +5,8 @@ class Ballot < ApplicationRecord
   # RELATIONSHIPS
   # ==========================
   belongs_to :user
+  has_many :voters
+  has_many :stored_voters, through: :user
   has_many :questions, dependent: :destroy
   has_many :partys, dependent: :destroy
   has_many :options, through: :questions
