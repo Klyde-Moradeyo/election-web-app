@@ -12,11 +12,6 @@ RSpec.describe User, type: :model do
     # start_date: DateTime.now,
     # end_date: DateTime.now + 1.week,
   )
-  permissions = Permission.new(
-      user_id: user.id,
-      isAdmin: false,
-    )
-  puts permissions
   puts user
 
   it "is valid with valid attributes" do
@@ -50,9 +45,7 @@ RSpec.describe User, type: :model do
 
   # Assosciations
   describe "Association" do
-    it { should have_many(:voters).without_validating_presence }
     it { should have_many(:stored_voters).without_validating_presence }
     it { should have_many(:ballots).without_validating_presence }
-    # it { should have_one(:permissions) }
   end
 end
