@@ -10,19 +10,20 @@ Rails.application.routes.draw do
   # resources
   resources :home
   resources :users do
-    resources :ballots
+    resources :ballots do
+      resources :questions, shallow: true do
+        resources :options
+        resources :question_results
+      end
+      resources :parties, shallow: true
+      resources :voters, shallow: true
+      resources :ballot_results, shallow: true
+    end
+  
     resources :stored_voters
     # resources :stored_parties
   end
-  resource :ballots do
-    resources :questions, shallow: true 
-    resources :parties, shallow: true
-    resources :voters, shallow: true
-    resources :ballot_results, shallow: true
-  end
+  
+ 
 
-  resource :questions do
-    resources :options
-    resources :question_results
-  end
 end
