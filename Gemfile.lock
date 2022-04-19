@@ -161,13 +161,6 @@ GEM
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    panolint (0.1.4)
-      brakeman (>= 4.8, < 6.0)
-      rubocop (>= 0.83, < 2.0)
-      rubocop-performance (~> 1.5)
-      rubocop-rails (~> 2.5)
-      rubocop-rake (~> 0.5)
-      rubocop-rspec (~> 2.0)
     parallel (1.21.0)
     parallel_tests (3.8.1)
       parallel
@@ -255,8 +248,6 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
-    rubocop-rake (0.6.0)
-      rubocop (~> 1.0)
     rubocop-rspec (2.9.0)
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
@@ -336,7 +327,6 @@ DEPENDENCIES
   haml-rails
   importmap-rails (>= 0.9.2)
   jbuilder (~> 2.11)
-  panolint
   parallel_tests
   pg
   puma (~> 5.0)
