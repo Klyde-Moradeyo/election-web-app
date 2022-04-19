@@ -8,7 +8,6 @@ class User < ApplicationRecord
     # ==========================
     # RELATIONSHIPS
     # ==========================
-    has_many :voters, dependent: :destroy
     has_many :stored_voters, dependent: :destroy
     has_many :ballots, dependent: :destroy
 

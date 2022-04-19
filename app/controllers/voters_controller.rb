@@ -8,14 +8,14 @@ class VotersController < ApplicationController
 
   # GET /voters/1 or /voters/1.json
   def show
+    @ballot = Ballot.find_by(params[:ballot_id])
   end
 
   # GET /voters/new
   def new
     # @voter = Voter.new
     @ballot = Ballot.find(params[:ballot_id])
-    # @ballot = Voter.find(params[:ballot_id])
-    @voter = @ballot.voters.new
+    @voters = @ballot.voters.new
   end
 
   # GET /voters/1/edit
@@ -24,8 +24,9 @@ class VotersController < ApplicationController
 
   # POST /voters or /voters.json
   def create
-    @ballot = Ballot.find(params[:id])
-    @voter = Voter.new(voter_params)
+    @ballot = Ballot.find(params[:ballot_id])
+    # @voter = Voter.new(voter_params)
+    @voter = @ballot.voters.new(voter_params)
 
     respond_to do |format|
       if @voter.save

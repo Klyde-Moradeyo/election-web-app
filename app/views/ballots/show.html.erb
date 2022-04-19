@@ -8,7 +8,7 @@
 <div>
   <%= link_to "Edit this ballot", edit_user_ballot_path(@ballot) %> |
   <%= link_to "Back to ballots", user_ballots_path %> |
-  <%= link_to "Ballot's Voters", new_ballots_voter_path(:ballot_id => @ballot.id)%>
+  <%= link_to "Ballot's Voters", user_ballot_voters_path(:ballot_id => @ballot.id)%> 
   <%= button_to "Destroy this ballot", user_ballot_path, method: :delete %>
 </div>
 
@@ -22,5 +22,5 @@
 
 
 <h2>Add a new Question:</h2>
-<%= render "questions/form", question: @question %>
+<%= render "questions/form",question: @question, url: [current_user, @ballot, @question] %>
 
