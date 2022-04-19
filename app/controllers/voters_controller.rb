@@ -12,7 +12,10 @@ class VotersController < ApplicationController
 
   # GET /voters/new
   def new
-    @voter = Voter.new
+    # @voter = Voter.new
+    @ballot = Ballot.find(params[:ballot_id])
+    # @ballot = Voter.find(params[:ballot_id])
+    @voter = @ballot.voters.new
   end
 
   # GET /voters/1/edit
@@ -21,6 +24,7 @@ class VotersController < ApplicationController
 
   # POST /voters or /voters.json
   def create
+    @ballot = Ballot.find(params[:id])
     @voter = Voter.new(voter_params)
 
     respond_to do |format|
@@ -65,6 +69,6 @@ class VotersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def voter_params
-      params.require(:voter).permit(:user_id, :username, :password, :email, :vote_weight, :store_voter)
+      params.require(:voter).permit(:ballot_id, :username, :password, :email, :vote_weight, :store_voter)
     end
 end
