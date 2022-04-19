@@ -88,8 +88,4 @@ class QuestionsController < ApplicationController
         ]
       )
     end
-
-    def set_ballot
-      @ballot = Ballot.find_by(params[:ballot_id])
-    end
 end

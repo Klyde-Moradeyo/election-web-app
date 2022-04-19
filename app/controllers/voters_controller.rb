@@ -24,8 +24,9 @@ class VotersController < ApplicationController
 
   # POST /voters or /voters.json
   def create
-    @ballot = Ballot.find(params[:id])
-    @voter = Voter.new(voter_params)
+    @ballot = Ballot.find_by(params[:ballot_id])
+    # @voter = Voter.new(voter_params)
+    @voter = @ballot.voters.new(voter_params)
 
     respond_to do |format|
       if @voter.save
