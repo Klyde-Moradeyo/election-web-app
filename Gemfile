@@ -33,6 +33,7 @@ group :test, :ltest do
   gem "rubocop-performance"
   gem "rubocop-rails"
   gem "rubocop-rspec"
+  gem "panolint"
   gem "selenium-webdriver", ">= 4.0.0"
   gem "webdrivers"
   gem "shoulda-matchers" # for RSPEC
