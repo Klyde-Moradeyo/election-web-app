@@ -1,4 +1,4 @@
-<%= form_with(model: voter) do |form| %>
+<%= form_with(model: [@ballot, voter], url: ballots_voters_path) do |form| %>
   <% if voter.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(voter.errors.count, "error") %> prohibited this voter from being saved:</h2>
@@ -12,8 +12,8 @@
   <% end %>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.label :ballot_id, style: "display: block" %>
+    <%= form.text_field :ballot_id %>
   </div>
 
   <div>
