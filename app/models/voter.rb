@@ -1,8 +1,8 @@
 class Voter < ApplicationRecord
-  validates_presence_of :user_id, :username, :password, :vote_weight, :store_voter
+  validates_presence_of  :username, :password, :vote_weight, :store_voter
 
   # ==========================
   # RELATIONSHIPS
   # ==========================
-  belongs_to :user
+  belongs_to :ballot
 end
