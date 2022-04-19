@@ -13,9 +13,8 @@ class QuestionsController < ApplicationController
 
   # GET /ballots/1/questions/new
   def new
-    # @question = Question.new
+    @ballot = Question.find(params[:ballot_id])
     @question = @ballot.questions.new
-    5.times { @question.options.new } # 5 different options 
   end
   
   # GET /questions/1/edit
@@ -25,11 +24,10 @@ class QuestionsController < ApplicationController
   # POST /polls/1/questions or /polls/1/questions.json
   def create
     @question = @ballot.questions.new(question_params)
-    
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: "Question was successfully created." }
+        format.html { redirect_to user_ballot_path(current_user.id, @ballot), notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -53,7 +51,7 @@ class QuestionsController < ApplicationController
 
   # DELETE /questions/1 or /questions/2.json
   def destroy
-    ballot_id = Question.find_by(params[:ballot_id])
+    # @ballot = Question.find(params[:ballot_id])
     session[:return_to] ||= request.referer
     @question.destroy
 

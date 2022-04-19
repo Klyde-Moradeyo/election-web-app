@@ -1,27 +1,20 @@
 <div id="<%= dom_id option %>">
-  <p>
-    <strong>Question:</strong>
-    <%= option.question_id %>
-  </p>
 
-  <p>
-    <strong>Ballot:</strong>
-    <%= option.ballot_id %>
-  </p>
-
-  <p>
-    <strong>Party:</strong>
-    <%= option.party_id %>
-  </p>
+  <% if option.party_id != nil %>
+    <p>
+      <strong>Party:</strong>
+      <%= option.party_id %>
+    </p>
+  <% end %>
 
   <p>
     <strong>Title:</strong>
     <%= option.title %>
   </p>
 
-  <p>
+  <!-- <p>
     <strong>Description:</strong>
     <%= option.description %>
-  </p>
+  </p> -->
 
 </div>
