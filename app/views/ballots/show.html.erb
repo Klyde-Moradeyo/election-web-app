@@ -7,7 +7,8 @@
 </p>
 <div>
   <%= link_to "Edit this ballot", edit_user_ballot_path(@ballot) %> |
-  <%= link_to "Back to ballots", user_ballots_path %>
+  <%= link_to "Back to ballots", user_ballots_path %> |
+  <%= link_to "Ballot's Voters", new_ballots_voter_path(:ballot_id => @ballot.id)%>
   <%= button_to "Destroy this ballot", user_ballot_path, method: :delete %>
 </div>
 
