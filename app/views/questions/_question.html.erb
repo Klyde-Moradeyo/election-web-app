@@ -29,9 +29,14 @@
   </p>
 
   <strong>Options:</strong>
+  <%question.options.map do |option|%>
+  <ul>
+  <li><%=option.title%></li>
+  </ul>
+  <%end%>
   <div></div>
 
   
-  <%= link_to "Edit", edit_question_path%> |
+  <%= link_to "Edit", edit_question_path(question)%> |
   <%= button_to "Delete",  question_path(question.id ||= @ballot), method: :delete %> <!-- temp fix -->
 </div>
