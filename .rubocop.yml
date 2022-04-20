@@ -1,50 +1,30 @@
+# ==========================
+# Config from: https://github.com/colinsoleim/react-on-rails-template/blob/main/.rubocop.yml
+# Guide: https://nextlinklabs.com/insights/our-rubocop-configuration-for-rails-development-projects
+# ==========================
+# inherit_from: .rubocop_todo.yml
+
 require:
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
 
 AllCops:
-  Includes:
-    - Rakefile
-    - config.ru
-  Excludes:
-    - db/**
-    - bin/{rails,rake,bundle,setup,importmap}
-    - config/**
-    - script/**
-    - tmp/**
-  Documentation:
-    Enabled: false
-
-# Style Cops
-
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
-  SupportedStyles:
-    - single_quotes
-    - double_quotes
-
-# No space makes the method definition shorter and differentiates
-# from a regular assignment.
-Layout/SpaceAroundEqualsInParameterDefault:
-  EnforcedStyle: no_space
-
-Style/HashEachMethods:
-  Enabled: true
-
-Style/HashTransformKeys:
-  Enabled: true
-
-Style/HashTransformValues:
-  Enabled: true
-
-Style/CollectionMethods:
-  Enabled: true
-  PreferredMethods:
-    # inject seems more common in the community.
-    reduce: "inject"
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'test/fixtures/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'spec/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'app/views/**/*'
+    - 'config/environments/*'
+    - 'node_modules/**/*'
 
 # Metrics Cops
+
 Metrics/ClassLength:
   Description: 'Avoid classes longer than 100 lines of code.'
   Max: 100
@@ -62,7 +42,7 @@ Metrics/ParameterLists:
 
 Metrics/MethodLength:
   Description: 'Avoid methods longer than 5 lines of code.'
-  StyleGuide: '<https://github.com/bbatsov/ruby-style-guide#short-methods>'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#short-methods'
   Max: 5
   Enabled: true
 
@@ -79,3 +59,132 @@ Metrics/BlockLength:
     - draw
     - configure
     - group
+
+# Style Cops
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*'
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Description: 'Checks style of children classes and modules.'
+  Enabled: false
+  EnforcedStyle: nested
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    find: detect
+    inject: reduce
+    collect: map
+    find_all: select
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Description: >-
+    Add the frozen_string_literal comment to the top of files
+    to help transition from Ruby 2.3.0 to Ruby 3.0.
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Description: >-
+                 Favor modifier if/unless usage when you have a
+                 single-line body.
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#if-as-a-modifier'
+  Enabled: false
+
+Style/InlineComment:
+  Description: 'Avoid inline comments.'
+  Enabled: false
+
+Style/LineEndConcatenation:
+  Description: >-
+                 Use \ instead of + or << to concatenate two string literals at
+                 line end.
+  Enabled: true
+
+Style/StringLiterals:
+  Description: 'Checks if uses of quotes match the configured preference.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-string-literals'
+  EnforcedStyle: double_quotes
+  Enabled: true
+
+Style/TrailingCommaInArguments:
+  Description: 'Checks for trailing comma in argument lists.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas'
+  EnforcedStyleForMultiline: comma
+  SupportedStylesForMultiline:
+    - comma
+    - consistent_comma
+    - no_comma
+  Enabled: true
+
+Style/TrailingCommaInArrayLiteral:
+  Description: 'Checks for trailing comma in array literals.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas'
+  EnforcedStyleForMultiline: comma
+  SupportedStylesForMultiline:
+    - comma
+    - consistent_comma
+    - no_comma
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
+  Description: 'Checks for trailing comma in hash literals.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas'
+  EnforcedStyleForMultiline: comma
+  SupportedStylesForMultiline:
+    - comma
+    - consistent_comma
+    - no_comma
+  Enabled: true
+
+# Layout Cops
+
+Layout/ArgumentAlignment:
+  Exclude:
+    - 'config/initializers/*'
+
+Layout/FirstArgumentIndentation:
+  Enabled: false
+
+Layout/DotPosition:
+  Description: 'Checks the position of the dot in multi-line method calls.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains'
+  Enabled: false
+
+Layout/LineLength:
+  Description: 'Limit lines to 120 characters.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
+  Max: 120
+
+Layout/MultilineOperationIndentation:
+  Description: >-
+                 Checks indentation of binary operations that span more than
+                 one line.
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/MultilineMethodCallIndentation:
+  Description: >-
+                 Checks indentation of method calls with the dot operator
+                 that span more than one line.
+  Enabled: true
+  EnforcedStyle: indented
+
+# Rails Cops
+
+Rails/Delegate:
+  Description: 'Prefer delegate method for delegations.'
+  Enabled: false
+
+# Bundler Cops
+
+Bundler/OrderedGems:
+  Enabled: false
