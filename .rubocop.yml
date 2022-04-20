@@ -13,7 +13,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'vendor/**/*'
-    - 'test/fixtures/**/*'
+    - 'test/**/*'
     - 'db/**/*'
     - 'bin/**/*'
     - 'spec/**/*'
@@ -22,6 +22,7 @@ AllCops:
     - 'app/views/**/*'
     - 'config/environments/*'
     - 'node_modules/**/*'
+    - 'config/initializers/**'
 
 # Metrics Cops
 
@@ -41,14 +42,14 @@ Metrics/ParameterLists:
   Enabled: true
 
 Metrics/MethodLength:
-  Description: 'Avoid methods longer than 5 lines of code.'
+  Description: 'Avoid methods longer than 15 lines of code.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#short-methods'
-  Max: 5
+  Max: 15
   Enabled: true
 
 Metrics/BlockLength:
   CountComments: false
-  Max: 5
+  Max: 10
   IgnoredMethods:
     - context
     - describe
@@ -145,6 +146,9 @@ Style/TrailingCommaInHashLiteral:
     - no_comma
   Enabled: true
 
+Style/GuardClause:
+  Enabled: false
+
 # Layout Cops
 
 Layout/ArgumentAlignment:
@@ -162,7 +166,7 @@ Layout/DotPosition:
 Layout/LineLength:
   Description: 'Limit lines to 120 characters.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
-  Max: 120
+  Max: 200
 
 Layout/MultilineOperationIndentation:
   Description: >-
@@ -178,10 +182,16 @@ Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
 
+Layout/EndOfLine:
+  Enabled: False
+
 # Rails Cops
 
 Rails/Delegate:
   Description: 'Prefer delegate method for delegations.'
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
   Enabled: false
 
 # Bundler Cops
