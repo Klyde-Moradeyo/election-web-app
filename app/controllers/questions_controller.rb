@@ -50,7 +50,6 @@ class QuestionsController < ApplicationController
 
   # DELETE /questions/1 or /questions/2.json
   def destroy
-    ballot_id = Question.find_by(params[:ballot_id])
     session[:return_to] ||= request.referer
     @question.destroy
 
