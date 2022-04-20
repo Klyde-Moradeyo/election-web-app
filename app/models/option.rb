@@ -1,5 +1,5 @@
 class Option < ApplicationRecord
-  validates_presence_of :title
+  validates :title, presence: true
 
   # ==========================
   # RELATIONSHIPS

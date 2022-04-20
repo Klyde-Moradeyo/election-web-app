@@ -1,5 +1,5 @@
 class Party < ApplicationRecord
-  validates_presence_of :ballot_id, :title
+  validates :title, presence: true
 
   # ==========================
   # RELATIONSHIPS

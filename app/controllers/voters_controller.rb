@@ -1,5 +1,5 @@
 class VotersController < ApplicationController
-  before_action :set_voter, only: %i[ show edit update destroy ]
+  before_action :set_voter, only: %i[show edit update destroy]
 
   # GET /voters or /voters.json
   def index
@@ -7,8 +7,7 @@ class VotersController < ApplicationController
   end
 
   # GET /voters/1 or /voters/1.json
-  def show
-  end
+  def show; end
 
   # GET /voters/new
   def new
@@ -16,8 +15,7 @@ class VotersController < ApplicationController
   end
 
   # GET /voters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /voters or /voters.json
   def create
@@ -58,13 +56,14 @@ class VotersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_voter
-      @voter = Voter.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def voter_params
-      params.require(:voter).permit(:user_id, :username, :password, :email, :vote_weight, :store_voter)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_voter
+    @voter = Voter.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def voter_params
+    params.require(:voter).permit(:user_id, :username, :password, :email, :vote_weight, :store_voter)
+  end
 end

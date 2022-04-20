@@ -1,5 +1,5 @@
 class BallotResult < ApplicationRecord
-  validates_presence_of :question_result_id, :content
+  validates :content, presence: true
 
   # ==========================
   # RELATIONSHIPS

@@ -1,6 +1,6 @@
 class BallotsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_ballot, only: %i[ show edit update destroy ]
+  before_action :set_ballot, only: %i[show edit update destroy]
 
   # GET /ballots or /ballots.json
   def index
@@ -10,7 +10,7 @@ class BallotsController < ApplicationController
   # GET /ballots/1 or /ballots/1.json
   def show
     @question = @ballot.questions.new
-    3.times { @question.options.new } # 3 different options 
+    3.times { @question.options.new } # 3 different options
   end
 
   # GET /ballots/new
@@ -63,13 +63,15 @@ class BallotsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ballot
-      @ballot = Ballot.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def ballot_params
-      params.require(:ballot).permit(:user_id, :title, :description, :URL, :ballot_type, :start_date, :end_date, :weighted_voting, :show_results)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_ballot
+    @ballot = Ballot.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def ballot_params
+    params.require(:ballot).permit(:user_id, :title, :description, :URL, :ballot_type, :start_date, :end_date,
+                                   :weighted_voting, :show_results)
+  end
 end
