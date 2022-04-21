@@ -1,5 +1,5 @@
 class Ballot < ApplicationRecord
-  validates_presence_of :title, :URL, :ballot_type, :start_date, :end_date
+  validates :title, :URL, :ballot_type, :start_date, :end_date, presence: true
 
   # ==========================
   # RELATIONSHIPS

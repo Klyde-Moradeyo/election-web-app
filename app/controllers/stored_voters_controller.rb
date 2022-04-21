@@ -1,5 +1,5 @@
 class StoredVotersController < ApplicationController
-  before_action :set_stored_voter, only: %i[ show edit update destroy ]
+  before_action :set_stored_voter, only: %i[show edit update destroy]
 
   # GET /stored_voters or /stored_voters.json
   def index
@@ -7,8 +7,7 @@ class StoredVotersController < ApplicationController
   end
 
   # GET /stored_voters/1 or /stored_voters/1.json
-  def show
-  end
+  def show; end
 
   # GET /stored_voters/new
   def new
@@ -16,8 +15,7 @@ class StoredVotersController < ApplicationController
   end
 
   # GET /stored_voters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /stored_voters or /stored_voters.json
   def create
@@ -58,13 +56,14 @@ class StoredVotersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_stored_voter
-      @stored_voter = StoredVoter.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def stored_voter_params
-      params.require(:stored_voter).permit(:user_id, :username, :password, :email, :vote_weight)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_stored_voter
+    @stored_voter = StoredVoter.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def stored_voter_params
+    params.require(:stored_voter).permit(:user_id, :username, :password, :email, :vote_weight)
+  end
 end

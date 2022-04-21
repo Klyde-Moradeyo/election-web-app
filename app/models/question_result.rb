@@ -1,6 +1,4 @@
 class QuestionResult < ApplicationRecord
-  validates_presence_of :question_id, :ballot_id, :voter_id, :option_id
-
   # ==========================
   # RELATIONSHIPS
   # ==========================
