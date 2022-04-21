@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -28,17 +27,17 @@ group :test, :ltest do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "brakeman" # https://brakemanscanner.org/docs/install/
   gem "capybara", ">= 3.26"
-  gem "rspec" # https://semaphoreci.com/community/tutorials/getting-started-with-rspec
-  gem "rspec-rails"
+  gem "rspec-rails" # https://semaphoreci.com/community/tutorials/getting-started-with-rspec
   gem "rubocop"
   gem "rubocop-performance"
   gem "rubocop-rails"
   gem "rubocop-rspec"
+  gem "factory_bot_rails" # For RSPEC
+  gem "shoulda-matchers" # For RSPEC
+  gem "parallel_tests" # Parallel threads in RSPEC
+  gem 'simplecov' # Tests code coverage
   gem "selenium-webdriver", ">= 4.0.0"
   gem "webdrivers"
-  gem "shoulda-matchers" # for RSPEC
-  gem "parallel_tests" # RSPEC parallel threads
-  gem "simplecov"
 end
 
 group :development, :test do
