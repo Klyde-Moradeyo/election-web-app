@@ -2,46 +2,35 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-  x = Random.rand(11)
-  subject {
-    described_class.new(
-      first_name: "first_name",
-      last_name: "last_name",
-      email: "email#{x}@email.com",
-      username: "username",
-      password: "password", 
-      # start_date: DateTime.now,
-      # end_date: DateTime.now + 1.week,
-    )
-  }
+  let(:user) { build(:user) }
 
   it "is valid with valid attributes" do
-    # expect(subject).to be_valid
+    expect(user).to be_valid
   end
 
   it "is not valid without a first_name" do
-    subject.first_name = nil
-    expect(subject).to_not be_valid
+    user.first_name = nil
+    expect(user).to_not be_valid
   end
 
   it "is not valid without a last_name" do
-    subject.last_name = nil
-    expect(subject).to_not be_valid
+    user.last_name = nil
+    expect(user).to_not be_valid
   end
   
   it "is not valid without a email" do
-    subject.email = nil
-    expect(subject).to_not be_valid
+    user.email = nil
+    expect(user).to_not be_valid
   end
 
   it "is not valid without a username"  do
-    subject.username = nil
-    expect(subject).to_not be_valid
+    user.username = nil
+    expect(user).to_not be_valid
   end
   
   it "is not valid without a password"  do
-    subject.password = nil
-    expect(subject).to_not be_valid
+    user.password = nil
+    expect(user).to_not be_valid
   end
 
   # Assosciations
