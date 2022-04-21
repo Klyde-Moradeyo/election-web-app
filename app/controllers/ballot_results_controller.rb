@@ -1,5 +1,5 @@
 class BallotResultsController < ApplicationController
-  before_action :set_ballot_result, only: %i[ show edit update destroy ]
+  before_action :set_ballot_result, only: %i[show edit update destroy]
 
   # GET /ballot_results or /ballot_results.json
   def index
@@ -7,8 +7,7 @@ class BallotResultsController < ApplicationController
   end
 
   # GET /ballot_results/1 or /ballot_results/1.json
-  def show
-  end
+  def show; end
 
   # GET /ballot_results/new
   def new
@@ -16,8 +15,7 @@ class BallotResultsController < ApplicationController
   end
 
   # GET /ballot_results/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /ballot_results or /ballot_results.json
   def create
@@ -58,13 +56,14 @@ class BallotResultsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ballot_result
-      @ballot_result = BallotResult.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def ballot_result_params
-      params.require(:ballot_result).permit(:ballot_id, :question_result_id, :content)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_ballot_result
+    @ballot_result = BallotResult.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def ballot_result_params
+    params.require(:ballot_result).permit(:ballot_id, :question_result_id, :content)
+  end
 end

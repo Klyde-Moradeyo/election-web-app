@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -37,7 +38,7 @@ group :test, :ltest do
   gem "webdrivers"
   gem "shoulda-matchers" # for RSPEC
   gem "parallel_tests" # RSPEC parallel threads
-  gem 'simplecov'
+  gem "simplecov"
 end
 
 group :development, :test do
@@ -53,4 +54,3 @@ group :development, :ltest do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-

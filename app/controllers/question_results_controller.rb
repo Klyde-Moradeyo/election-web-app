@@ -1,5 +1,5 @@
 class QuestionResultsController < ApplicationController
-  before_action :set_question_result, only: %i[ show edit update destroy ]
+  before_action :set_question_result, only: %i[show edit update destroy]
 
   # GET /question_results or /question_results.json
   def index
@@ -7,8 +7,7 @@ class QuestionResultsController < ApplicationController
   end
 
   # GET /question_results/1 or /question_results/1.json
-  def show
-  end
+  def show; end
 
   # GET /question_results/new
   def new
@@ -16,8 +15,7 @@ class QuestionResultsController < ApplicationController
   end
 
   # GET /question_results/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /question_results or /question_results.json
   def create
@@ -25,7 +23,9 @@ class QuestionResultsController < ApplicationController
 
     respond_to do |format|
       if @question_result.save
-        format.html { redirect_to question_result_url(@question_result), notice: "Question result was successfully created." }
+        format.html do
+          redirect_to question_result_url(@question_result), notice: "Question result was successfully created."
+        end
         format.json { render :show, status: :created, location: @question_result }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,9 @@ class QuestionResultsController < ApplicationController
   def update
     respond_to do |format|
       if @question_result.update(question_result_params)
-        format.html { redirect_to question_result_url(@question_result), notice: "Question result was successfully updated." }
+        format.html do
+          redirect_to question_result_url(@question_result), notice: "Question result was successfully updated."
+        end
         format.json { render :show, status: :ok, location: @question_result }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,13 +60,14 @@ class QuestionResultsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question_result
-      @question_result = QuestionResult.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def question_result_params
-      params.require(:question_result).permit(:question_id, :ballot_id, :voter_id, :option_id, :content)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_question_result
+    @question_result = QuestionResult.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def question_result_params
+    params.require(:question_result).permit(:question_id, :ballot_id, :voter_id, :option_id, :content)
+  end
 end
