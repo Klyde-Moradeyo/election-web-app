@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   # GET /ballots/1/questions or /ballots/1/questions.json
   def index
     @questions = Question.all
-    @questions = ballots.questions
+    # @questions = ballots.questions
   end
 
   # GET /questions/1  or /ballots/1/questions/1.json
