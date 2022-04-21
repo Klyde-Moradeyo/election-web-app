@@ -25,5 +25,11 @@ module ElectionWebApp
     #config.generators.stylesheet_engine = :sass
 
     config.assets.paths << "#{Rails.root}/app/assets/videos" # add videos path
+
+    # Add Factory Bot
+    config.generators do |g|
+      g.test_framework :rspec
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
+    end
   end
 end
