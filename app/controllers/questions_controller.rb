@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[show edit update destroy]
-  before_action :set_ballot
+  before_action :set_question, only: %i[ show edit update destroy ]
+  before_action :set_ballot, only:[:create, :index, :new]
 
   # GET /ballots/1/questions or /ballots/1/questions.json
   def index
@@ -12,9 +12,8 @@ class QuestionsController < ApplicationController
 
   # GET /ballots/1/questions/new
   def new
-    # @question = Question.new
+    @ballot = Question.find(params[:ballot_id])
     @question = @ballot.questions.new
-    5.times { @question.options.new } # 5 different options
   end
 
   # GET /questions/1/edit
@@ -26,7 +25,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: "Question was successfully created." }
+        format.html { redirect_to user_ballot_path(current_user.id, @ballot), notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,6 +49,7 @@ class QuestionsController < ApplicationController
 
   # DELETE /questions/1 or /questions/2.json
   def destroy
+    # @ballot = Question.find(params[:ballot_id])
     session[:return_to] ||= request.referer
     @question.destroy
 
@@ -82,11 +82,20 @@ class QuestionsController < ApplicationController
         :party_id,
         :title,
         :description,
-      ],
-    )
-  end
-
-  def set_ballot
-    @ballot = Ballot.find_by(params[:ballot_id])
-  end
+        :randomize_selection, 
+        :voter_abstain, 
+        # do not wrap hash arguments in brackets 
+        # as it will break if/when the `permit` method is changed to use real keyword arguments 
+        # for has_many assocations the key naming convention is also plural_attributes
+        options_attributes: [
+          :party_id, 
+          :title, 
+          :description
+        ]
+      )
+    end
+    
+    def set_ballot
+      @ballot = Ballot.find(params[:ballot_id])
+    end
 end

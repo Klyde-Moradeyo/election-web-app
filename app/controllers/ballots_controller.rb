@@ -9,8 +9,8 @@ class BallotsController < ApplicationController
 
   # GET /ballots/1 or /ballots/1.json
   def show
-    @question = @ballot.questions.new
-    3.times { @question.options.new } # 3 different options
+    @question = Question.new({ballot_id: @ballot.id})
+    3.times { @question.options.new } # 3 different options 
   end
 
   # GET /ballots/new

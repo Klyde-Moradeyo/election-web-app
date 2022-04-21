@@ -7,11 +7,15 @@ class VotersController < ApplicationController
   end
 
   # GET /voters/1 or /voters/1.json
-  def show; end
+  def show
+    @ballot = Ballot.find_by(params[:ballot_id])
+  end
 
   # GET /voters/new
   def new
-    @voter = Voter.new
+    # @voter = Voter.new
+    @ballot = Ballot.find(params[:ballot_id])
+    @voters = @ballot.voters.new
   end
 
   # GET /voters/1/edit
@@ -19,7 +23,9 @@ class VotersController < ApplicationController
 
   # POST /voters or /voters.json
   def create
-    @voter = Voter.new(voter_params)
+    @ballot = Ballot.find(params[:ballot_id])
+    # @voter = Voter.new(voter_params)
+    @voter = @ballot.voters.new(voter_params)
 
     respond_to do |format|
       if @voter.save
@@ -56,14 +62,8 @@ class VotersController < ApplicationController
   end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_voter
-    @voter = Voter.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def voter_params
-    params.require(:voter).permit(:user_id, :username, :password, :email, :vote_weight, :store_voter)
-  end
+    # Only allow a list of trusted parameters through.
+    def voter_params
+      params.require(:voter).permit(:ballot_id, :username, :password, :email, :vote_weight, :store_voter)
+    end
 end
