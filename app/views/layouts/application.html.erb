@@ -31,9 +31,7 @@
           <!-- check for user sign in | Start -->
           <% if user_signed_in? %>
             <a class="nav-item nav-link" href="#">Hello, <%= current_user.email %></a>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-            <% end %>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 
           <% else %>
             <%= link_to new_user_session_path do %>
