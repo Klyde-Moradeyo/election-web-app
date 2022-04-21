@@ -4,7 +4,8 @@ class BallotsController < ApplicationController
 
   # GET /ballots or /ballots.json
   def index
-    @ballots = Ballot.all
+    # @ballots = Ballot.all
+    @ballots = current_user.ballots
   end
 
   # GET /ballots/1 or /ballots/1.json
