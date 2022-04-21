@@ -6,11 +6,11 @@ class Ballot < ApplicationRecord
   # ==========================
   belongs_to :user
   has_many :voters
-  has_many :stored_voters, through: :user
   has_many :questions, dependent: :destroy
   has_many :partys, dependent: :destroy
-  has_many :options, through: :questions
   has_many :ballot_results, dependent: :destroy
+  has_many :stored_voters, through: :user
+  has_many :options, through: :questions
   has_many :question_results, through: :questions
 
   accepts_nested_attributes_for :questions
