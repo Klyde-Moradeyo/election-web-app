@@ -21,8 +21,7 @@ class VotersController < ApplicationController
   end
 
   # GET /voters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /voters or /voters.json
   def create
@@ -66,11 +65,6 @@ class VotersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_voter
-      @voter = Voter.find(params[:id])
-    end
-
     # Only allow a list of trusted parameters through.
     def voter_params
       params.require(:voter).permit(:ballot_id, :username, :password, :email, :vote_weight, :store_voter)

@@ -1,5 +1,5 @@
 class OptionsController < ApplicationController
-  before_action :set_option, only: %i[ show edit update destroy ]
+  before_action :set_option, only: %i[show edit update destroy]
 
   # GET /options or /options.json
   def index
@@ -7,8 +7,7 @@ class OptionsController < ApplicationController
   end
 
   # GET /options/1 or /options/1.json
-  def show
-  end
+  def show; end
 
   # GET /options/new
   def new
@@ -16,8 +15,7 @@ class OptionsController < ApplicationController
   end
 
   # GET /options/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /options or /options.json
   def create
@@ -58,13 +56,14 @@ class OptionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_option
-      @option = Option.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def option_params
-      params.require(:option).permit(:question_id, :ballot_id, :party_id, :title, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_option
+    @option = Option.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def option_params
+    params.require(:option).permit(:question_id, :ballot_id, :party_id, :title, :description)
+  end
 end

@@ -1,5 +1,5 @@
 class PartiesController < ApplicationController
-  before_action :set_party, only: %i[ show edit update destroy ]
+  before_action :set_party, only: %i[show edit update destroy]
 
   # GET /parties or /parties.json
   def index
@@ -7,8 +7,7 @@ class PartiesController < ApplicationController
   end
 
   # GET /parties/1 or /parties/1.json
-  def show
-  end
+  def show; end
 
   # GET /parties/new
   def new
@@ -16,8 +15,7 @@ class PartiesController < ApplicationController
   end
 
   # GET /parties/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /parties or /parties.json
   def create
@@ -58,13 +56,14 @@ class PartiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_party
-      @party = Party.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def party_params
-      params.require(:party).permit(:ballot_id, :title, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_party
+    @party = Party.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def party_params
+    params.require(:party).permit(:ballot_id, :title, :description)
+  end
 end

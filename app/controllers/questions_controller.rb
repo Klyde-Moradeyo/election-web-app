@@ -9,18 +9,16 @@ class QuestionsController < ApplicationController
   end
 
   # GET /questions/1  or /ballots/1/questions/1.json
-  def show
-  end
+  def show; end
 
   # GET /ballots/1/questions/new
   def new
     @ballot = Question.find(params[:ballot_id])
     @question = @ballot.questions.new
   end
-  
+
   # GET /questions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /polls/1/questions or /polls/1/questions.json
   def create
@@ -63,17 +61,27 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def question_params
-      # do not write this in a single unreadable line
-      params.require(:question).permit(
-        :question_type, 
-        :title, 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_question
+    @question = Question.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def question_params
+    # do not write this in a single unreadable line
+    params.require(:question).permit(
+      :question_type,
+      :title,
+      :description,
+      :randomize_selection,
+      :voter_abstain,
+      # do not wrap hash arguments in brackets
+      # as it will break if/when the `permit` method is changed to use real keyword arguments
+      # for has_many assocations the key naming convention is also plural_attributes
+      options_attributes: [
+        :party_id,
+        :title,
         :description,
         :randomize_selection, 
         :voter_abstain, 
