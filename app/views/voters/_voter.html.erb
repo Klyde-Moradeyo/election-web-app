@@ -1,10 +1,5 @@
 <div id="<%= dom_id voter %>">
   <p>
-    <strong>User:</strong>
-    <%= voter.ballot.title %>
-  </p>
-
-  <p>
     <strong>Username:</strong>
     <%= voter.username %>
   </p>
@@ -28,5 +23,6 @@
     <strong>Store voter:</strong>
     <%= voter.store_voter %>
   </p>
-
+  <%= link_to "Edit", edit_voter_path(voter)%> |
+  <%= button_to "Delete",  voter_path(voter), method: :delete %>
 </div>
