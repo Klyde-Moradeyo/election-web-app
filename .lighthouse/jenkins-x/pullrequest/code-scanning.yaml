@@ -67,7 +67,7 @@ spec:
             chmod u+r+x ./bin/error_handler.sh
             bundle exec ./bin/error_handler.sh "rubocop --parallel -a"
             echo "-------- RUBOCOP | END --------"
-            bundle exec ./bin/error_handler.sh "./bin/git_commit_and_push.sh \"REFACTOR CODE SCAN - RuboCop Auto-Correct\""
+            # bundle exec ./bin/error_handler.sh "./bin/git_commit_and_push.sh \"REFACTOR CODE SCAN - RuboCop Auto-Correct\""
         - image: ruby:3.0.3
           name: ruby-security-checks # Brakeman security test
           resources: {}
