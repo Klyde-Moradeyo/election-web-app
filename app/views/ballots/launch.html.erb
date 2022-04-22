@@ -1,6 +1,10 @@
 <div id="<%= dom_id @ballot %>">
 <table class="table">
   <thead>
+    <tr>
+      <th scope="col">Ballot Details:</th>
+      <th scope="col"></th>
+    </tr>
   </thead>
   <tbody>
     <tr>
@@ -35,7 +39,7 @@
       <td><%= @ballot.show_results %></td>
     </tr>
     <tr>
-      <th scope="row">Number of Questions</th>
+      <th scope="row">No. of Questions</th>
       <td><%= @ballot.questions.count %></td>
     </tr>
     <tr>
