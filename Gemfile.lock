@@ -97,6 +97,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (2.0.6)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     diff-lcs (1.5.0)
     digest (3.1.0)
     docile (1.4.0)
@@ -325,6 +328,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   debug (>= 1.0.0)
   devise
+  devise_invitable (~> 2.0.0)
   factory_bot_rails
   haml-rails
   importmap-rails (>= 0.9.2)
