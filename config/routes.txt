@@ -1,7 +1,7 @@
-                                  Prefix Verb   URI Pattern                                                                                       Controller#Action
+                         Prefix Verb   URI Pattern                                                                                       Controller#Action
                         new_user_session GET    /users/sign_in(.:format)                                                                          devise/sessions#new
                             user_session POST   /users/sign_in(.:format)                                                                          devise/sessions#create
-                    destroy_user_session DELETE /users/sign_out(.:format)                                                                         devise/sessions#destroy
+                    destroy_user_session GET    /users/sign_out(.:format)                                                                         devise/sessions#destroy
                        new_user_password GET    /users/password/new(.:format)                                                                     devise/passwords#new
                       edit_user_password GET    /users/password/edit(.:format)                                                                    devise/passwords#edit
                            user_password PATCH  /users/password(.:format)                                                                         devise/passwords#update
@@ -31,6 +31,7 @@
                                          PATCH  /users/:user_id/stored_voters/:id(.:format)                                                       stored_voters#update
                                          PUT    /users/:user_id/stored_voters/:id(.:format)                                                       stored_voters#update
                                          DELETE /users/:user_id/stored_voters/:id(.:format)                                                       stored_voters#destroy
+                      user_ballot_launch GET    /users/:user_id/ballots/:ballot_id/launch(.:format)                                               ballots#launch
                      user_ballot_parties GET    /users/:user_id/ballots/:ballot_id/parties(.:format)                                              parties#index
                                          POST   /users/:user_id/ballots/:ballot_id/parties(.:format)                                              parties#create
                    new_user_ballot_party GET    /users/:user_id/ballots/:ballot_id/parties/new(.:format)                                          parties#new

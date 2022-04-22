@@ -63,6 +63,11 @@ class BallotsController < ApplicationController
     end
   end
 
+  # LAUNCH ballot
+  def launch 
+    @ballot = Ballot.find(params[:ballot_id])
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
