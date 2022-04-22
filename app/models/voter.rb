@@ -1,5 +1,5 @@
 class Voter < ApplicationRecord
-  validates :username, :password, presence: true
+  validates_presence_of  :username, :password
 
   # ==========================
   # RELATIONSHIPS
