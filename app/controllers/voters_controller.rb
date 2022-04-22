@@ -1,17 +1,16 @@
 class VotersController < ApplicationController
-  before_action :set_voter, only: %i[ show edit update destroy ]
-  before_action :set_ballot, only:[:create, :index, :new]
+  before_action :set_voter, only: %i[show edit update destroy]
+  before_action :set_ballot, only: [:create, :index, :new]
 
   # GET /voters or /voters.json
   def index
     # @voters = Voter.all
     @ballot = Ballot.find(params[:ballot_id])
-    @voter = Voter.new({ballot_id: @ballot.id})
+    @voter = Voter.new({ ballot_id: @ballot.id })
   end
 
   # GET /voters/1 or /voters/1.json
-  def show
-  end
+  def show; end
 
   # GET /voters/new
   def new
@@ -65,12 +64,13 @@ class VotersController < ApplicationController
   end
 
   private
-    # Only allow a list of trusted parameters through.
-    def voter_params
-      params.require(:voter).permit(:ballot_id, :username, :password, :email, :vote_weight, :store_voter)
-    end
 
-    def set_ballot
-      @ballot = Ballot.find(params[:ballot_id])
-    end
+  # Only allow a list of trusted parameters through.
+  def voter_params
+    params.require(:voter).permit(:ballot_id, :username, :password, :email, :vote_weight, :store_voter)
+  end
+
+  def set_ballot
+    @ballot = Ballot.find(params[:ballot_id])
+  end
 end
