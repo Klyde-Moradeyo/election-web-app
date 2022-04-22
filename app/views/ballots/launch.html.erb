@@ -1,0 +1,50 @@
+<div id="<%= dom_id @ballot %>">
+<table class="table">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Title</th>
+      <td><%= @ballot.title %></td>
+    <tr>
+      <th scope="row">Description</th>
+      <td><%= @ballot.description %></td>
+    </tr>
+    <tr>
+      <th scope="row">Type</th>
+      <td><%= @ballot.ballot_type %></td>
+    </tr>
+    <tr>
+      <th scope="row">URL</th>
+      <td><%= @ballot.URL %></td>
+    </tr>
+    <tr>
+      <th scope="row">Start Date</th>
+      <td><%= @ballot.start_date %></td>
+    </tr>
+    <tr>
+      <th scope="row">End Date</th>
+      <td><%= @ballot.end_date %></td>
+    </tr>
+    <tr>
+      <th scope="row">Weighted Voting</th>
+      <td><%= @ballot.weighted_voting %></td>
+    </tr>
+    <tr>
+      <th scope="row">Show Results</th>
+      <td><%= @ballot.show_results %></td>
+    </tr>
+    <tr>
+      <th scope="row">Number of Questions</th>
+      <td><%= @ballot.questions.count %></td>
+    </tr>
+    <tr>
+      <th scope="row">Expected Voter Turnout</th>
+      <td><%= @ballot.voters.count %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<%= link_to "Back to Ballot", user_ballot_path(current_user, @ballot) %> |
+<%= link_to "Schedule Ballot"%> |
+<%= link_to "Launch Ballot"%> 
