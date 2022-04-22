@@ -1,5 +1,5 @@
-#!/bin/bash  
-MSG = $1
+#!/bin/sh  
+
 git commit .
-git commit -m $msg
+git commit -m $1
 git push origin main
