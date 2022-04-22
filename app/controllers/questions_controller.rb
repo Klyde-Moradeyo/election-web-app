@@ -84,7 +84,6 @@ class QuestionsController < ApplicationController
         :title,
         :description,
         :randomize_selection, 
-        :voter_abstain
       ])
     end
     
