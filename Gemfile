@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -36,7 +35,7 @@ group :test, :ltest do
   gem "factory_bot_rails" # For RSPEC
   gem "shoulda-matchers" # For RSPEC
   gem "parallel_tests" # Parallel threads in RSPEC
-  gem "simplecov" # Tests code coverage
+  gem 'simplecov' # Tests code coverage
   gem "selenium-webdriver", ">= 4.0.0"
   gem "webdrivers"
 end
