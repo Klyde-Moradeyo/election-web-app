@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -19,7 +20,7 @@ gem "haml-rails" # Use haml rails https://haml.info/
 gem "bootstrap-scss" # https://getbootstrap.com/docs/5.0/customize/sass/
 gem "sassc-rails", "~> 2.1" # Use Sass to process CSS # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images] # gem "image_processing", "~> 1.2"
 gem "devise"
-gem 'devise_invitable', '~> 2.0.0'
+gem "devise_invitable", "~> 2.0.0"
 # gem "redis", "~> 4.0" # Use Redis adapter to run Action Cable in production
 # gem "kredis" # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "bcrypt", "~> 3.1.7" # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
@@ -36,7 +37,7 @@ group :test, :ltest do
   gem "factory_bot_rails" # For RSPEC
   gem "shoulda-matchers" # For RSPEC
   gem "parallel_tests" # Parallel threads in RSPEC
-  gem 'simplecov' # Tests code coverage
+  gem "simplecov" # Tests code coverage
   gem "selenium-webdriver", ">= 4.0.0"
   gem "webdrivers"
 end
