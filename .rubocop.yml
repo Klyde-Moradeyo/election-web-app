@@ -199,9 +199,6 @@ Rails/Delegate:
 Rails/HasManyOrHasOneDependent:
   Enabled: false
 
-Rails/I18nLocaleTexts:
-  Enabled: false
-
 Rails/FilePath: 
   EnforcedStyle: arguments
 
