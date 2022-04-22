@@ -1,5 +1,4 @@
-#!/bin/sh  
-
-git commit .
-git commit -m $1
+#!/bin/sh
+msg=$1
+git commit -a -m "$msg"
 git push origin main
