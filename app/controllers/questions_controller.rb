@@ -84,16 +84,7 @@ class QuestionsController < ApplicationController
         :title,
         :description,
         :randomize_selection, 
-        :voter_abstain, 
-        # do not wrap hash arguments in brackets 
-        # as it will break if/when the `permit` method is changed to use real keyword arguments 
-        # for has_many assocations the key naming convention is also plural_attributes
-        options_attributes: [
-          :party_id, 
-          :title, 
-          :description
-        ]
-      )
+      ])
     end
     
     def set_ballot
