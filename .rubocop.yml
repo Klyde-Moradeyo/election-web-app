@@ -23,8 +23,13 @@ AllCops:
     - 'config/environments/*'
     - 'node_modules/**/*'
     - 'config/initializers/**'
+    - 'app/controllers/registrations_controller.rb'
 
 # Metrics Cops
+
+Metrics/AbcSize: # Look into this again later
+  Description: 'checks that the ABC size of methods is not higher than the configured maximum' 
+  Enabled: false
 
 Metrics/ClassLength:
   Description: 'Avoid classes longer than 100 lines of code.'
@@ -49,7 +54,7 @@ Metrics/MethodLength:
 
 Metrics/BlockLength:
   CountComments: false
-  Max: 10
+  Max: 15
   IgnoredMethods:
     - context
     - describe
@@ -193,6 +198,9 @@ Rails/Delegate:
 
 Rails/HasManyOrHasOneDependent:
   Enabled: false
+
+Rails/FilePath: 
+  EnforcedStyle: arguments
 
 # Bundler Cops
 

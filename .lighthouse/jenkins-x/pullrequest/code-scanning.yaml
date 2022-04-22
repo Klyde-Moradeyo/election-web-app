@@ -64,9 +64,8 @@ spec:
             bundle install # Standrd Ruby on Rails bundle install
 
             echo "-------- RUBOCOP | START --------"
-            cd ./bin
-            chmod u+r+x error_handler.sh
-            ./error_handler.sh "rubocop --parallel"; cd ..
+            chmod u+r+x ./bin/error_handler.sh
+            bundle exec ./bin/error_handler.sh "rubocop --parallel"
             echo "-------- RUBOCOP | END --------"
         - image: ruby:3.0.3
           name: ruby-security-checks # Brakeman security test

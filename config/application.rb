@@ -24,7 +24,7 @@ module ElectionWebApp
     config.sass.preferred_syntax = :sass # allow to use sass over scss
     # config.generators.stylesheet_engine = :sass
 
-    config.assets.paths << "#{Rails.root}/app/assets/videos" # add videos path
+    Dir[Rails.root.join('app', 'assets', 'assets', '**', '*')].each { |f| require f }# Add videos path
 
     # Add Factory Bot
     config.generators do |g|
