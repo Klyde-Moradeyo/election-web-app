@@ -70,30 +70,6 @@ spec:
             export SECRET_KEY_BASE=$RAKE_SECRET
             #RACK_ENV=production RAILS_ENV=production bundle exec rake db:migrate
             echo "-------- Migrate Production DB  | END --------"
-        - image: ruby:3.0.3
-          name: unit-test 
-          resources: {}
-          script: |
-            #!/bin/bash
-            git reset --hard HEAD
-            set -e # Makes terminal exit on error
-            bundle install 
-            echo "-------- RSPEC | START --------"
-            bundle exec rspec spec/models spec/features # spec/requests
-            echo "-------- RSPEC | END --------"
-            ./bin/commit_and_push.sh "Unit-Test: Add latest release coverage" ""
-        - image: ruby:3.0.3
-          name: code-scanning
-          resources: {}
-          script: |
-            #!/bin/bash
-            git reset --hard HEAD
-            set -e # Makes terminal exit on error
-            bundle install 
-            chmod u+r+x ./bin/error_handler.sh
-            chmod u+r+x ./bin/commit_and_push.sh
-            bundle exec ./bin/error_handler.sh "rubocop -a"
-            ./bin/commit_and_push.sh "Code-Scan: RuboCop Auto-Correct" # xdg-open coverage/index.html 
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
