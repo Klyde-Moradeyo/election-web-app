@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :stored_voters
     # resources :stored_parties
     resources :ballots do
+      get '/launch' => 'ballots#launch'
       resources :parties, shallow: true
       resources :voters, shallow: true
       resources :ballot_results, shallow: true
