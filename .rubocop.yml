@@ -202,6 +202,9 @@ Rails/HasManyOrHasOneDependent:
 Rails/FilePath: 
   EnforcedStyle: arguments
 
+Rails/HasAndBelongsToMany: # file added by rollify (role.rb) was causing failures
+  Enabled: false
+
 # Bundler Cops
 
 Bundler/OrderedGems:
