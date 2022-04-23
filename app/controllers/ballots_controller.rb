@@ -31,6 +31,7 @@ class BallotsController < ApplicationController
 
     respond_to do |format|
       if @ballot.save
+        current_user.add_role :host, @ballot
         format.html { redirect_to user_ballots_url(@ballot), notice: "Ballot was successfully created." }
         format.json { render :show, status: :created, location: @ballot }
       else
