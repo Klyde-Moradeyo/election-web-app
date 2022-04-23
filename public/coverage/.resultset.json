@@ -122,8 +122,11 @@
         ]
       },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "/mnt/d/Repo/election-web-app/spec/factories/roles.rb": {
 =======
+=======
+>>>>>>> Stashed changes
       "/workspace/source/spec/factories/roles.rb": {
         "lines": [
           1,
@@ -149,7 +152,10 @@
           1,
 <<<<<<< Updated upstream
           1,
+<<<<<<< Updated upstream
           1,
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
           20,
@@ -174,6 +180,7 @@
         "lines": [
           1,
           1,
+<<<<<<< Updated upstream
           null,
           null,
           1,
@@ -181,6 +188,8 @@
           1,
           null,
           null,
+=======
+>>>>>>> Stashed changes
           null,
           null,
           1,
@@ -203,12 +212,22 @@
 >>>>>>> Stashed changes
           null,
           1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
           null,
           1,
           null,
           null,
           1,
           0,
+<<<<<<< Updated upstream
           null,
           1,
           0,
@@ -218,6 +237,14 @@
           null,
           1,
           0,
+=======
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+>>>>>>> Stashed changes
           null,
           null
         ]
@@ -408,8 +435,11 @@
           null,
           1,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
           null,
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           null,
           null,
@@ -424,7 +454,10 @@
           1,
           1,
           1,
+<<<<<<< Updated upstream
           1,
+=======
+>>>>>>> Stashed changes
           null,
           1,
           null
@@ -559,7 +592,11 @@
         ]
       },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "/mnt/d/Repo/election-web-app/spec/models/role_spec.rb": {
+=======
+      "/workspace/source/spec/models/role_spec.rb": {
+>>>>>>> Stashed changes
 =======
       "/workspace/source/spec/models/role_spec.rb": {
 >>>>>>> Stashed changes
@@ -572,7 +609,11 @@
         ]
       },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "/mnt/d/Repo/election-web-app/app/models/role.rb": {
+=======
+      "/workspace/source/app/models/role.rb": {
+>>>>>>> Stashed changes
 =======
       "/workspace/source/app/models/role.rb": {
 >>>>>>> Stashed changes
@@ -593,7 +634,11 @@
         ]
       },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "/mnt/d/Repo/election-web-app/spec/models/stored_voter_spec.rb": {
+=======
+      "/workspace/source/spec/models/stored_voter_spec.rb": {
+>>>>>>> Stashed changes
 =======
       "/workspace/source/spec/models/stored_voter_spec.rb": {
 >>>>>>> Stashed changes
@@ -606,7 +651,11 @@
         ]
       },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "/mnt/d/Repo/election-web-app/app/models/stored_voter.rb": {
+=======
+      "/workspace/source/app/models/stored_voter.rb": {
+>>>>>>> Stashed changes
 =======
       "/workspace/source/app/models/stored_voter.rb": {
 >>>>>>> Stashed changes
@@ -622,7 +671,11 @@
         ]
       },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "/mnt/d/Repo/election-web-app/spec/models/user_spec.rb": {
+=======
+      "/workspace/source/spec/models/user_spec.rb": {
+>>>>>>> Stashed changes
 =======
       "/workspace/source/spec/models/user_spec.rb": {
 >>>>>>> Stashed changes
@@ -698,9 +751,13 @@
       }
     },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "timestamp": 1650729559
 =======
     "timestamp": 1650730013
+>>>>>>> Stashed changes
+=======
+    "timestamp": 1650730646
 >>>>>>> Stashed changes
   }
 }
