@@ -75,6 +75,7 @@ spec:
           resources: {}
           script: |
             #!/bin/bash
+            source .jx/variables.sh
             git reset --hard HEAD
             set -e # Makes terminal exit on error
             bundle install 
