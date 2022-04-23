@@ -5,7 +5,6 @@ FactoryBot.define do
     first_name { "first_name" }
     last_name { "last_name" }
     email { "email#{rand1}_#{rand1}@email.com" }
-    username { "username" }
     password {"password" }
     
     # trait :admin do
