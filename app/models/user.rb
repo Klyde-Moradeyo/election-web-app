@@ -1,19 +1,32 @@
 class User < ApplicationRecord
-  rolify
-    # Include default devise modules. Others available are:
-    # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-    devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :validatable
-    validates_presence_of :first_name, :last_name, :email, :username, :password
-
-    # ==========================
-    # RELATIONSHIPS
-    # ==========================
-    has_many :stored_voters, dependent: :destroy
-    has_many :ballots, dependent: :destroy
-
+  rolify :before_add => :before_add_method
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  # devise :database_authenticatable, :registerable,
-  # :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable,
+        :recoverable, :rememberable, :validatable
+  validates_presence_of :first_name, :last_name, :email, :username
+
+  # ==========================
+  # RELATIONSHIPS
+  # ==========================
+  has_many :stored_voters, dependent: :destroy
+  has_many :ballots, dependent: :destroy, through: :roles, source: :resource, source_type: :Ballot
+
+  after_create :assign_default_role
+  validate :must_have_a_role, on: :update
+  
+  private
+  def before_add_method(role)
+    # do something before it gets added
+  end
+
+  def must_have_a_role
+    unless roles.any?
+      errors.add(:roles, "must have at least 1 role")
+    end
+  end
+
+  def assign_default_role
+    self.add_role(:newuser) if self.roles.blank?
+  end
 end
