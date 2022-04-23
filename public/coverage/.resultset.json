@@ -1,0 +1,646 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/mnt/d/Repo/election-web-app/spec/models/ballot_result_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/rails_helper.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          3,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/factories/ballots.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/factories/questions.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          7,
+          7,
+          7,
+          7,
+          7,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/factories/roles.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/factories/users.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          20,
+          20,
+          20,
+          20,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/ballot_results_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/ballots_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/guest_voters_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/home_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/options_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/parties_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/question_results_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/questions_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/registrations_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/stored_voters_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/helpers/voters_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/support/devise.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/support/factory_bot.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/ballot_result.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/models/ballot_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          10,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/ballot.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/models/option_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/option.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/models/party_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/party.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/models/question_result_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/question_result.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/models/question_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          7,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/question.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/models/role_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/role.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/models/stored_voter_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/stored_voter.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          5,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/models/voter_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/voter.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/features/users_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1650729559
+  }
+}
