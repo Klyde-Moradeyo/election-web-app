@@ -6,3 +6,4 @@ git stash pop;
 git add .
 git commit -m "$2"
 git push origin
+git checkout --force main
