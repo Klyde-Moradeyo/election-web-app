@@ -121,12 +121,26 @@
           null
         ]
       },
+<<<<<<< Updated upstream
       "/mnt/d/Repo/election-web-app/spec/factories/users.rb": {
+=======
+      "/workspace/source/spec/factories/roles.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/workspace/source/spec/factories/users.rb": {
+>>>>>>> Stashed changes
         "lines": [
           1,
           1,
           1,
           1,
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
           1,
           1,
@@ -134,10 +148,15 @@
           1,
           1,
 =======
+=======
+>>>>>>> Stashed changes
           20,
           20,
           20,
           20,
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           null,
           null,
@@ -156,6 +175,7 @@
       "/mnt/d/Repo/election-web-app/app/models/user.rb": {
         "lines": [
           1,
+          1,
           null,
           null,
           1,
@@ -168,9 +188,23 @@
           1,
           1,
           null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
           null,
           null,
           null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
           null,
           null
         ]
@@ -311,15 +345,32 @@
           0,
           null,
           null,
+<<<<<<< Updated upstream
           0,
           0,
           0,
+=======
+          1,
+          null,
+>>>>>>> Stashed changes
           null,
           null,
           0,
           0,
           0,
           null,
+<<<<<<< Updated upstream
+=======
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+>>>>>>> Stashed changes
           null,
           0,
           0,
@@ -415,7 +466,11 @@
           null
         ]
       },
+<<<<<<< Updated upstream
       "/mnt/d/Repo/election-web-app/spec/models/stored_voter_spec.rb": {
+=======
+      "/workspace/source/spec/models/role_spec.rb": {
+>>>>>>> Stashed changes
         "lines": [
           1,
           null,
@@ -424,11 +479,23 @@
           null
         ]
       },
+<<<<<<< Updated upstream
       "/mnt/d/Repo/election-web-app/spec/models/user_spec.rb": {
+=======
+      "/workspace/source/app/models/role.rb": {
+>>>>>>> Stashed changes
         "lines": [
           1,
           null,
+<<<<<<< Updated upstream
           0,
+=======
+          1,
+          null,
+          null,
+          null,
+          1,
+>>>>>>> Stashed changes
           null,
 <<<<<<< Updated upstream
           0,
@@ -436,20 +503,58 @@
           0,
           0,
           null,
+<<<<<<< Updated upstream
+=======
+          1,
+          null
+        ]
+      },
+      "/workspace/source/spec/models/stored_voter_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/workspace/source/app/models/stored_voter.rb": {
+        "lines": [
+          1,
+          1,
+>>>>>>> Stashed changes
           null,
           0,
           0,
           0,
           null,
+<<<<<<< Updated upstream
           null,
           0,
           0,
           0,
 =======
+=======
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/workspace/source/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+>>>>>>> Stashed changes
           5,
           null,
           1,
           1,
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           null,
           null,
@@ -503,12 +608,16 @@
     },
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "timestamp": 1650642625
 =======
     "timestamp": 1650725993
 >>>>>>> Stashed changes
 =======
     "timestamp": 1650728944
+>>>>>>> Stashed changes
+=======
+    "timestamp": 1650729373
 >>>>>>> Stashed changes
   }
 }
