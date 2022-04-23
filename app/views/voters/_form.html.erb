@@ -1,0 +1,46 @@
+<%= form_with(model: voter, url: url||= [@voter]) do |form| %>
+  <% if voter.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(voter.errors.count, "error") %> prohibited this voter from being saved:</h2>
+
+      <ul>
+        <% voter.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.hidden_field :ballot_id %>
+  </div>
+
+  <div>
+    <%= form.label "ID:", style: "display: block" %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div>
+    <%= form.label :password, style: "display: block" %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :vote_weight, style: "display: block" %>
+    <%= form.number_field :vote_weight %>
+  </div>
+
+  <div>
+    <%= form.label :store_voter, style: "display: block" %>
+    <%= form.check_box :store_voter %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
