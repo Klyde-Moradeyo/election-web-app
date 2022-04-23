@@ -69,6 +69,11 @@ class BallotsController < ApplicationController
     @ballot = Ballot.find(params[:ballot_id])
   end
 
+  def log_in
+    @ballot = Ballot.find_by_id(18)
+  end
+
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
