@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[ show edit update destroy ]
-  before_action :set_ballot, only:[:create, :index, :new]
+  before_action :set_question, only: %i[show edit update destroy]
+  before_action :set_ballot, only: [:create, :index, :new]
 
   # GET /ballots/1/questions or /ballots/1/questions.json
   def index
@@ -83,11 +83,12 @@ class QuestionsController < ApplicationController
         :party_id,
         :title,
         :description,
-        :randomize_selection, 
-      ])
-    end
-    
-    def set_ballot
-      @ballot = Ballot.find(params[:ballot_id])
-    end
+        :randomize_selection,
+      ],
+    )
+  end
+
+  def set_ballot
+    @ballot = Ballot.find(params[:ballot_id])
+  end
 end
