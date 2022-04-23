@@ -25,4 +25,14 @@
     <%= user.last_login %>
   </p>
 
+  <p>
+    <strong>User Ballot:</strong>
+    <%= user.hosted_ballots.pluck(:id) %>
+  </p>
+
+  <p>
+    <strong>User Voter's Ballot:</strong>
+    <%= user.voter_ballots.pluck(:id) %>
+  </p>
+
 </div>
