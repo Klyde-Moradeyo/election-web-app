@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   before_action :index
   before_action :render_layout
+  skip_before_action :authenticate_user!
 
   def index
     if user_signed_in?
