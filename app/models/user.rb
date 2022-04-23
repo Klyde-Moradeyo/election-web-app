@@ -11,7 +11,7 @@ class User < ApplicationRecord
   # ==========================
   has_many :stored_voters, dependent: :destroy
   has_many :ballots, dependent: :destroy, through: :roles, source: :resource, source_type: :Ballot
-  
+
   after_create :assign_default_role
   validate :must_have_a_role, on: :update
 
