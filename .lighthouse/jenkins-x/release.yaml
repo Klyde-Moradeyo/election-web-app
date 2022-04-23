@@ -83,17 +83,6 @@ spec:
             echo "-------- RSPEC | END --------"
             chmod u+r+x ./bin/commit_and_push.sh
             ./bin/commit_and_push.sh BUILD_STATS "Unit-Test: Add latest release coverage"
-        - image: ruby:3.0.3
-          name: code-scanning
-          resources: {}
-          script: |
-            #!/bin/bash
-            git reset --hard HEAD
-            bundle install 
-            chmod u+r+x ./bin/error_handler.sh
-            chmod u+r+x ./bin/commit_and_push.sh
-            rubocop -a
-            ./bin/commit_and_push.sh main "Code-Scan: RuboCop Auto-Correct" # xdg-open coverage/index.html 
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
