@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  rolify :before_add => :before_add_method
+  rolify before_add: :before_add_method
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -14,8 +14,9 @@ class User < ApplicationRecord
   
   after_create :assign_default_role
   validate :must_have_a_role, on: :update
-  
+
   private
+
   def before_add_method(role)
     # do something before it gets added
   end
@@ -27,6 +28,6 @@ class User < ApplicationRecord
   end
 
   def assign_default_role
-    self.add_role(:newuser) if self.roles.blank?
+    add_role(:newuser) if roles.blank?
   end
 end
