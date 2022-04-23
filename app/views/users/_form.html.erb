@@ -22,6 +22,11 @@
   </div>
 
   <div>
+    <%= form.collection_check_boxes :role_ids, Role.all, :id, :name %>
+    <%= user.errors[:roles] %>
+  </div>
+
+  <div>
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
   </div>
@@ -32,8 +37,7 @@
   </div>
 
   <div>
-    <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
+    <%= form.hidden_field :encrypted_password %>
   </div>
 
   <div>
