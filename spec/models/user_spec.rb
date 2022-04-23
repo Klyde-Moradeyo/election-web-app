@@ -23,16 +23,6 @@ RSpec.describe User, type: :model do
     expect(user).to_not be_valid
   end
 
-  it "is not valid without a username"  do
-    user.username = nil
-    expect(user).to_not be_valid
-  end
-  
-  it "is not valid without a password"  do
-    user.password = nil
-    expect(user).to_not be_valid
-  end
-
   # Assosciations
   describe "Association" do
     it { should have_many(:stored_voters).without_validating_presence }
