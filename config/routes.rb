@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#coming_soon"
 
-  get "/it" => "ballots#log_in"
+  get "/it" => "voter_sessions#entry"
 
   # resources
   resources :home
