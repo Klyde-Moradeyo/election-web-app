@@ -1,7 +1,7 @@
 #!/bin/sh
 git fetch --all
 git stash
-git checkout --force $1 
+git checkout -b BUILD_$VERSION
 git stash pop;
 
 # Remove build files before commit

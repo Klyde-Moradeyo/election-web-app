@@ -24,6 +24,7 @@ gem "sassc-rails", "~> 2.1" # Use Sass to process CSS # Use Active Storage varia
 gem "devise"
 gem "devise_invitable", "~> 2.0.0"
 gem "rolify" # https://github.com/EppO/rolify
+gem "date_validator"
 # gem "redis", "~> 4.0" # Use Redis adapter to run Action Cable in production
 # gem "kredis" # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "bcrypt", "~> 3.1.7" # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
