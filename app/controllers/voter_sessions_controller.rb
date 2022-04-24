@@ -1,5 +1,5 @@
 class VoterSessionsController < ApplicationController
-  before_action :set_voter_session, only: %i[ show edit update destroy ]
+  before_action :set_voter_session, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!
 
   # GET /voter_sessions or /voter_sessions.json
@@ -8,8 +8,7 @@ class VoterSessionsController < ApplicationController
   end
 
   # GET /voter_sessions/1 or /voter_sessions/1.json
-  def show
-  end
+  def show; end
 
   # GET /voter_sessions/new
   def new
@@ -17,8 +16,7 @@ class VoterSessionsController < ApplicationController
   end
 
   # GET /voter_sessions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /voter_sessions or /voter_sessions.json
   def create
@@ -59,13 +57,14 @@ class VoterSessionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_voter_session
-      @voter_session = VoterSession.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def voter_session_params
-      params.fetch(:voter_session, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_voter_session
+    @voter_session = VoterSession.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def voter_session_params
+    params.fetch(:voter_session, {})
+  end
 end
