@@ -25,7 +25,6 @@ RSpec.describe User, type: :model do
 
   # Assosciations
   describe "Association" do
-    it { should have_many(:stored_voters).without_validating_presence }
     it { should have_many(:ballots).without_validating_presence }
   end
 end
