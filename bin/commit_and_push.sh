@@ -14,5 +14,5 @@ git push origin
 git checkout --force main
 
 # Move build files after commit
-[ ! -e ../VERSION ] || mv -v ../VERSION . 
-[ ! -e ../variables.sh ] || mv -v ../variables.sh ./.jx/variables.sh 
+[ ! -e ../VERSION ] || mkdirmv -v ../VERSION . 
+[ ! -e ../variables.sh ] || mkdir ./.jx || mv -v ../variables.sh ./.jx/variables.sh 
