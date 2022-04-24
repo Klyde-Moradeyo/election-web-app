@@ -17,8 +17,8 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby] # Windows does not
 gem "bootsnap", ">= 1.4.4", require: false # Reduces boot times through caching; required in config/boot.rb
 gem "pg" # Use postgre as the database for Active Record
 gem "haml-rails" # Use haml rails https://haml.info/
-gem 'jsbundling-rails'  # needed for bootstrap javascript
-gem 'cssbundling-rails' # Install bootstrap 5
+gem "jsbundling-rails"  # needed for bootstrap javascript
+gem "cssbundling-rails" # Install bootstrap 5
 gem "bootstrap-scss" # https://getbootstrap.com/docs/5.0/customize/sass/
 gem "sassc-rails", "~> 2.1" # Use Sass to process CSS # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images] # gem "image_processing", "~> 1.2"
 gem "devise"
