@@ -5,17 +5,16 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
 
   # Defines the root path route ("/")
-  root "home#index"
+  root "home#coming_soon"
+
+  get "/it" => "voter_sessions#entry"
 
   # resources
   resources :home
   resources :users do
-    resources :stored_voters
-    # resources :stored_parties
     resources :ballots do
       get "/launch" => "ballots#launch"
       resources :parties, shallow: true
-      resources :voters, shallow: true
       resources :ballot_results, shallow: true
       resources :questions, shallow: true do
         resources :options
