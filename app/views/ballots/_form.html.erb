@@ -12,7 +12,7 @@
   <% end %>
 
   <div>
-    <%= form.text_field :user_id, value: current_user.id, class:'d-none' %>
+    <%= form.hidden_field :user_id, value: current_user.id, class:'d-none' %>
   </div>
 
   <div>
@@ -26,16 +26,6 @@
   </div>
 
   <div>
-    <%= form.label :URL, style: "display: block" %>
-    <%= form.text_area :URL %>
-  </div>
-
-  <div>
-    <%= form.label :ballot_type, style: "display: block" %>
-    <%= form.text_field :ballot_type %>
-  </div>
-
-  <div>
     <%= form.label :start_date, style: "display: block" %>
     <%= form.datetime_field :start_date %>
   </div>
@@ -46,13 +36,8 @@
   </div>
 
   <div>
-    <%= form.label :weighted_voting, style: "display: block" %>
-    <%= form.check_box :weighted_voting %>
-  </div>
-
-  <div>
-    <%= form.label :show_results, style: "display: block" %>
-    <%= form.check_box :show_results %>
+    <%= form.label :show_voter_results, style: "display: block" %>
+    <%= form.check_box :show_voter_results %>
   </div>
 
   <div>
