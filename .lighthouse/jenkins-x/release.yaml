@@ -80,6 +80,7 @@ spec:
             #!/bin/bash
             source .jx/variables.sh
             git reset --hard HEAD
+            [ ! -e public/coverage ] || rm -rf public/coverage # Delete public/coverage if exist
             set -e # Makes terminal exit on error
             bundle install 
             echo "-------- RSPEC | START --------"
