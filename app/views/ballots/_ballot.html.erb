@@ -6,12 +6,10 @@
       <th scope="col">Ballot ID</th>
       <th scope="col">Title</th>
       <th scope="col">Description</th>
-      <th scope="col">Url</th>
-      <th scope="col">ballot_type</th>
       <th scope="col">start_date</th>
       <th scope="col">end_date</th>
-      <th scope="col">weighted_voting</th>
-      <th scope="col">show_results</th>
+      <th scope="col">show_voters_results</th>
+      <th scope="col">access_token</th>
       <th scope="col">Host</th>
       <th scope="col">Voters</th>
     </tr>
@@ -22,12 +20,10 @@
       <td><%= ballot.id %></td>
       <td><%= ballot.title %></td>
       <td><%= ballot.description %></td>
-      <td><%= ballot.URL %></td>
-      <td><%= ballot.ballot_type %></td>
       <td><%= ballot.start_date %></td>
       <td><%= ballot.end_date %></td>
-      <td><%= ballot.weighted_voting %></td>
-      <td><%= ballot.show_results %></td>
+      <td><%= ballot.show_voter_results %></td>
+      <td><%= ballot.access_token %></td>
       <td><%= ballot.host.pluck(:email, :name) %></td>
       <td><%= ballot.voters.distinct.pluck(:email) %></td>
     </tr>
