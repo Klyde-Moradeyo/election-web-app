@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
 
   # Defines the root path route ("/")
-  root "home#index"
+  root "home#coming_soon"
 
   get "/it" => "ballots#log_in"
 
