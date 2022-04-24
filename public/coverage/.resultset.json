@@ -170,6 +170,7 @@
           1,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           null,
           1,
           1,
@@ -177,6 +178,15 @@
           1,
 =======
 =======
+=======
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+>>>>>>> Stashed changes
           null,
           1,
           1,
@@ -199,6 +209,15 @@
           null,
 =======
 >>>>>>> Stashed changes
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
           1,
           0,
           0,
@@ -331,6 +350,7 @@
           6,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 =======
           null,
@@ -342,8 +362,9 @@
           1,
           1,
           null,
+=======
+>>>>>>> Stashed changes
           null,
-          1,
           1,
           1,
           null,
@@ -375,6 +396,7 @@
           1,
           null,
           null,
+<<<<<<< Updated upstream
           null,
           null,
           1,
@@ -383,6 +405,29 @@
           1,
           1,
           1,
+=======
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/workspace/source/app/models/ballot.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+>>>>>>> Stashed changes
           1,
           1,
           1,
@@ -404,6 +449,14 @@
 =======
           null,
           1,
+          null,
+          1,
+          1,
+          null,
+          1,
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
           null,
           1,
           null,
@@ -587,6 +640,7 @@
           null,
           5,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           null,
           1,
           1,
@@ -596,6 +650,21 @@
           null,
           1,
           1,
+=======
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+>>>>>>> Stashed changes
           null,
           null,
           1,
@@ -606,6 +675,7 @@
           null,
           1,
           2,
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
           2,
@@ -625,6 +695,9 @@
           null,
           null,
           null,
+=======
+          null,
+>>>>>>> Stashed changes
 =======
           null,
 >>>>>>> Stashed changes
@@ -651,6 +724,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "timestamp": 1650832664
 =======
     "timestamp": 1650833711
@@ -663,6 +737,9 @@
 >>>>>>> Stashed changes
 =======
     "timestamp": 1650834474
+>>>>>>> Stashed changes
+=======
+    "timestamp": 1650835029
 >>>>>>> Stashed changes
   }
 }
