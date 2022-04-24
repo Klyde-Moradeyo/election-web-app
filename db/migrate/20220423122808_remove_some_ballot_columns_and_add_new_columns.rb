@@ -7,7 +7,7 @@ class RemoveSomeBallotColumnsAndAddNewColumns < ActiveRecord::Migration[7.0]
     
     add_column :ballots, :show_voter_results, :boolean
     add_column :ballots, :access_token, :bigint, unique: true
-    change_column :ballots, :access_token, :bigint, null: false
+    change_column :ballots, :access_token, :string, null: false
   end
 
   def down
@@ -17,6 +17,6 @@ class RemoveSomeBallotColumnsAndAddNewColumns < ActiveRecord::Migration[7.0]
     add_column :ballots, :URL, :boolean
     
     remove_column :ballots, :show_voter_results, :boolean
-    remove_column :ballots, :access_token, :bigint, unique: true
+    remove_column :ballots, :access_token, :string, unique: true
   end
 end
