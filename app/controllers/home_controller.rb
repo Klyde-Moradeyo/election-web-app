@@ -6,6 +6,8 @@ class HomeController < ApplicationController
   def index
     if user_signed_in?
       redirect_to user_ballots_path(current_user.id)
+    else
+      redirect_to it_path
     end
   end
 

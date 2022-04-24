@@ -1,5 +1,6 @@
 class VoterSessionsController < ApplicationController
   before_action :set_voter_session, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate_user!
 
   # GET /voter_sessions or /voter_sessions.json
   def index
