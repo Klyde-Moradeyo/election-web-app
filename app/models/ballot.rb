@@ -1,5 +1,7 @@
 class Ballot < ApplicationRecord
-  validates :title, :URL, :ballot_type, :start_date, :end_date, presence: true
+  validates :title, :start_date, presence: true
+  validates :end_date, date: { after_or_equal_to:  :start_date}, presence: true
+  before_create :generate_token
 
   resourcify
 
@@ -17,4 +19,20 @@ class Ballot < ApplicationRecord
   has_many :question_results, through: :questions
 
   accepts_nested_attributes_for :questions
+  
+  protected
+  def generate_token
+    loop do
+      time = Time.new
+      token = "#{time.month}#{rand(111)}#{time.hour}"
+      if token.length > 6
+        token = token[0...6]
+      elsif token.length != 6
+        i = (6-token.length)
+        i.times { token = "#{token}#{rand(11)}" }
+      end
+      self.access_token = token
+      break token unless Ballot.where(access_token: token).exists?
+    end
+  end
 end
