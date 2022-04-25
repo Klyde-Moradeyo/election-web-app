@@ -16,4 +16,4 @@ git checkout --force $3
 
 # Move build files after commit
 [ ! -e ../VERSION ] || mv -v ../VERSION . 
-[ ! -e ../variables.sh ] || mv -v ../variables.sh ./.jx/variables.sh 
+[ ! -e ../variables.sh ] || mkdir -v --parents ./.jx; mv -v ../variables.sh $_
