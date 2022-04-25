@@ -7,6 +7,10 @@ class RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.sanitize(:account_update)
   end
 
+  def voter_new
+    ballot = session[:ballot]
+  end
+
   private
 
   def sign_up_params
