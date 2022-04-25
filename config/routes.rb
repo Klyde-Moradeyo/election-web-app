@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # resources
   resources :home
+  resources :voter_sessions
   resources :users do
     resources :ballots do
       get "/launch" => "ballots#launch"
