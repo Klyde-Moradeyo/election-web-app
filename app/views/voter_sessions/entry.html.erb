@@ -25,19 +25,12 @@
             background: hsla(0, 0%, 100%, 0.55);
             backdrop-filter: blur(30px);
             ">
-          <div class="card-body p-5 shadow-5 text-center">
-            <form>
-
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" placeholder="BALLOT PIN" />
-              </div>
-
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Enter
-              </button>
-            </form>
+          <div class="card-body p-5 shadow-5 text-center">      
+            <%= form_tag("/it", method: "get") do %>
+              <%= text_field_tag :access_token, "", class:'form-control', :placeholder => "Ballot Pin", maxlength: 6 %>
+              <br>
+              <p><%= submit_tag "Enter", class: 'btn btn-primary btn-block mb-4'%></p>
+               <% end %>
           </div>
         </div>
       </div>
