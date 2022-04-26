@@ -21,10 +21,13 @@ class VoterSessionsController < ApplicationController
   def entry
     ballot = Ballot.find_by(access_token: params[:access_token])
     if ballot
-      session[:access_token] = ballot.access_token
-      redirect_to new_user_registration_path
+      Rails.logger.debug ballot.id
+      session[:ballot_id] = ballot.id
+      redirect_to new_voter_path
     end
   end
+
+  def waiting_room; end
 
   # POST /voter_sessions or /voter_sessions.json
   def create

@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Voter Menu</h1>
+<%= link_to "Back to Ballot", user_ballot_path(current_user, @ballot) %>
+<hr>
+<h1>Create Access token for ballot</h1>
+<%= button_to "Generate token"%>
+<hr>
+<h1>Add New Individual Voters</h1>
+<!-- <%= link_to "Add New Voter", user_ballot_voters_path %> --> <!-- in the future this should give a pop up menu -->
+<%= render "voters/form", voter: @voter, url: [current_user, @ballot, @voter] %>
+
+<% if @ballot.voters.any? %>
+  <hr>
+  <h2>Voters:</h2>
+  <%= render @ballot.voters %>
+  
+<% end %>
+
+
+

@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   # resources
   resources :home
   resources :voter_sessions
+  resources :voters
   resources :users do
     resources :ballots do
       get "/launch" => "ballots#launch"
+      resources :voters, shallow: true
       resources :parties, shallow: true
       resources :ballot_results, shallow: true
       resources :questions, shallow: true do
