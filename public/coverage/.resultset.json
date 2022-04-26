@@ -95,14 +95,11 @@
           1,
           1,
           1,
-          16,
-          16,
-          16,
-          16,
-          16,
-          16,
-          16,
-          16,
+          12,
+          12,
+          12,
+          12,
+          12,
           null,
           null
         ]
@@ -121,17 +118,25 @@
           null
         ]
       },
+      "/workspace/source/spec/factories/roles.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/workspace/source/spec/factories/users.rb": {
         "lines": [
           1,
           1,
           1,
           1,
-          22,
-          22,
-          22,
-          22,
-          22,
+          16,
+          16,
+          16,
+          16,
           null,
           null,
           null,
@@ -149,6 +154,7 @@
       "/workspace/source/app/models/user.rb": {
         "lines": [
           1,
+          1,
           null,
           null,
           1,
@@ -160,10 +166,26 @@
           null,
           1,
           1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
           null,
           null,
           null,
+          1,
+          0,
+          0,
           null,
+          null,
+          null,
+          1,
+          0,
           null,
           null
         ]
@@ -239,19 +261,13 @@
           null
         ]
       },
-      "/workspace/source/app/helpers/stored_voters_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/workspace/source/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/voters_helper.rb": {
+      "/workspace/source/app/helpers/voter_sessions_helper.rb": {
         "lines": [
           1,
           null
@@ -291,28 +307,8 @@
           null,
           1,
           null,
-          10,
+          6,
           null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
           1,
           1,
           null,
@@ -339,7 +335,6 @@
           null,
           null,
           1,
-          2,
           2,
           2,
           2,
@@ -351,6 +346,10 @@
         "lines": [
           1,
           1,
+          1,
+          1,
+          null,
+          1,
           null,
           null,
           null,
@@ -363,8 +362,26 @@
           1,
           1,
           1,
+          1,
           null,
           1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
           null
         ]
       },
@@ -496,7 +513,7 @@
           null
         ]
       },
-      "/workspace/source/spec/models/stored_voter_spec.rb": {
+      "/workspace/source/spec/models/role_spec.rb": {
         "lines": [
           1,
           null,
@@ -505,11 +522,16 @@
           null
         ]
       },
-      "/workspace/source/app/models/stored_voter.rb": {
+      "/workspace/source/app/models/role.rb": {
         "lines": [
           1,
           1,
           null,
+          1,
+          null,
+          null,
+          null,
+          1,
           null,
           null,
           null,
@@ -523,18 +545,8 @@
           null,
           1,
           null,
-          7,
+          5,
           null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
           1,
           1,
           null,
@@ -557,29 +569,7 @@
           null,
           1,
           2,
-          2,
           null,
-          null
-        ]
-      },
-      "/workspace/source/spec/models/voter_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/workspace/source/app/models/voter.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
           null
         ]
       },
@@ -599,6 +589,6 @@
         ]
       }
     },
-    "timestamp": 1650720734
+    "timestamp": 1650986420
   }
 }
