@@ -1,6 +1,8 @@
 class VotersController < ApplicationController
   before_action :set_voter, only: %i[show edit update destroy]
   before_action :set_ballot, only: [:create, :index, :new]
+  skip_before_action :authenticate_user!
+  
 
   # GET /voters or /voters.json
   def index
@@ -15,8 +17,8 @@ class VotersController < ApplicationController
   # GET /voters/new
   def new
     # @voter = Voter.new
-    @ballot = Voter.find(params[:ballot_id])
-    @voter = @ballot.voters.new
+    @ballot = session[:ballot_id]
+    @voter = Voter.new
   end
 
   # GET /voters/1/edit
@@ -24,7 +26,7 @@ class VotersController < ApplicationController
 
   # POST /voters or /voters.json
   def create
-    @voter = @ballot.voters.new(voter_params)
+    @voter = Voter.new(voter_params)
 
     respond_to do |format|
       if @voter.save
@@ -65,10 +67,10 @@ class VotersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def voter_params
-    params.require(:voter).permit(:ballot_id, :username, :password, :email, :vote_weight, :store_voter)
+    params.require(:voter).permit(:ballot_id, :username)
   end
 
   def set_ballot
-    @ballot = Ballot.find(params[:ballot_id])
+    @ballot = session[:ballot][:id]
   end
 end
