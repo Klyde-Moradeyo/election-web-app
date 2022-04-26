@@ -14,7 +14,8 @@
                                          PUT    /users(.:format)                                                                                  registrations#update
                                          DELETE /users(.:format)                                                                                  registrations#destroy
                                          POST   /users(.:format)                                                                                  registrations#create
-                                    root GET    /                                                                                                 home#index
+                                    root GET    /                                                                                                 home#coming_soon
+                                      it GET    /it(.:format)                                                                                     voter_sessions#entry
                               home_index GET    /home(.:format)                                                                                   home#index
                                          POST   /home(.:format)                                                                                   home#create
                                 new_home GET    /home/new(.:format)                                                                               home#new
@@ -23,15 +24,31 @@
                                          PATCH  /home/:id(.:format)                                                                               home#update
                                          PUT    /home/:id(.:format)                                                                               home#update
                                          DELETE /home/:id(.:format)                                                                               home#destroy
-                      user_stored_voters GET    /users/:user_id/stored_voters(.:format)                                                           stored_voters#index
-                                         POST   /users/:user_id/stored_voters(.:format)                                                           stored_voters#create
-                   new_user_stored_voter GET    /users/:user_id/stored_voters/new(.:format)                                                       stored_voters#new
-                  edit_user_stored_voter GET    /users/:user_id/stored_voters/:id/edit(.:format)                                                  stored_voters#edit
-                       user_stored_voter GET    /users/:user_id/stored_voters/:id(.:format)                                                       stored_voters#show
-                                         PATCH  /users/:user_id/stored_voters/:id(.:format)                                                       stored_voters#update
-                                         PUT    /users/:user_id/stored_voters/:id(.:format)                                                       stored_voters#update
-                                         DELETE /users/:user_id/stored_voters/:id(.:format)                                                       stored_voters#destroy
+                          voter_sessions GET    /voter_sessions(.:format)                                                                         voter_sessions#index
+                                         POST   /voter_sessions(.:format)                                                                         voter_sessions#create
+                       new_voter_session GET    /voter_sessions/new(.:format)                                                                     voter_sessions#new
+                      edit_voter_session GET    /voter_sessions/:id/edit(.:format)                                                                voter_sessions#edit
+                           voter_session GET    /voter_sessions/:id(.:format)                                                                     voter_sessions#show
+                                         PATCH  /voter_sessions/:id(.:format)                                                                     voter_sessions#update
+                                         PUT    /voter_sessions/:id(.:format)                                                                     voter_sessions#update
+                                         DELETE /voter_sessions/:id(.:format)                                                                     voter_sessions#destroy
+                                  voters GET    /voters(.:format)                                                                                 voters#index
+                                         POST   /voters(.:format)                                                                                 voters#create
+                               new_voter GET    /voters/new(.:format)                                                                             voters#new
+                              edit_voter GET    /voters/:id/edit(.:format)                                                                        voters#edit
+                                   voter GET    /voters/:id(.:format)                                                                             voters#show
+                                         PATCH  /voters/:id(.:format)                                                                             voters#update
+                                         PUT    /voters/:id(.:format)                                                                             voters#update
+                                         DELETE /voters/:id(.:format)                                                                             voters#destroy
                       user_ballot_launch GET    /users/:user_id/ballots/:ballot_id/launch(.:format)                                               ballots#launch
+                      user_ballot_voters GET    /users/:user_id/ballots/:ballot_id/voters(.:format)                                               voters#index
+                                         POST   /users/:user_id/ballots/:ballot_id/voters(.:format)                                               voters#create
+                   new_user_ballot_voter GET    /users/:user_id/ballots/:ballot_id/voters/new(.:format)                                           voters#new
+                                         GET    /voters/:id/edit(.:format)                                                                        voters#edit
+                                         GET    /voters/:id(.:format)                                                                             voters#show
+                                         PATCH  /voters/:id(.:format)                                                                             voters#update
+                                         PUT    /voters/:id(.:format)                                                                             voters#update
+                                         DELETE /voters/:id(.:format)                                                                             voters#destroy
                      user_ballot_parties GET    /users/:user_id/ballots/:ballot_id/parties(.:format)                                              parties#index
                                          POST   /users/:user_id/ballots/:ballot_id/parties(.:format)                                              parties#create
                    new_user_ballot_party GET    /users/:user_id/ballots/:ballot_id/parties/new(.:format)                                          parties#new
@@ -40,14 +57,6 @@
                                          PATCH  /parties/:id(.:format)                                                                            parties#update
                                          PUT    /parties/:id(.:format)                                                                            parties#update
                                          DELETE /parties/:id(.:format)                                                                            parties#destroy
-                      user_ballot_voters GET    /users/:user_id/ballots/:ballot_id/voters(.:format)                                               voters#index
-                                         POST   /users/:user_id/ballots/:ballot_id/voters(.:format)                                               voters#create
-                   new_user_ballot_voter GET    /users/:user_id/ballots/:ballot_id/voters/new(.:format)                                           voters#new
-                              edit_voter GET    /voters/:id/edit(.:format)                                                                        voters#edit
-                                   voter GET    /voters/:id(.:format)                                                                             voters#show
-                                         PATCH  /voters/:id(.:format)                                                                             voters#update
-                                         PUT    /voters/:id(.:format)                                                                             voters#update
-                                         DELETE /voters/:id(.:format)                                                                             voters#destroy
               user_ballot_ballot_results GET    /users/:user_id/ballots/:ballot_id/ballot_results(.:format)                                       ballot_results#index
                                          POST   /users/:user_id/ballots/:ballot_id/ballot_results(.:format)                                       ballot_results#create
            new_user_ballot_ballot_result GET    /users/:user_id/ballots/:ballot_id/ballot_results/new(.:format)                                   ballot_results#new

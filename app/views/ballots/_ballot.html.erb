@@ -11,7 +11,6 @@
       <th scope="col">show_voters_results</th>
       <th scope="col">access_token</th>
       <th scope="col">Host</th>
-      <th scope="col">Voters</th>
     </tr>
   </thead>
   <tbody>
@@ -25,7 +24,6 @@
       <td><%= ballot.show_voter_results %></td>
       <td><%= ballot.access_token %></td>
       <td><%= ballot.host.pluck(:email, :name) %></td>
-      <td><%= ballot.voters.distinct.pluck(:email) %></td>
     </tr>
   </tbody>
 </table>
