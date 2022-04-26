@@ -22,13 +22,17 @@ class VoterSessionsController < ApplicationController
     ballot = Ballot.find_by(access_token: params[:access_token])
     if ballot
       puts ballot.id
+      session[:ballot_user_id] = ballot.user_id
       session[:ballot_id] = ballot.id
       redirect_to new_voter_path
     end
   end
 
   def waiting_room
-    
+    ballot_id = session[:ballot_id]
+    @voter = session[:voter]
+
+    @ballot = Ballot.find_by(id: session[:ballot_id])
   end
 
   # POST /voter_sessions or /voter_sessions.json
