@@ -5,9 +5,9 @@ class VotersController < ApplicationController
 
   # GET /voters or /voters.json
   def index
-    # @voters = Voter.all
-    @ballot = Ballot.find(params[:ballot_id])
-    @voter = Voter.new({ ballot_id: @ballot.id })
+    @voters = Voter.all
+    # @ballot = Ballot.find(params[:ballot_id])
+    # @voter = Voter.new({ ballot_id: @ballot.id })
   end
 
   # GET /voters/1 or /voters/1.json
@@ -17,6 +17,8 @@ class VotersController < ApplicationController
   def new
     # @voter = Voter.new
     @ballot = session[:ballot_id]
+    @ballot_user_id = session[:ballot_user_id]
+    Rails.logger.debug { "ballot_id: #{@ballot_id} user_id: #{@ballot_user_id}" }
     @voter = Voter.new
   end
 
@@ -25,11 +27,15 @@ class VotersController < ApplicationController
 
   # POST /voters or /voters.json
   def create
+    @ballot = session[:ballot_id]
+    @ballot_user_id = session[:ballot_user_id]
     @voter = Voter.new(voter_params)
 
     respond_to do |format|
       if @voter.save
-        format.html { redirect_to user_ballot_voters_url(current_user, @ballot), notice: "Voter was successfully created." }
+        session[:ballot_id] = @ballot
+        session[:voter] = @voter
+        format.html { redirect_to user_ballot_waiting_room_path(@ballot_user_id, @voter.ballot_id), notice: "Voter was successfully created." }
         format.json { render :show, status: :created, location: @voter }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,11 +71,17 @@ class VotersController < ApplicationController
   private
 
   # Only allow a list of trusted parameters through.
+  # Use callbacks to share common setup or constraints between actions.
+  def set_voter
+    @voter = Voter.find(params[:id])
+  end
+
   def voter_params
     params.require(:voter).permit(:ballot_id, :username)
   end
 
   def set_ballot
-    @ballot = session[:ballot][:id]
+    @ballot_user_id = session[:ballot_user_id]
+    @ballot_id = session[:ballot_id]
   end
 end

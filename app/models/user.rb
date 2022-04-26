@@ -9,7 +9,7 @@ class User < ApplicationRecord
   # ==========================
   # RELATIONSHIPS
   # ==========================
-  has_many :stored_voters, dependent: :destroy
+  has_many :voters, dependent: :destroy
   has_many :ballots, dependent: :destroy, through: :roles, source: :resource, source_type: :Ballot
   has_many :hosted_ballots, -> { where(roles: { name: :host }) }, dependent: :destroy, through: :roles, source: :resource, source_type: :Ballot
   has_many :voter_ballots, -> { where(roles: { name: :voter }) }, dependent: :destroy, through: :roles, source: :resource, source_type: :Ballot
