@@ -2,7 +2,6 @@ class VotersController < ApplicationController
   before_action :set_voter, only: %i[show edit update destroy]
   before_action :set_ballot, only: [:create, :index, :new]
   skip_before_action :authenticate_user!
-  
 
   # GET /voters or /voters.json
   def index
