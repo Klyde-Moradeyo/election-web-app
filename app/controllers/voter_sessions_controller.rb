@@ -18,6 +18,14 @@ class VoterSessionsController < ApplicationController
   # GET /voter_sessions/1/edit
   def edit; end
 
+  def entry
+    ballot = Ballot.find_by(access_token: params[:access_token])
+    if ballot
+      session[:access_token] = ballot.access_token
+      redirect_to new_user_registration_path
+    end
+  end
+
   # POST /voter_sessions or /voter_sessions.json
   def create
     @voter_session = VoterSession.new(voter_session_params)
