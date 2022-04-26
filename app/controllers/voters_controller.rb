@@ -2,7 +2,6 @@ class VotersController < ApplicationController
   before_action :set_voter, only: %i[show edit update destroy]
   before_action :set_ballot, only: [:create, :index, :new]
   skip_before_action :authenticate_user!
-  
 
   # GET /voters or /voters.json
   def index
@@ -19,7 +18,7 @@ class VotersController < ApplicationController
     # @voter = Voter.new
     @ballot = session[:ballot_id]
     @ballot_user_id = session[:ballot_user_id]
-    puts "ballot_id: #{@ballot_id} user_id: #{@ballot_user_id}"
+    Rails.logger.debug { "ballot_id: #{@ballot_id} user_id: #{@ballot_user_id}" }
     @voter = Voter.new
   end
 
@@ -76,7 +75,6 @@ class VotersController < ApplicationController
   def set_voter
     @voter = Voter.find(params[:id])
   end
-  
 
   def voter_params
     params.require(:voter).permit(:ballot_id, :username)

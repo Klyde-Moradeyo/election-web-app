@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   root "home#coming_soon"
 
   get "/it" => "voter_sessions#entry"
-  
 
   # resources
   resources :home
