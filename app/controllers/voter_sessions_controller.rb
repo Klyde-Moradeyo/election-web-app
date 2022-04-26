@@ -29,7 +29,6 @@ class VoterSessionsController < ApplicationController
   end
 
   def waiting_room
-    ballot_id = session[:ballot_id]
     @voter = session[:voter]
 
     @ballot = Ballot.find_by(id: session[:ballot_id])
