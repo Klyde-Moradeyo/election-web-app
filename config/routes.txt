@@ -41,6 +41,7 @@
                                          PUT    /voters/:id(.:format)                                                                             voters#update
                                          DELETE /voters/:id(.:format)                                                                             voters#destroy
                       user_ballot_launch GET    /users/:user_id/ballots/:ballot_id/launch(.:format)                                               ballots#launch
+                user_ballot_waiting_room GET    /users/:user_id/ballots/:ballot_id/waiting_room(.:format)                                         voter_session#waiting_room
                       user_ballot_voters GET    /users/:user_id/ballots/:ballot_id/voters(.:format)                                               voters#index
                                          POST   /users/:user_id/ballots/:ballot_id/voters(.:format)                                               voters#create
                    new_user_ballot_voter GET    /users/:user_id/ballots/:ballot_id/voters/new(.:format)                                           voters#new

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root "home#coming_soon"
 
   get "/it" => "voter_sessions#entry"
+  
 
   # resources
   resources :home
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :ballots do
       get "/launch" => "ballots#launch"
+      get "/waiting_room" => "voter_sessions#waiting_room"
       resources :voters, shallow: true
       resources :parties, shallow: true
       resources :ballot_results, shallow: true
