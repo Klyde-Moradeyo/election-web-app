@@ -4,25 +4,7 @@
     <%= voter.username %>
   </p>
 
-  <p>
-    <strong>Password:</strong>
-    <%= voter.password %>
-  </p>
 
-  <p>
-    <strong>Email:</strong>
-    <%= voter.email %>
-  </p>
-
-  <p>
-    <strong>Vote weight:</strong>
-    <%= voter.vote_weight %>
-  </p>
-
-  <p>
-    <strong>Store voter:</strong>
-    <%= voter.store_voter %>
-  </p>
   <%= link_to "Edit", edit_voter_path(voter)%> |
   <%= button_to "Delete",  voter_path(voter), method: :delete %>
 </div>

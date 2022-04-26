@@ -6,9 +6,9 @@ class VotersController < ApplicationController
 
   # GET /voters or /voters.json
   def index
-    # @voters = Voter.all
-    @ballot = Ballot.find(params[:ballot_id])
-    @voter = Voter.new({ ballot_id: @ballot.id })
+    @voters = Voter.all
+    # @ballot = Ballot.find(params[:ballot_id])
+    # @voter = Voter.new({ ballot_id: @ballot.id })
   end
 
   # GET /voters/1 or /voters/1.json
