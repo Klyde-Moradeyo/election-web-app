@@ -27,7 +27,6 @@ class VoterSessionsController < ApplicationController
     end
   end
 
-
   def waiting_room
     @voter = session[:voter]
 
