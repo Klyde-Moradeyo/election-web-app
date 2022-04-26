@@ -21,12 +21,12 @@ class VoterSessionsController < ApplicationController
   def entry
     ballot = Ballot.find_by(access_token: params[:access_token])
     if ballot
-      Rails.logger.debug ballot.id
       session[:ballot_user_id] = ballot.user_id
       session[:ballot_id] = ballot.id
       redirect_to new_voter_path
     end
   end
+
 
   def waiting_room
     @voter = session[:voter]
