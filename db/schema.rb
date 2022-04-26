@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_23_122808) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_23_122809) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_kcache"
   enable_extension "pg_stat_statements"
@@ -143,6 +143,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_23_122808) do
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.string "password"
+    t.bigint "ballot_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
