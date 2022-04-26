@@ -1,0 +1,27 @@
+<h1> Waiting Room </h1>
+<div id="<%= dom_id @ballot %>">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">start_date</th>
+      <th scope="col">end_date</th>
+      <th scope="col">Will Voters get Results?</th>
+      <th scope="col">Host</th>
+      <th scope="col">Voters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @ballot.title %></td>
+      <td><%= @ballot.description %></td>
+      <td><%= @ballot.start_date %></td>
+      <td><%= @ballot.end_date %></td>
+      <td><%= @ballot.show_voter_results %></td>
+      <td><%= @ballot.host.pluck(:email, :name) %></td>
+      <td><%= @ballot.voters.pluck(:username) %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
