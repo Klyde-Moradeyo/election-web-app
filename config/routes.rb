@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :ballots do
       get "/launch" => "ballots#launch"
-      get "/waiting_room" => "voter_sessions#waiting_room"
+      get "/lobby" => "voter_sessions#quiz_lobby"
       resources :voters, shallow: true
       resources :parties, shallow: true
       resources :ballot_results, shallow: true
