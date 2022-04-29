@@ -1,0 +1,38 @@
+<div id="<%= dom_id question %>">
+  <!-- <p> <strong>Ballot:</strong> <%= question.ballot_id %></p> --> 
+
+  <p>
+    <strong>ID:</strong>
+    <%= question.id %> |
+    <strong>Title:</strong>
+    <%= question.title %>
+  </p>
+
+  <p>
+    <strong>Question type:</strong>
+    <%= question.question_type %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= question.description %>
+  </p>
+
+  <p>
+    <strong>Randomize selection:</strong>
+    <%= question.randomize_selection %>
+  </p>
+
+  <p>
+    <strong>Voter abstain:</strong>
+    <%= question.voter_abstain %>
+  </p>
+
+  <strong>Options:</strong>
+  <%question.options.map do |option|%>
+  <ul>
+  <li><%=option.title%></li>
+  </ul>
+  <%end%>
+  <div></div>
+</div>

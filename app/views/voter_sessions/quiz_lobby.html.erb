@@ -1,0 +1,5 @@
+<% if @start_date < @date %>
+  <%= render "quiz", ballot: @ballot %>
+<% elsif @start_date >= @date %>
+  <%= render "waiting_room", ballot: @ballot  %>
+<% end %>
