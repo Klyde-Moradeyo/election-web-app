@@ -25,6 +25,7 @@ gem "devise"
 gem "devise_invitable", "~> 2.0.0"
 gem "rolify" # https://github.com/EppO/rolify
 gem "date_validator"
+gem "letter_opener" # Preview email in the default browser instead of sending it.
 # gem "redis", "~> 4.0" # Use Redis adapter to run Action Cable in production
 # gem "kredis" # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "bcrypt", "~> 3.1.7" # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
