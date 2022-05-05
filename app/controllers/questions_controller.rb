@@ -84,7 +84,9 @@ class QuestionsController < ApplicationController
         :title,
         :description,
         :randomize_selection,
-      ],
+      ], 
+      question_results_attributes: [ 
+        :question_id :voter_id, :content ] }
     )
   end
 

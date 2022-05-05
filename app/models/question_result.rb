@@ -1,9 +1,4 @@
 class QuestionResult < ApplicationRecord
-  # ==========================
-  # RELATIONSHIPS
-  # ==========================
+  has_one :voter
   belongs_to :question
-  belongs_to :ballot
-  belongs_to :voter
-  belongs_to :option
 end

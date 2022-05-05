@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Voter:
+  = @question_result.voter
+%p
+  %b Question:
+  = @question_result.question
+%p
+  %b Content:
+  = @question_result.content
+
+= link_to 'Edit', edit_question_result_path(@question_result)
+\|
+= link_to 'Back', question_results_path

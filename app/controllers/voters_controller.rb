@@ -35,7 +35,7 @@ class VotersController < ApplicationController
       if @voter.save
         session[:ballot_id] = @ballot
         session[:voter] = @voter
-        format.html { redirect_to user_ballot_waiting_room_path(@ballot_user_id, @voter.ballot_id), notice: "Voter was successfully created." }
+        format.html { redirect_to user_ballot_lobby_path(@ballot_user_id, @voter.ballot_id), notice: "Voter was successfully created." }
         format.json { render :show, status: :created, location: @voter }
       else
         format.html { render :new, status: :unprocessable_entity }

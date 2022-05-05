@@ -27,10 +27,34 @@ class VoterSessionsController < ApplicationController
     end
   end
 
-  def waiting_room
+  def quiz_lobby
     @voter = session[:voter]
+    
 
     @ballot = Ballot.find_by(id: session[:ballot_id])
+    @question = @ballot.questions
+    @ballot.questions.each do |question|
+      @question.question_results.new question: question
+    end
+
+    # Date and Time Variables
+    d = DateTime.now
+    @date = d.strftime("%d/%m/%Y %H:%M")
+    @start_date = @ballot.start_date.strftime("%d/%m/%Y %H:%M")
+    @end_date = @ballot.end_date.strftime("%d/%m/%Y %H:%M")
+
+
+    # if @ballot.start_date.strftime("%d/%m/%Y %H:%M") >= @date
+    #   puts "hi"
+    #   @x = true
+    # elsif  @ballot.start_date.strftime("%d/%m/%Y %H:%M") < @date
+    #   puts "wait"
+    #   @x = false
+    # elsif @ballot.end_date.strftime("%d/%m/%Y %H:%M") < date
+    #   redirect_to ballotended
+    # else 
+    #   error 404
+    # end
   end
 
   # POST /voter_sessions or /voter_sessions.json

@@ -1,0 +1,25 @@
+%h1 Listing question_results
+
+%table
+  %thead
+    %tr
+      %th Voter
+      %th Question
+      %th Content
+      %th
+      %th
+      %th
+
+  %tbody
+    - @question_results.each do |question_result|
+      %tr
+        %td= question_result.voter
+        %td= question_result.question
+        %td= question_result.content
+        %td= link_to 'Show', question_result
+        %td= link_to 'Edit', edit_question_result_path(question_result)
+        %td= link_to 'Destroy', question_result, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Question result', new_question_result_path
