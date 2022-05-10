@@ -3,8 +3,8 @@ class Ballot < ApplicationRecord
   validates :end_date, date: { after_or_equal_to: :start_date }, presence: true
   before_create :generate_token
   resourcify
-  
-  VOTING_TYPE = ["Popular vote", "Modified Borda count", "D'Hondt"]
+
+  VOTING_TYPE = ["Popular vote", "Modified Borda count", "D'Hondt"].freeze
 
   # ==========================
   # RELATIONSHIPS
@@ -24,6 +24,7 @@ class Ballot < ApplicationRecord
   accepts_nested_attributes_for :questions
 
   protected
+
   def generate_token
     loop do
       time = Time.zone.now
