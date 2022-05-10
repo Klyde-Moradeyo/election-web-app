@@ -11,7 +11,7 @@ class BallotsController < ApplicationController
   # GET /ballots/1 or /ballots/1.json
   def show
     @question = Question.new({ ballot_id: @ballot.id })
-    3.times { @question.options.new } # 3 different options
+    @question.options.new
   end
 
   # GET /ballots/new
@@ -32,7 +32,7 @@ class BallotsController < ApplicationController
     respond_to do |format|
       if @ballot.save
         current_user.add_role :host, @ballot
-        format.html { redirect_to user_ballots_url(@ballot), notice: "Ballot was successfully created." }
+        format.html { redirect_to user_ballot_url(current_user, @ballot), notice: "Ballot was successfully created." }
         format.json { render :show, status: :created, location: @ballot }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -45,7 +45,7 @@ class BallotsController < ApplicationController
   def update
     respond_to do |format|
       if @ballot.update(ballot_params)
-        format.html { redirect_to ballot_url(@ballot), notice: "Ballot was successfully updated." }
+        format.html { redirect_to user_ballots_url, notice: "Ballot was successfully updated." }
         format.json { render :show, status: :ok, location: @ballot }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -79,6 +79,6 @@ class BallotsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def ballot_params
     params.require(:ballot).permit(:user_id, :title, :description, :start_date, :end_date,
-                                   :show_voter_results, :access_token)
+                                   :show_voter_results, :access_token, :expected_voters, :voting_type )
   end
 end
