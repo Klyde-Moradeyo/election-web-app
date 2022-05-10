@@ -13,6 +13,10 @@ git commit -m "$2"
 git checkout $3
 git merge $1
 git checkout --force $3
+
+# Move build files before commit
+[ ! -e VERSION ] || mv -v VERSION .. 
+[ ! -e .jx/variables.sh ] || mv -v .jx/variables.sh ..
 git push origin
 
 # Move build files after commit
