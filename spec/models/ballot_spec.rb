@@ -31,7 +31,6 @@ RSpec.describe Ballot, type: :model do
   # Assosciations
   describe "Association" do
     it { should have_many(:questions).without_validating_presence }
-    it { should have_many(:partys).without_validating_presence }
     it { should have_many(:ballot_results).without_validating_presence }
   end
 end
