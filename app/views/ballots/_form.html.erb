@@ -1,4 +1,4 @@
-<%= form_with(model: ballot, url: user_ballots_path) do |form| %>
+<%= form_with(model: ballot, url: user_ballot_path(current_user, @ballot)) do |form| %>
   <% if ballot.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(ballot.errors.count, "error") %> prohibited this ballot from being saved:</h2>
@@ -33,6 +33,16 @@
   <div>
     <%= form.label :end_date, style: "display: block" %>
     <%= form.datetime_field :end_date %>
+  </div>
+
+  <div>
+    <%= form.label 'Expected number of voter turn out', style: "display: block", required: true %>
+    <%= form.number_field :expected_voters %>
+  </div>
+
+  <div>
+    <%= form.label :voting_type, style: "display: block" %>
+    <%= form.select :voting_type, Ballot::VOTING_TYPE %>
   </div>
 
   <div>

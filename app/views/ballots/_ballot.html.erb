@@ -10,6 +10,8 @@
       <th scope="col">end_date</th>
       <th scope="col">show_voters_results</th>
       <th scope="col">access_token</th>
+      <th scope="col">voting_type</th>
+      <th scope="col">expected_voters</th>
       <th scope="col">Host</th>
     </tr>
   </thead>
@@ -23,6 +25,8 @@
       <td><%= ballot.end_date %></td>
       <td><%= ballot.show_voter_results %></td>
       <td><%= ballot.access_token %></td>
+      <td><%= ballot.voting_type %></td>
+      <td><%= ballot.expected_voters %></td>
       <td><%= ballot.host.pluck(:email, :name) %></td>
     </tr>
   </tbody>
