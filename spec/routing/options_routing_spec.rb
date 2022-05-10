@@ -3,11 +3,11 @@ require "rails_helper"
 RSpec.describe OptionsController, type: :routing do
   describe "routing" do
     it "routes to #index" do
-      expect(get: "/options").to route_to("options#index")
+      expect(get: "/questions/1/options").to route_to("options#index", question_id: "1")
     end
 
     it "routes to #new" do
-      expect(get: "/options/new").to route_to("options#new")
+      expect(get: "/questions/1/options/new").to route_to("options#new", question_id: "1")
     end
 
     it "routes to #show" do
@@ -20,7 +20,7 @@ RSpec.describe OptionsController, type: :routing do
 
 
     it "routes to #create" do
-      expect(post: "/options").to route_to("options#create")
+      expect(post: "/questions/1/options").to route_to("options#create", question_id: "1")
     end
 
     it "routes to #update via PUT" do

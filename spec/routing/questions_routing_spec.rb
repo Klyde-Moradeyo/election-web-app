@@ -3,11 +3,11 @@ require "rails_helper"
 RSpec.describe QuestionsController, type: :routing do
   describe "routing" do
     it "routes to #index" do
-      expect(get: "/questions").to route_to("questions#index")
+      expect(get: "/users/1/ballots/1/questions").to route_to("questions#index", user_id: "1", ballot_id: "1")
     end
 
     it "routes to #new" do
-      expect(get: "/questions/new").to route_to("questions#new")
+      expect(get: "/users/1/ballots/1/questions/new").to route_to("questions#new", user_id: "1", ballot_id: "1")
     end
 
     it "routes to #show" do
@@ -20,7 +20,7 @@ RSpec.describe QuestionsController, type: :routing do
 
 
     it "routes to #create" do
-      expect(post: "/questions").to route_to("questions#create")
+      expect(post: "/users/1/ballots/1/questions").to route_to("questions#create", user_id: "1", ballot_id: "1")
     end
 
     it "routes to #update via PUT" do
