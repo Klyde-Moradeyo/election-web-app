@@ -72,6 +72,7 @@ spec:
             #RACK_ENV=production RAILS_ENV=production bundle exec rake db:migrate
             echo "-------- Migrate Production DB  | END --------"
             chmod u+r+x ./bin/git_merge_and_push.sh
+            source .jx/variables.sh
             ./bin/git_merge_and_push.sh BUILD_$VERSION "DB-Migration: Re-generate schema" main
         - image: ruby:3.0.3
           name: unit-test 
