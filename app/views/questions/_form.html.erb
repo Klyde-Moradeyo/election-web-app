@@ -1,4 +1,4 @@
-<%= form_with(model: question, url: url) do |form| %>
+<%= form_with(model: question, url: question_path) do |form| %>
   <% if question.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
@@ -39,15 +39,15 @@
     <%= form.check_box :voter_abstain %>
   </div>
 
-  <div>
+  <div id='options'>
   <%= form.fields_for :options do |o| %>
     <div>
-      <%= o.label "Option", style: "display: block" %>
-      <%= o.text_field :title, placeholder: "Enter Option here" %>
-     <!--<%= o.text_field :description, placeholder: "Enter Option here" %> 
-      <%= o.text_field :party_id, placeholder: "Enter Option here" %> -->
+      <%= render "questions/option_fields", :f => o %>
     </div>
   <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add option', form, :options %>
+    </div>
   </div>
 
   <div>
