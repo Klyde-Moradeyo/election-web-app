@@ -13,7 +13,7 @@ git commit -m "$2"
 git checkout $3
 git merge $1
 git checkout --force $3
-git push $3
+git push origin
 
 # Move build files after commit
 [ ! -e ../VERSION ] || mv -v ../VERSION . 
