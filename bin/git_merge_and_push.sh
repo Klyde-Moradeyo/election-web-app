@@ -8,7 +8,7 @@ git stash pop;
 [ ! -e VERSION ] || mv -v VERSION .. 
 [ ! -e .jx/variables.sh ] || mv -v .jx/variables.sh ..
 
-git add .
+git add $4
 git commit -m "$2"
 git checkout $3
 git merge $1
