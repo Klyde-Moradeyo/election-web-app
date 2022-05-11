@@ -4,10 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   # These 2 lines should be removed once the applications goes live
-  before_action :set_default_url_options
+  before_filter :set_default_url_options
   skip_before_action :verify_authenticity_token
-
-  protected
 
   def set_default_url_options
     ActionMailer::Base.default_url_options = { host: request.host_with_port }
