@@ -32,9 +32,9 @@ module ElectionWebApp
       g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
 
-    # Add letter opner
+    # letter opner | Used for email verification etc
     config.action_mailer.delivery_method = :letter_opener
     config.action_mailer.perform_deliveries = true
-    config.action_mailer.default_url_options = { host: "localhost:3000" }
+    config.action_mailer.default_url_options = { host: request.host_with_port }
   end
 end
