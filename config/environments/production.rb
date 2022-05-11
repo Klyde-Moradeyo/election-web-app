@@ -139,4 +139,5 @@ Rails.application.configure do
     # Add letter opner
     config.action_mailer.delivery_method = :letter_opener
     config.action_mailer.perform_deliveries = true
+    config.action_mailer.default_url_options = { host: "election-web-app-pr115.35.178.110.181.nip.io" }
 end
