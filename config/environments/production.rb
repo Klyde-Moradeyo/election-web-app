@@ -135,4 +135,8 @@ Rails.application.configure do
     # Enable this option inside config/environments/production.rb:
     config.require_master_key = true
     # config.web_console.whiny_requests = false
+
+    # Add letter opner
+    config.action_mailer.delivery_method = :letter_opener
+    config.action_mailer.perform_deliveries = true
 end
