@@ -20,7 +20,7 @@
                             <%= form_tag("/it", method: "get") do %>
                               <%= text_field_tag :access_token, "", class:'form-control', style:"background-color: #F5F5F5",:placeholder => "Ballot Pin", maxlength: 6 %>
                               <br>
-                              <p>Already in a ballot? <a href="https://www.w3schools.com/">Voter login</a><!-- Placeholder --></p>
+                              <p>Already in a ballot?  <%= link_to "Voter Login"  %> </p>
                               <p><%= submit_tag "Enter", class: 'btn btn-primary btn-block mb-4'%></p>
                                <% end %>
                               <div class="invalid-feedback">Incorrect Ballot Pin</div>
