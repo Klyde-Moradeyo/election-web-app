@@ -4,7 +4,9 @@ class HomeController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    if user_signed_in?
+    if user_signed_in? && current_user.has_role?(:admin)
+      redirect_to users_path
+    elsif user_signed_in?
       redirect_to user_ballots_path(current_user.id)
     else
       redirect_to it_path
