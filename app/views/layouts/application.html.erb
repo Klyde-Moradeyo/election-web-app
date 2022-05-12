@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ElectionWebApp</title>
+    <title>ESA</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+     <!-- stylesheet -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+     <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+     <!-- Vendor JS Files -->
+     <%= javascript_tag 'apexcharts/apexcharts.min.js' %>
+     <%= javascript_tag 'chart.js/chart.min.js' %>
+     <%= javascript_tag 'echarts/echarts.min.js' %>
+     <%= javascript_tag 'quill/quill.min.js' %>
+     <%= javascript_tag 'simple-datatables/simple-datatables.js' %>
+     <%= javascript_tag 'tinymce/tinymce.min.js' %>
+     <%= javascript_tag 'php-email-form/validate.js' %>
+
+    <!-- Template Main JS File -->
+    <%= javascript_tag 'main.js' %>
   </head>
 
   <body>
     <%= render partial: 'layouts/partials/header' if user_signed_in? %>
     <%= render partial: 'layouts/partials/sidebar' if user_signed_in? %>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Render Views -->
     <main id='<%= user_signed_in? ? 'main' : '' %>'>   <%= yield %>   </main>
     <!-- Render Views -->
+    <%= render partial: 'layouts/partials/footer' %>
   </body>
 </html>
