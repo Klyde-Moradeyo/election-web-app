@@ -1,8 +1,9 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 //= require rails-ujs
-require("@nathanvda/cocoon")
+require("jquery");
+require("@nathanvda/cocoon");
 require("bootstrap");
 require("./main");
 require("../assets/stylesheets/main.css");
-import * as bootstrap from "bootstrap"
-
+import Chart from 'chart.js/auto';
+import * as bootstrap from "bootstrap";
