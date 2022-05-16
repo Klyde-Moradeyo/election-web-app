@@ -22,7 +22,6 @@ gem "cssbundling-rails" # Install bootstrap 5
 gem "bootstrap-scss" # https://getbootstrap.com/docs/5.0/customize/sass/
 gem "sassc-rails", "~> 2.1" # Use Sass to process CSS # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images] # gem "image_processing", "~> 1.2"
 gem "devise"
-gem "devise_invitable", "~> 2.0.0"
 gem "rolify" # https://github.com/EppO/rolify
 gem "date_validator"
 gem "letter_opener" # Preview email in the default browser instead of sending it.
