@@ -51,7 +51,7 @@ group :test, :ltest, :preview  do
 end
 
 
-group :development, :preview, do
+group :development, :preview do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console", ">= 4.1.0"
   gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw]
