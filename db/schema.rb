@@ -10,12 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_06_192614) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_12_050633) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_stat_kcache"
-  enable_extension "pg_stat_statements"
   enable_extension "plpgsql"
-  enable_extension "set_user"
 
   create_table "ballot_results", force: :cascade do |t|
     t.bigint "ballot_id", null: false
@@ -88,14 +85,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_192614) do
     t.index ["ballot_id"], name: "index_questions_on_ballot_id"
   end
 
-  create_table "quote", id: :serial, force: :cascade do |t|
-    t.string "quote", limit: 255, null: false
-    t.string "author", limit: 255, null: false
-    t.timestamptz "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-    t.timestamptz "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-    t.index ["quote"], name: "quote_quote_key", unique: true
-  end
-
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
@@ -151,6 +140,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_192614) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ballot_id", null: false
+    t.string "email"
+    t.string "password"
     t.index ["ballot_id"], name: "index_voters_on_ballot_id"
   end
 
