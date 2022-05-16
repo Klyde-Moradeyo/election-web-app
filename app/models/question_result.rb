@@ -1,6 +1,6 @@
 class QuestionResult < ApplicationRecord
   validates :question, uniqueness: { scope: [:ballot, :voter] }
-  
+
   # ==========================
   # RELATIONSHIPS
   # ==========================

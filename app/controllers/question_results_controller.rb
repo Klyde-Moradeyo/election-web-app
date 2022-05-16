@@ -25,7 +25,7 @@ class QuestionResultsController < ApplicationController
     respond_to do |format|
       if @question_result.save
         format.html do
-          redirect_to request.referrer, notice: "Question result was successfully created."
+          redirect_to request.referer, notice: "Question result was successfully created."
         end
         format.json { render :show, status: :created, location: @question_result }
       else
@@ -40,7 +40,7 @@ class QuestionResultsController < ApplicationController
     respond_to do |format|
       if @question_result.update(question_result_params)
         format.html do
-          redirect_to request.referrer, notice: "Question result was successfully updated."
+          redirect_to request.referer, notice: "Question result was successfully updated."
         end
         format.json { render :show, status: :ok, location: @question_result }
       else
