@@ -140,8 +140,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_12_050633) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ballot_id", null: false
-    t.string "email"
-    t.string "password"
+    t.string "email", null: false
+    t.string "password", null: false
     t.index ["ballot_id"], name: "index_voters_on_ballot_id"
   end
 
