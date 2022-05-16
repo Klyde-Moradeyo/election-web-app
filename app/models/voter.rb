@@ -6,4 +6,6 @@ class Voter < ApplicationRecord
   # RELATIONSHIPS
   # ==========================
   belongs_to :ballot
+
+  has_many :question_results, dependent: :destroy
 end
