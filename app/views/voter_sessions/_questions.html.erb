@@ -1,0 +1,17 @@
+<%= form_with model: qst.question_results.build, url: question_question_results_path(qst) do |f| %>
+  <%= f.hidden_field :ballot_id, value: @ballot.id %>
+  <%= f.hidden_field :voter_id, value: @voter.id %>
+  <%= f.hidden_field :question_id, value: qst.id %>
+
+  <h3> <li> <%= qst.title %></li> </h3>
+    <h6> <%= qst.description %> </h6>
+    <ul>
+      <% qst.options.each do |opt| %>
+        <%= f.radio_button :option_id, opt.id %>
+        <%= opt.title %> </li>
+      <% end %>
+    </ul>
+  <div>
+    <%= f.submit "Save Answer" %>
+  </div>
+<% end %>

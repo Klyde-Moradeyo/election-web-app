@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       resources :questions, shallow: true do
         resources :options
         resources :question_results
+        patch "/create_question_results", to: "questions#create_question_results", as: "create_question_results"
       end
     end
   end

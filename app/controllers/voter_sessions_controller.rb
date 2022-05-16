@@ -28,7 +28,7 @@ class VoterSessionsController < ApplicationController
   end
 
   def waiting_room
-    @voter = session[:voter]
+    @voter = Voter.find_by(username: session[:voter]["username"])
 
     @ballot = Ballot.find_by(id: session[:ballot_id])
   end

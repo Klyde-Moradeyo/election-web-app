@@ -1,4 +1,4 @@
-<%= form_with(model: question_result) do |form| %>
+<%= form_with(model: question_result, url: url) do |form| %>
   <% if question_result.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(question_result.errors.count, "error") %> prohibited this question_result from being saved:</h2>
