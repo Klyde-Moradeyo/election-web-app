@@ -11,12 +11,12 @@ class Ballot < ApplicationRecord
   # ==========================
   # Users
   belongs_to :user, class_name: "User"
-  has_many :admin, -> { where(roles: { name: :admin }) }, dependent: :destroy , through: :roles, class_name: "User", source: :users
+  has_many :admin, -> { where(roles: { name: :admin }) }, dependent: :destroy, through: :roles, class_name: "User", source: :users
   has_many :host, -> { where(roles: { name: :host }) }, dependent: :destroy, through: :roles, class_name: "User", source: :users
 
   has_many :voters, dependent: :destroy
 
-  # Ballot 
+  # Ballot
   has_many :questions, dependent: :destroy
   has_many :options, through: :questions, dependent: :destroy
   accepts_nested_attributes_for :questions

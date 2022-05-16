@@ -6,5 +6,4 @@ class Option < ApplicationRecord
   # ==========================
   belongs_to :question
   has_many :question_results, dependent: :destroy
-
 end
