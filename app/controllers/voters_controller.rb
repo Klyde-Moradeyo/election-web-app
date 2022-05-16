@@ -18,7 +18,6 @@ class VotersController < ApplicationController
     # @voter = Voter.new
     @ballot = session[:ballot_id]
     @ballot_user_id = session[:ballot_user_id]
-    Rails.logger.debug { "ballot_id: #{@ballot_id} user_id: #{@ballot_user_id}" }
     @voter = Voter.new
   end
 
@@ -77,7 +76,7 @@ class VotersController < ApplicationController
   end
 
   def voter_params
-    params.require(:voter).permit(:ballot_id, :username)
+    params.require(:voter).permit(:ballot_id, :username, :email, :password)
   end
 
   def set_ballot
