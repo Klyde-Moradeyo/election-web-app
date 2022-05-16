@@ -50,7 +50,7 @@ group :test, :ltest, :preview  do
   gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw] # See https://edgeguides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
 end
 
-group :development, :test, :ltest, :preview do
+group :development, :ltest, :preview do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console", ">= 4.1.0"
   # gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw]
