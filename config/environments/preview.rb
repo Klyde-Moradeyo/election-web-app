@@ -82,4 +82,5 @@ Rails.application.configure do
   # Enable this option inside config/environments/production.rb:
   config.require_master_key = true
   config.web_console.whiny_requests = false
+  config.web_console.development_only = false
 end

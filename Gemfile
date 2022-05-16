@@ -32,7 +32,7 @@ gem "cocoon" # Cocoon makes it easier to handle nested forms. https://github.com
 # gem "kredis" # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "bcrypt", "~> 3.1.7" # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 
-group :test, :ltest do
+group :test, :ltest, :preview  do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "brakeman" # https://brakemanscanner.org/docs/install/
   gem "capybara", ">= 3.26"
@@ -47,16 +47,15 @@ group :test, :ltest do
   gem "simplecov" # Tests code coverage
   gem "selenium-webdriver", ">= 4.0.0"
   gem "webdrivers"
+  gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw] # See https://edgeguides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "web-console", ">= 4.1.0"
 end
 
-group :development, :test do
-  # See https://edgeguides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw]
-end
 
-group :development, :ltest do
+group :development, :ltest, :preview do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console", ">= 4.1.0"
+  gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw]
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler", ">= 2.3.3"
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
