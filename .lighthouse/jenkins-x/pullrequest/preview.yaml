@@ -39,6 +39,11 @@ spec:
             #!/busybox/sh
             source .jx/variables.sh
             cp /tekton/creds-secrets/tekton-container-registry-auth/.dockerconfigjson /kaniko/.docker/config.json
+
+            # Set Rails environment to preview in docker image
+            sed -i 's/ENV RAILS_ENV development/ENV RAILS_ENV preview/g' $DOCKERFILE_PATH
+            sed -i 's/CMD \["rails", "server", "-b", "0.0.0.0", "-p", "80"\]/CMD \["rails", "server", "-b", "0.0.0.0", "-p", "80", "-e", "preview"\]/g' $DOCKERFILE_PATH
+
             /kaniko/executor $KANIKO_FLAGS --context=/workspace/source --dockerfile=${DOCKERFILE_PATH:-Dockerfile} --destination=$PUSH_CONTAINER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME:$VERSION
         - image: ghcr.io/jenkins-x-plugins/jx-preview:0.0.192
           name: promote-jx-preview
