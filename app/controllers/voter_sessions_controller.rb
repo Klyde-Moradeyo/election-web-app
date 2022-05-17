@@ -33,6 +33,11 @@ class VoterSessionsController < ApplicationController
     @ballot = Ballot.find_by(id: session[:ballot_id])
   end
 
+  def sign_out
+    reset_session
+    redirect_to root_path
+  end
+
   # POST /voter_sessions or /voter_sessions.json
   def create
     @voter_session = VoterSession.new(voter_session_params)
