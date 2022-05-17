@@ -24,7 +24,7 @@ class VotersController < ApplicationController
   # GET /voters/1/edit
   def edit; end
 
-  def log_in
+  def sign_in
     voter = Voter.find_by(email: params[:email])
     if voter && ( params[:password] == voter.password)
       ballot = Ballot.find_by(id: voter.ballot_id)
