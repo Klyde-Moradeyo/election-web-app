@@ -17,7 +17,7 @@ class VoterSessionsController < ApplicationController
 
   # GET /voter_sessions/1/edit
   def edit; end
-  
+
   def entry
     ballot = Ballot.find_by(access_token: params[:access_token])
     if ballot

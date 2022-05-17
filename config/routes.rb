@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   resources :users do
     resources :ballots do
       get "/launch" => "ballots#launch"
-      
+
       # Voter Sessions
       get "/waiting_room" => "voter_sessions#waiting_room"
-      get '/voter/sign_out', to: 'voter_sessions#sign_out'
+      get "/voter/sign_out", to: "voter_sessions#sign_out"
 
       # Voter User
       resources :voters, shallow: true
