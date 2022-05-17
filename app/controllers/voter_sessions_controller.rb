@@ -28,8 +28,11 @@ class VoterSessionsController < ApplicationController
   end
 
   def waiting_room
-    @voter = Voter.find_by(username: session[:voter]["username"])
-
+    if defined? session[:voter]["username"]
+      @voter = Voter.find_by(username: session[:voter]["username"])
+    else
+      redirect_to "/it"
+    end
     @ballot = Ballot.find_by(id: session[:ballot_id])
   end
 

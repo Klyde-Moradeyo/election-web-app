@@ -24,6 +24,20 @@ class VotersController < ApplicationController
   # GET /voters/1/edit
   def edit; end
 
+  def sign_in
+    voter = Voter.find_by(email: params[:email])
+    if voter && (params[:password] == voter.password)
+      ballot = Ballot.find_by(id: voter.ballot_id)
+      session[:voter] = voter
+      session[:ballot_user_id] = ballot.user_id
+      session[:ballot_id] = ballot.id
+      redirect_to user_ballot_waiting_room_path(ballot.user_id, ballot)
+    else
+      flash[:danger] = "Invalid email/password combination" # Not quite right!
+      # redirect_to voter_log_in_path
+    end
+  end
+
   # POST /voters or /voters.json
   def create
     @ballot = session[:ballot_id]

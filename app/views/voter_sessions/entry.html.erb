@@ -18,9 +18,9 @@
                       <div class="col-lg-12" style="text-align: center"><br>
                         <div class="card-body p-5 shadow-5 text-center">      
                             <%= form_tag("/it", method: "get") do %>
-                              <%= text_field_tag :access_token, "", class:'form-control', style:"background-color: #F5F5F5",:placeholder => "Ballot Pin", maxlength: 6 %>
+                              <%= text_field_tag :access_token, "", class:'form-control', style:"background-color: #F5F5F5",:placeholder => "Ballot Pin", maxlength: 8 %>
                               <br>
-                              <p>Already in a ballot?  <%= link_to "Voter Login"  %> </p>
+                              <p>Already in a ballot?  <%= link_to "Voter Login", voter_sign_in_path  %> </p>
                               <p><%= submit_tag "Enter", class: 'btn btn-primary btn-block mb-4'%></p>
                                <% end %>
                               <div class="invalid-feedback">Incorrect Ballot Pin</div>
