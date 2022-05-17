@@ -17,7 +17,7 @@ class VoterSessionsController < ApplicationController
 
   # GET /voter_sessions/1/edit
   def edit; end
-
+  
   def entry
     ballot = Ballot.find_by(access_token: params[:access_token])
     if ballot
@@ -31,6 +31,11 @@ class VoterSessionsController < ApplicationController
     @voter = Voter.find_by(username: session[:voter]["username"])
 
     @ballot = Ballot.find_by(id: session[:ballot_id])
+  end
+
+  def sign_out
+    reset_session
+    redirect_to root_path
   end
 
   # POST /voter_sessions or /voter_sessions.json
