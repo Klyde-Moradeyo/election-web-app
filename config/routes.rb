@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   get "/it" => "voter_sessions#entry"
 
   # resources
+  resources :voters
+  get '/voter/sign_in', to: 'voters#sign_in'
+  post '/voter/sign_in', to: 'voters#sign_in'
+
   resources :home
   resources :voter_sessions
-  resources :voters
   resources :users do
     resources :ballots do
       get "/launch" => "ballots#launch"
