@@ -28,9 +28,10 @@ class VoterSessionsController < ApplicationController
   end
 
   def waiting_room
-    @voter = Voter.find_by(username: session[:voter]["username"])
-
-    @ballot = Ballot.find_by(id: session[:ballot_id])
+    if defined?session[:voter]["username"]
+      @voter = Voter.find_by(username: session[:voter]["username"])
+    else
+      redirect_to "/it"
   end
 
   # POST /voter_sessions or /voter_sessions.json
