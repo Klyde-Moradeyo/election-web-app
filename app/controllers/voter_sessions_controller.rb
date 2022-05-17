@@ -28,7 +28,7 @@ class VoterSessionsController < ApplicationController
   end
 
   def waiting_room
-    if defined?session[:voter]["username"]
+    if defined? session[:voter]["username"]
       @voter = Voter.find_by(username: session[:voter]["username"])
     else
       redirect_to "/it"

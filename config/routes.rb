@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   # resources
   resources :voters
-  get '/voter/sign_in', to: 'voters#sign_in'
-  post '/voter/sign_in', to: 'voters#sign_in'
+  get "/voter/sign_in", to: "voters#sign_in"
+  post "/voter/sign_in", to: "voters#sign_in"
 
   resources :home
   resources :voter_sessions
