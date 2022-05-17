@@ -1,3 +1,4 @@
+<%= link_to "Sign Out", user_ballot_voter_sign_out_path(@ballot.user_id, @ballot.id)%> 
 <% if @ballot.start_date <= DateTime.now && @ballot.end_date >= DateTime.now %>
   <h1> Questions </h1>
   <% if @ballot.questions.length > 0 %>
