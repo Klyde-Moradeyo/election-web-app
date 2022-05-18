@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
       # Voter User
       resources :voters, shallow: true
+      get "/voter_list" => "ballots#voters"
 
       # Ballot Results
       resources :ballot_results, shallow: true
