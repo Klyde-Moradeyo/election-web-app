@@ -30,12 +30,12 @@ class Ballot < ApplicationRecord
   def generate_token
     loop do
       time = Time.zone.now
-      token = "#{time.month}#{rand(111)}#{time.hour}"
+      token = "#{time.month}#{4.times.map{rand(10)}.join}#{time.hour}"
       if token.length > 6
         token = token[0...6]
-      elsif token.length != 6
+      elsif token.length < 6
         i = (6 - token.length)
-        i.times { token = "#{token}#{rand(11)}" }
+        i.times { token = "#{token}#{rand(10)}" }
       end
       self.access_token = token
       break token unless Ballot.exists?(access_token: token)

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       get "/voter/sign_out", to: "voter_sessions#sign_out"
 
       # Voter User
+      get "/ballot_questions" => "ballots#questions"
       resources :voters, shallow: true
       get "/voter_list" => "ballots#voters"
 

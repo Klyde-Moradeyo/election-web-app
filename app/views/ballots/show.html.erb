@@ -1,27 +1,101 @@
-<p style="color: green"><%= notice %></p>
-
-<p>
-  <strong>Ballot Title:</strong>
-  <%= @ballot.title %>
-  <%= render @ballot %>
-</p>
-<div>
-  <%= link_to "Edit this ballot", edit_user_ballot_path(@ballot) %> |
-  <%= link_to "Back to ballots", user_ballots_path %> |
-  <%= link_to "Ballot's Voters", user_ballot_voter_list_path(current_user, @ballot) %> |
-  <%= link_to "Launch Ballot", user_ballot_launch_path(:ballot_id => @ballot.id), ballot: @ballot, url: [current_user, @ballot]%> 
-  <%= button_to "Destroy this ballot", user_ballot_path, method: :delete %>
+<!-- Ballot Title -->
+<div class="pagetitle">
+     <div class="card-body" style="background-color: #6A87A5;text-align: center;padding: 0 0px 0px 0px;">
+        <strong><h1 class="card-title" style="color:#fff;">Ballot Overview</h1></strong>
+     </div>
+      <div class="card">
+           <div class="card-body" style="background-color: #21507a">
+                <br>
+                <h2 style="color:#fff;text-align: center;"><%= @ballot.title %></h2>
+           </div>
+      </div>
 </div>
+<!-- Ballot Title End -->
 
-<% if @ballot.questions.any? %>
-  <hr>
-  <h2>Questions:</h2>
-  <%= render @ballot.questions %>
-  
-<% end %>
-<hr>
-
-
-<h2>Add a new Question:</h2>
-<%= render "questions/form", question: @question, url: [current_user, @ballot, @question] %>
-
+<section class="section dashboard">
+  <div class="row">
+     <!-- Left side columns -->
+     <div class="col-lg-12">
+        <div class="row">
+           <!-- Start Date -->
+           <div class="col-xxl-6 col-md-6">
+              <div class="card info-card sales-card"  style="align-items: center; background-color:#5184c2;">
+                 <div class="card-body">
+                    <br>
+                    <div class="d-flex align-items-center" style="align-content: center">
+                       <div class="ps-3" style="color: #fff">
+                          <strong><p style="text-align: center;color: black;font-size: 20px">START DATE</p></strong>
+                          <h2 style="text-align: center;color: #fff;"><%= @ballot.start_date %></h2>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <!-- End Start Date -->
+           <!-- Start End Date -->
+           <div class="col-xxl-6 col-md-6">
+              <div class="card info-card revenue-card"  style="align-items: center; background-color:#5b66b5">
+                 <div class="card-body" >
+                    <br>
+                    <div class="d-flex align-item-center">
+                       <div class="ps-3"style="color: #fff" >
+                          <strong><p style="text-align: center;color: black;font-size: 20px">END DATE</p></strong>
+                          <h2 style="text-align: center;color: #fff;"><%= @ballot.end_date %></h2> 
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <!-- End End Date -->
+           <div class="row">
+               <div class="card info-card revenue-card"  style="align-items: center; background-color:#43628a">
+                  <div class="card-body" >
+                     <br>
+                     <div class="d-flex align-item-center">
+                        <div class="ps-3"style="color: #fff" >
+                           <strong><p style="text-align: center;color: black;font-size: 20px">BALLOT PIN</p></strong>
+                           <h2 style="text-align: center;color: #fff;"><%= @ballot.access_token %></h2> 
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+           <div class="card" style="background-color:#21507a">
+              <div class="card-body">
+                 <br>
+                 <div class="card">
+                    <div class="card-body">
+                       <div class="col-md-12">
+                        <div class="table-responsive text-nowrap">
+                           <!--Table-->
+                           <table class="table table-striped">
+                              <thead>
+                                 <tr>
+                                    <th scope="col">Question Title</th>
+                                    <th scope="col">Question Type</th>
+                                    <th scope="col">No. of Options</th> 
+                                    <!--  <th scope="col">Vote Count</th> -->
+                                 </tr>
+                              </thead>
+                              <tbody>
+                               <% if @ballot.questions.any? %>
+                                 <% @ballot.questions.map do |q|%>
+                                  <%= render :partial => 'questions/question_table', :locals =>  { :question => q } %>
+                                  <% end %>
+                               <% else %>
+                                    <th scope="col">-</th>
+                                    <th scope="col">-</th>
+                                    <th scope="col">-</th> 
+                                    <!--  <th scope="col">Vote Count</th> -->
+                               <% end %>
+                              </tbody>
+                           </table>
+                           <!-- End Table with stripped rows -->
+                        </div>
+                      </div>
+                    </div>
+                 </div>
+                   
+        </div>
+      </div>
+</section>

@@ -1,53 +1,45 @@
 <aside id="sidebar" class="sidebar">
-
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link " href="Home.html">
+      <div class="nav-link ">
         <i class="bi bi-grid"></i>
         <span>Menu</span>
-      </a>
-    </li><!-- End Dashboard Nav -->
+      </div>
+    </li>
 
-    <li class="nav">
-      <a class="nav-link collapsed" href="new-index.html">
-        <i class="bi bi-bar-chart"></i>
-        <span>Login</span>
-      </a></li>
+    <li class="nav"> 
+      <%= link_to ('<div class="nav-link collapsed">
+        <i class="bi bi-house"></i>
+        <span>Overview</span>
+      </div></li>').html_safe, user_ballot_path(current_user.id, @ballot)  %>
   </ul>
-  </li><!-- End Components Nav -->
+  </li>
 
   <li class="nav">
-    <a class="nav-link collapsed" href="Token-verification.html">
-      <i class="bi bi-bar-chart"></i>
-      <span>Token</span>
-    </a></li>
+    <%= link_to ('<div class="nav-link collapsed">
+      <i class="bi bi-collection"></i>
+      <span>Ballot</span>
+    </a></li>').html_safe, edit_user_ballot_path(current_user.id, @ballot)  %>
   </ul>
-  </li><!-- End Forms Nav -->
+  </li>
 
   <li class="nav">
-    <a class="nav-link collapsed" href="Register.html">
-      <i class="bi bi-bar-chart"></i>
-      <span>Register</span>
-    </a></li><!-- End Tables Nav -->
+    <%= link_to ('<div class="nav-link collapsed">
+      <i class="bi bi-journal-text"></i>
+      <span>Questions</span>
+    </a></li>').html_safe, user_ballot_ballot_questions_path(current_user.id, @ballot)  %>
 
 
   <li class="nav">
     <a class="nav-link collapsed" href="about.html">
-      <i class="bi bi-bar-chart"></i>
-      <span>About Us</span>
+      <i class="bi bi-person-lines-fill"></i>
+      <span>Voters</span>
     </a></li>
 
   <li class="nav">
     <a class="nav-link collapsed" href="FAQ.html">
-      <i class="bi bi-bar-chart"></i>
-      <span>FAQs</span>
+      <i class="bi bi-check2-circle"></i>
+      <span>Launch</span>
     </a></li>
-
-  <li class="nav">
-    <a class="nav-link collapsed" href="contact.html">
-      <i class="bi bi-bar-chart"></i>
-      <span>Contact Us</span>
-    </a></li>
-
-</aside><!-- End Sidebar-->
+</aside>

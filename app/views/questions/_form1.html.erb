@@ -1,0 +1,89 @@
+<%= form_with(model: question, url: url, id: "new" ) do |form| %>
+<% if question.errors.any? %>
+<div style="color: red">
+   <h2>
+      <%= pluralize(question.errors.count, "error" ) %> prohibited this question from being saved:
+   </h2>
+   <ul>
+      <% question.errors.each do |error| %>
+      <li>
+         <%= error.full_message %>
+      </li>
+      <% end %>
+   </ul>
+</div>
+<% end %>
+<div class="row">
+   <div class="col-md-12">
+      <h3>Question Builder</h3>
+   </div>
+</div>
+<div class="card">
+   <div class="card-body">
+      <br>
+      <div class="row">
+         <div class="col-md-12">
+         </div>
+         <div>
+            <div class="row">
+               <div class="col-md-4">
+                  <%= form.hidden_field :ballot_id %>
+                  <h5>
+                     <%= form.text_area :title, placeholder: "TITLE" %>
+                  </h5>
+                  <h5>
+                     <%= form.text_field :question_type, placeholder: "QUESTION TYPE" %>
+                  </h5>
+               </div>
+               <br><br>
+               <div class="col-md-4">
+                  <%= form.text_area :description, placeholder: "DESCRIPTION " , class: 'card' %>
+               </div>
+               <div class="col-md-1">
+                  <table style="border-collapse: separate;">
+                     <tr style="text-align: center; font-size: 80%">
+                        <td>ABSTAIN</td>
+                     </tr>
+                     <tr style="text-align: center;">
+                        <td>
+                           <%= form.check_box :voter_abstain %>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="col-md-1">
+                  <table style="border-collapse: separate;">
+                     <tr style="text-align: center; font-size: 80%">
+                        <td>RANDOM</td>
+                     </tr>
+                     <tr style="text-align: center;">
+                        <td>
+                           <%= form.check_box :randomize_selection %>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <br><br>
+               <div class="col-md-2">
+                  <div>
+                     <%= form.submit %>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <%= form.fields_for :options do |o| %>
+            <div>
+               <%= render "questions/option_fields" , :f=> o %>
+            </div>
+            <% end %>
+            <div class='links'>
+               <%= link_to_add_association 'ADD OPTION' , form, :options %>
+               <br>
+            </div>
+            <br>
+         </div>
+      </div>
+   </div>
+</div>
+
+<% end %>
