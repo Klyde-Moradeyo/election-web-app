@@ -43,7 +43,7 @@ class VotersController < ApplicationController
     @ballot = session[:ballot_id]
     @ballot_user_id = session[:ballot_user_id]
     @voter = Voter.new(voter_params)
-    @voter.password = generate_password()
+    @voter.password = generate_password
 
     respond_to do |format|
       if @voter.save
@@ -100,7 +100,6 @@ class VotersController < ApplicationController
   end
 
   def generate_password
-    password = (('A'..'Z').to_a + ('a'..'z').to_a + ('0'..'9').to_a).shuffle.first(6).join
-    return password
+    (("A".."Z").to_a + ("a".."z").to_a + ("0".."9").to_a).sample(6).join
   end
 end
