@@ -55,6 +55,10 @@ spec:
             ./error_handler.sh "npm run fix-styles"
             cd ..
             echo "-------- Prettier - ESLint - stylelint | END --------"
+            set -+e
+            git add .
+            git commit -m "CODE-SCANNING: eslint-stylelint-prettier-lint"
+            git push origin
         - image: ruby:3.0.3
           name: rubocop-lint
           resources: {}
