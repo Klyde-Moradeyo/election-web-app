@@ -59,7 +59,8 @@ spec:
             source .jx/variables.sh
             git add .
             git commit -m "CODE-SCANNING: eslint-stylelint-prettier-lint"
-            git push $BRANCH_NAME
+            $BRANCH = $(git rev-parse --abbrev-ref HEAD)
+            git push $BRANCH
         - image: ruby:3.0.3
           name: rubocop-lint
           resources: {}
