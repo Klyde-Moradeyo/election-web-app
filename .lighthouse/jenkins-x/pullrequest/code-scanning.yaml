@@ -58,7 +58,7 @@ spec:
             set +e
             git add .
             git commit -m "CODE-SCANNING: eslint-stylelint-prettier-lint"
-            git push origin
+            jx-gitops pr push
         - image: ruby:3.0.3
           name: rubocop-lint
           resources: {}
