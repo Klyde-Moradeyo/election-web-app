@@ -6,14 +6,16 @@
  *
  * Version: 5.10.2 (2021-11-17)
  */
-(function() {
-  "use strict";
+(function () {
+    'use strict';
 
-  var global = tinymce.util.Tools.resolve("tinymce.PluginManager");
+    var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
 
-  function Plugin() {
-    global.add("contextmenu", function() {});
-  }
+    function Plugin () {
+      global.add('contextmenu', function () {
+      });
+    }
 
-  Plugin();
-})();
+    Plugin();
+
+}());
