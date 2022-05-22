@@ -3,7 +3,7 @@ git fetch --all
 git stash
 git checkout --force $1 
 
-[ ! -e public/coverage ] || rm -rf public/coverage # Delete public/coverage if exist
+[ ! -e public/coverage ] || rm -rf public/coverage/{*,.*} # Delete public/coverage if exist
 git stash pop;
 
 # Move build files before commit

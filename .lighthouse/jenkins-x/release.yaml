@@ -82,7 +82,6 @@ spec:
             source .jx/variables.sh
             set -e # Makes terminal exit on error
             bundle install 
-            rm -rf public/coverage/{*,.*}
             echo "-------- RSPEC | START --------"
             bundle exec rspec spec/models spec/features # spec/requests
             echo "-------- RSPEC | END --------"
