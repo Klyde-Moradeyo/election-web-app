@@ -12050,7 +12050,8 @@
     if (isInlineFormat(format) || format.block_expand) {
       if (
         !isInlineFormat(format) ||
-        !isText$7(startContainer) || startOffset === 0
+        !isText$7(startContainer) ||
+        startOffset === 0
       ) {
         startContainer = findParentContainer(
           dom,
@@ -12062,7 +12063,8 @@
       }
       if (
         !isInlineFormat(format) ||
-        !isText$7(endContainer) || endOffset === endContainer.nodeValue.length
+        !isText$7(endContainer) ||
+        endOffset === endContainer.nodeValue.length
       ) {
         endContainer = findParentContainer(
           dom,
@@ -13235,9 +13237,9 @@
       rng1 &&
       rng2 &&
       rng1.startContainer === rng2.startContainer &&
-        rng1.startOffset === rng2.startOffset &&
+      rng1.startOffset === rng2.startOffset &&
       rng1.endContainer === rng2.endContainer &&
-        rng1.endOffset === rng2.endOffset
+      rng1.endOffset === rng2.endOffset
     );
   };
 
@@ -18776,7 +18778,8 @@
         }
         if (
           format.remove_similar ||
-          !compareNode || isEq$2(getStyle(dom, compareNode, name), value)
+          !compareNode ||
+          isEq$2(getStyle(dom, compareNode, name), value)
         ) {
           dom.setStyle(elm, name, "");
         }
@@ -18795,7 +18798,8 @@
         }
         if (
           format.remove_similar ||
-          !compareNode || isEq$2(dom.getAttrib(compareNode, name), value)
+          !compareNode ||
+          isEq$2(dom.getAttrib(compareNode, name), value)
         ) {
           if (name === "class") {
             value = dom.getAttrib(elm, name);
