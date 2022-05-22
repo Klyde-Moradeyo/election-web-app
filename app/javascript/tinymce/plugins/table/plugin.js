@@ -1832,7 +1832,8 @@
     return (
       leftEdge <= bounds.finishCol &&
       rightEdge >= bounds.startCol &&
-      topEdge <= bounds.finishRow && bottomEdge >= bounds.startRow
+      topEdge <= bounds.finishRow &&
+      bottomEdge >= bounds.startRow
     );
   };
   var isWithin = function(bounds, detail) {
@@ -7196,10 +7197,10 @@
     return (
       getCellElement(grid[rowIndex], colIndex) !== undefined &&
       rowIndex > 0 &&
-        comparator(
-          getCellElement(grid[rowIndex - 1], colIndex),
-          getCellElement(grid[rowIndex], colIndex)
-        )
+      comparator(
+        getCellElement(grid[rowIndex - 1], colIndex),
+        getCellElement(grid[rowIndex], colIndex)
+      )
     );
   };
   var notInStartColumn = function(row, index, comparator) {
