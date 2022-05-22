@@ -56,9 +56,10 @@ spec:
             cd ..
             echo "-------- Prettier - ESLint - stylelint | END --------"
             set +e
+            source .jx/variables.sh
             git add .
             git commit -m "CODE-SCANNING: eslint-stylelint-prettier-lint"
-            jx gitops pr push
+            git push $BRANCH_NAME
         - image: ruby:3.0.3
           name: rubocop-lint
           resources: {}
