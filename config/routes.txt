@@ -1,24 +1,34 @@
                          Prefix Verb   URI Pattern                                                                                       Controller#Action
-                        new_user_session GET    /users/sign_in(.:format)                                                                          devise/sessions#new
-                            user_session POST   /users/sign_in(.:format)                                                                          devise/sessions#create
-                    destroy_user_session GET    /users/sign_out(.:format)                                                                         devise/sessions#destroy        
-                       new_user_password GET    /users/password/new(.:format)                                                                     devise/passwords#new
-                      edit_user_password GET    /users/password/edit(.:format)                                                                    devise/passwords#edit
-                           user_password PATCH  /users/password(.:format)                                                                         devise/passwords#update        
-                                         PUT    /users/password(.:format)                                                                         devise/passwords#update        
-                                         POST   /users/password(.:format)                                                                         devise/passwords#create        
-                cancel_user_registration GET    /users/cancel(.:format)                                                                           registrations#cancel
+                        new_user_session GET    /users/sign_in(.:format)                                                                          devise/sessions#new        
+                            user_session POST   /users/sign_in(.:format)                                                                          devise/sessions#create     
+                    destroy_user_session GET    /users/sign_out(.:format)                                                                         devise/sessions#destroy    
+                       new_user_password GET    /users/password/new(.:format)                                                                     devise/passwords#new       
+                      edit_user_password GET    /users/password/edit(.:format)                                                                    devise/passwords#edit      
+                           user_password PATCH  /users/password(.:format)                                                                         devise/passwords#update    
+                                         PUT    /users/password(.:format)                                                                         devise/passwords#update    
+                                         POST   /users/password(.:format)                                                                         devise/passwords#create    
+                cancel_user_registration GET    /users/cancel(.:format)                                                                           registrations#cancel       
                    new_user_registration GET    /users/sign_up(.:format)                                                                          registrations#new
                   edit_user_registration GET    /users/edit(.:format)                                                                             registrations#edit
-                       user_registration PATCH  /users(.:format)                                                                                  registrations#update
-                                         PUT    /users(.:format)                                                                                  registrations#update
-                                         DELETE /users(.:format)                                                                                  registrations#destroy
-                                         POST   /users(.:format)                                                                                  registrations#create
-                   new_user_confirmation GET    /users/confirmation/new(.:format)                                                                 devise/confirmations#new       
-                       user_confirmation GET    /users/confirmation(.:format)                                                                     devise/confirmations#show      
-                                         POST   /users/confirmation(.:format)                                                                     devise/confirmations#create    
+                       user_registration PATCH  /users(.:format)                                                                                  registrations#update       
+                                         PUT    /users(.:format)                                                                                  registrations#update       
+                                         DELETE /users(.:format)                                                                                  registrations#destroy      
+                                         POST   /users(.:format)                                                                                  registrations#create       
+                   new_user_confirmation GET    /users/confirmation/new(.:format)                                                                 devise/confirmations#new   
+                       user_confirmation GET    /users/confirmation(.:format)                                                                     devise/confirmations#show  
+                                         POST   /users/confirmation(.:format)                                                                     devise/confirmations#create
                                     root GET    /                                                                                                 home#coming_soon
-                                      it GET    /it(.:format)                                                                                     voter_sessions#entry
+                                      it GET    /it(.:format)                                                                                     voter_sessions#entry       
+                                  voters GET    /voters(.:format)                                                                                 voters#index
+                                         POST   /voters(.:format)                                                                                 voters#create
+                               new_voter GET    /voters/new(.:format)                                                                             voters#new
+                              edit_voter GET    /voters/:id/edit(.:format)                                                                        voters#edit
+                                   voter GET    /voters/:id(.:format)                                                                             voters#show
+                                         PATCH  /voters/:id(.:format)                                                                             voters#update
+                                         PUT    /voters/:id(.:format)                                                                             voters#update
+                                         DELETE /voters/:id(.:format)                                                                             voters#destroy
+                           voter_sign_in GET    /voter/sign_in(.:format)                                                                          voters#sign_in
+                                         POST   /voter/sign_in(.:format)                                                                          voters#sign_in
                               home_index GET    /home(.:format)                                                                                   home#index
                                          POST   /home(.:format)                                                                                   home#create
                                 new_home GET    /home/new(.:format)                                                                               home#new
@@ -35,16 +45,9 @@
                                          PATCH  /voter_sessions/:id(.:format)                                                                     voter_sessions#update
                                          PUT    /voter_sessions/:id(.:format)                                                                     voter_sessions#update
                                          DELETE /voter_sessions/:id(.:format)                                                                     voter_sessions#destroy
-                                  voters GET    /voters(.:format)                                                                                 voters#index
-                                         POST   /voters(.:format)                                                                                 voters#create
-                               new_voter GET    /voters/new(.:format)                                                                             voters#new
-                              edit_voter GET    /voters/:id/edit(.:format)                                                                        voters#edit
-                                   voter GET    /voters/:id(.:format)                                                                             voters#show
-                                         PATCH  /voters/:id(.:format)                                                                             voters#update
-                                         PUT    /voters/:id(.:format)                                                                             voters#update
-                                         DELETE /voters/:id(.:format)                                                                             voters#destroy
                       user_ballot_launch GET    /users/:user_id/ballots/:ballot_id/launch(.:format)                                               ballots#launch
-                user_ballot_waiting_room GET    /users/:user_id/ballots/:ballot_id/waiting_room(.:format)                                         voter_sessions#waiting_room    
+                user_ballot_waiting_room GET    /users/:user_id/ballots/:ballot_id/waiting_room(.:format)                                         voter_sessions#waiting_room
+              user_ballot_voter_sign_out GET    /users/:user_id/ballots/:ballot_id/voter/sign_out(.:format)                                       voter_sessions#sign_out
                       user_ballot_voters GET    /users/:user_id/ballots/:ballot_id/voters(.:format)                                               voters#index
                                          POST   /users/:user_id/ballots/:ballot_id/voters(.:format)                                               voters#create
                    new_user_ballot_voter GET    /users/:user_id/ballots/:ballot_id/voters/new(.:format)                                           voters#new
@@ -53,14 +56,7 @@
                                          PATCH  /voters/:id(.:format)                                                                             voters#update
                                          PUT    /voters/:id(.:format)                                                                             voters#update
                                          DELETE /voters/:id(.:format)                                                                             voters#destroy
-                     user_ballot_parties GET    /users/:user_id/ballots/:ballot_id/parties(.:format)                                              parties#index
-                                         POST   /users/:user_id/ballots/:ballot_id/parties(.:format)                                              parties#create
-                   new_user_ballot_party GET    /users/:user_id/ballots/:ballot_id/parties/new(.:format)                                          parties#new
-                              edit_party GET    /parties/:id/edit(.:format)                                                                       parties#edit
-                                   party GET    /parties/:id(.:format)                                                                            parties#show
-                                         PATCH  /parties/:id(.:format)                                                                            parties#update
-                                         PUT    /parties/:id(.:format)                                                                            parties#update
-                                         DELETE /parties/:id(.:format)                                                                            parties#destroy
+                  user_ballot_voter_list GET    /users/:user_id/ballots/:ballot_id/voter_list(.:format)                                           ballots#voters
               user_ballot_ballot_results GET    /users/:user_id/ballots/:ballot_id/ballot_results(.:format)                                       ballot_results#index
                                          POST   /users/:user_id/ballots/:ballot_id/ballot_results(.:format)                                       ballot_results#create
            new_user_ballot_ballot_result GET    /users/:user_id/ballots/:ballot_id/ballot_results/new(.:format)                                   ballot_results#new
@@ -78,13 +74,14 @@
                                          PUT    /options/:id(.:format)                                                                            options#update
                                          DELETE /options/:id(.:format)                                                                            options#destroy
                question_question_results GET    /questions/:question_id/question_results(.:format)                                                question_results#index
-                                         POST   /questions/:question_id/question_results(.:format)                                                question_results#create        
+                                         POST   /questions/:question_id/question_results(.:format)                                                question_results#create
             new_question_question_result GET    /questions/:question_id/question_results/new(.:format)                                            question_results#new
                     edit_question_result GET    /question_results/:id/edit(.:format)                                                              question_results#edit
                          question_result GET    /question_results/:id(.:format)                                                                   question_results#show
-                                         PATCH  /question_results/:id(.:format)                                                                   question_results#update        
-                                         PUT    /question_results/:id(.:format)                                                                   question_results#update        
-                                         DELETE /question_results/:id(.:format)                                                                   question_results#destroy       
+                                         PATCH  /question_results/:id(.:format)                                                                   question_results#update
+                                         PUT    /question_results/:id(.:format)                                                                   question_results#update
+                                         DELETE /question_results/:id(.:format)                                                                   question_results#destroy
+        question_create_question_results PATCH  /questions/:question_id/create_question_results(.:format)                                         questions#create_question_results
                    user_ballot_questions GET    /users/:user_id/ballots/:ballot_id/questions(.:format)                                            questions#index
                                          POST   /users/:user_id/ballots/:ballot_id/questions(.:format)                                            questions#create
                 new_user_ballot_question GET    /users/:user_id/ballots/:ballot_id/questions/new(.:format)                                        questions#new
@@ -109,10 +106,11 @@
                                          PATCH  /users/:id(.:format)                                                                              users#update
                                          PUT    /users/:id(.:format)                                                                              users#update
                                          DELETE /users/:id(.:format)                                                                              users#destroy
-                       letter_opener_web        /letter_opener                                                                                    LetterOpenerWeb::Engine        
-        turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede 
-        turbo_resume_historical_location GET    /resume_historical_location(.:format)                                                             turbo/native/navigation#resume 
-       turbo_refresh_historical_location GET    /refresh_historical_location(.:format)                                                            turbo/native/navigation#refresh           rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
+                       letter_opener_web        /letter_opener                                                                                    LetterOpenerWeb::Engine
+        turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede
+        turbo_resume_historical_location GET    /resume_historical_location(.:format)                                                             turbo/native/navigation#resume
+       turbo_refresh_historical_location GET    /refresh_historical_location(.:format)                                                            turbo/native/navigation#refresh
+           rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
               rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                              action_mailbox/ingresses/relay/inbound_emails#create
            rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                           action_mailbox/ingresses/sendgrid/inbound_emails#create
      rails_mandrill_inbound_health_check GET    /rails/action_mailbox/mandrill/inbound_emails(.:format)                                           action_mailbox/ingresses/mandrill/inbound_emails#health_check
@@ -131,17 +129,11 @@ new_rails_conductor_inbound_email_source GET    /rails/conductor/action_mailbox/
    rails_conductor_inbound_email_reroute POST   /rails/conductor/action_mailbox/:inbound_email_id/reroute(.:format)                               rails/conductor/action_mailbox/reroutes#create
 rails_conductor_inbound_email_incinerate POST   /rails/conductor/action_mailbox/:inbound_email_id/incinerate(.:format)                            rails/conductor/action_mailbox/incinerates#create
                       rails_service_blob GET    /rails/active_storage/blobs/redirect/:signed_id/*filename(.:format)                               active_storage/blobs/redirect#show
-                rails_service_blob_proxy GET    /rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)                                  active_storage/blobs/proxy#show                                         GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                                        active_storage/blobs/redirect#show
+                rails_service_blob_proxy GET    /rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)                                  active_storage/blobs/proxy#show
+                                         GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                                        active_storage/blobs/redirect#show
                rails_blob_representation GET    /rails/active_storage/representations/redirect/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations/redirect#show
          rails_blob_representation_proxy GET    /rails/active_storage/representations/proxy/:signed_blob_id/:variation_key/*filename(.:format)    active_storage/representations/proxy#show
                                          GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format)          active_storage/representations/redirect#show
-                      rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                                       active_storage/disk#show       
-               update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                               active_storage/disk#update     
+                      rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                                       active_storage/disk#show
+               update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                               active_storage/disk#update
                     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                                    active_storage/direct_uploads#create
-
-Routes for LetterOpenerWeb::Engine:
-      letters GET  /                                letter_opener_web/letters#index
-clear_letters POST /clear(.:format)                 letter_opener_web/letters#clear
-       letter GET  /:id(/:style)(.:format)          letter_opener_web/letters#show
-delete_letter POST /:id/delete(.:format)            letter_opener_web/letters#destroy
-              GET  /:id/attachments/:file(.:format) letter_opener_web/letters#attachment
