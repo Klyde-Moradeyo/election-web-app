@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :question do
     ballot
-    question_type { "First_Past_The_Post" }
+    question_type { "Modified Borda Count" }
     sequence(:title) { |n| "Question_#{n}" }  
     description { "This a Test Question." }
     randomize_selection { 1 }

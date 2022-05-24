@@ -208,6 +208,9 @@ Rails/HasAndBelongsToMany: # file added by rollify (role.rb) was causing failure
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
 
+Rails/Validation:
+  Enabled: false
+
 # Bundler Cops
 
 Bundler/OrderedGems:
