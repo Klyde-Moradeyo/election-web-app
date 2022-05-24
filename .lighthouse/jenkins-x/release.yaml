@@ -80,14 +80,13 @@ spec:
           script: |
             #!/bin/bash
             source .jx/variables.sh
-            git reset --hard HEAD
             set -e # Makes terminal exit on error
             bundle install 
             echo "-------- RSPEC | START --------"
             bundle exec rspec spec/models spec/features # spec/requests
             echo "-------- RSPEC | END --------"
             chmod u+r+x ./bin/commit_and_push.sh
-            # ./bin/commit_and_push.sh BUILD_STATS "Unit-Test: Add $VERSION release coverage" main
+            ./bin/commit_and_push.sh BUILD_STATS "Unit-Test: Add $VERSION release coverage" main public/coverage
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
