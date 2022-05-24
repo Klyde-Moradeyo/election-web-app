@@ -161,6 +161,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           null,
           null,
           1,
@@ -189,6 +190,8 @@
 =======
 =======
 =======
+=======
+>>>>>>> Stashed changes
           null,
           1,
           1,
@@ -204,6 +207,7 @@
           null,
           1,
           1,
+          null,
           null,
           1,
 =======
@@ -223,12 +227,18 @@
           1,
 >>>>>>> Stashed changes
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           1,
           1,
           null,
           1,
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
           null,
@@ -267,6 +277,16 @@
           1,
           1,
 >>>>>>> Stashed changes
+=======
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+>>>>>>> Stashed changes
           null,
           1,
           1,
@@ -361,6 +381,8 @@
           0,
           null,
           null,
+          1,
+          0,
           null,
           1,
           0,
@@ -424,12 +446,6 @@
           null
         ]
       },
-      "/workspace/source/app/helpers/parties_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/workspace/source/app/helpers/question_results_helper.rb": {
         "lines": [
           1,
@@ -449,6 +465,15 @@
         ]
       },
       "/workspace/source/app/helpers/users_helper.rb": {
+<<<<<<< Updated upstream
+=======
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/workspace/source/app/helpers/voter_sessions_helper.rb": {
+>>>>>>> Stashed changes
         "lines": [
           1,
           null
@@ -505,23 +530,20 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 =======
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
 =======
 >>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
 =======
 >>>>>>> Stashed changes
 =======
@@ -532,10 +554,11 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
-          null,
-          1,
-          1,
-          null,
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           null,
           1,
@@ -546,8 +569,14 @@
           1,
           1,
           null,
+>>>>>>> Stashed changes
+          null,
+          1,
+          1,
           null,
           null,
+          null,
+<<<<<<< Updated upstream
           1,
           2,
           null,
@@ -615,6 +644,10 @@
           1,
           2,
 >>>>>>> Stashed changes
+=======
+          null,
+          1,
+>>>>>>> Stashed changes
           2,
           2,
           null,
@@ -631,6 +664,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 =======
 =======
@@ -685,6 +719,12 @@
 <<<<<<< Updated upstream
           1,
           1,
+=======
+          1,
+          null,
+          1,
+          null,
+>>>>>>> Stashed changes
           null,
           1,
 <<<<<<< Updated upstream
@@ -717,10 +757,15 @@
           1,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
           null,
           1,
+=======
+          null,
+          null,
+>>>>>>> Stashed changes
           1,
           null,
           1,
@@ -736,6 +781,7 @@
           null,
           1,
           null,
+<<<<<<< Updated upstream
           1,
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -744,6 +790,34 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/workspace/source/spec/models/option_spec.rb": {
+        "lines": [
+          1,
+=======
+>>>>>>> Stashed changes
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
           0,
           0,
           0,
@@ -783,28 +857,6 @@
           null
         ]
       },
-      "/workspace/source/spec/models/party_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/workspace/source/app/models/party.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
       "/workspace/source/spec/models/question_result_spec.rb": {
         "lines": [
           1,
@@ -817,6 +869,8 @@
       "/workspace/source/app/models/question_result.rb": {
         "lines": [
           1,
+          1,
+          null,
           null,
           null,
           null,
@@ -885,6 +939,8 @@
           1,
           1,
           1,
+          null,
+          1,
           null
         ]
       },
@@ -930,6 +986,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           null,
           1,
           1,
@@ -959,6 +1016,11 @@
           1,
 >>>>>>> Stashed changes
 =======
+=======
+          null,
+          1,
+          1,
+>>>>>>> Stashed changes
           null,
           1,
           1,
@@ -1009,7 +1071,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           2,
+=======
+>>>>>>> Stashed changes
           null,
           null
         ]
@@ -1020,10 +1085,23 @@
           null,
           1,
           1,
+<<<<<<< Updated upstream
+=======
+          null
+        ]
+      },
+      "/workspace/source/app/models/voter.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+>>>>>>> Stashed changes
           null,
           null,
           null,
           null,
+<<<<<<< Updated upstream
           null,
           null,
 =======
@@ -1054,6 +1132,17 @@
           null,
 >>>>>>> Stashed changes
 =======
+          null,
+>>>>>>> Stashed changes
+=======
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
           null,
 >>>>>>> Stashed changes
           null
@@ -1072,6 +1161,7 @@
         ]
       }
     },
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1120,6 +1210,9 @@
 >>>>>>> Stashed changes
 =======
     "timestamp": 1650982944
+>>>>>>> Stashed changes
+=======
+    "timestamp": 1653388650
 >>>>>>> Stashed changes
   }
 }
