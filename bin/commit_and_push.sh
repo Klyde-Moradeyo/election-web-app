@@ -1,9 +1,10 @@
 #!/bin/sh
 git fetch --all
+git add .
+
 git stash
 git checkout --force $1 
-
-git stash pop;
+git checkout stash -- . # git pop
 
 git add .
 git commit -m "$2"
