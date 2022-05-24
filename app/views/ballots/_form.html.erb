@@ -36,13 +36,18 @@
   </div>
 
   <div>
-    <%= form.label 'Expected number of voter turn out', style: "display: block", required: true %>
-    <%= form.number_field :expected_voters %>
+    <%= form.label "Expected number of voters", style: "display: block" %>
+    <%= form.number_field :expected_voters %> leave empty for unlimited
   </div>
 
   <div>
     <%= form.label :voting_type, style: "display: block" %>
     <%= form.select :voting_type, Ballot::VOTING_TYPE %>
+  </div>
+
+  <div>
+    <%= form.label :seats, style: "display: block" %>
+    <%= form.number_field :seats %>
   </div>
 
   <div>
