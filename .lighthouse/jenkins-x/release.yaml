@@ -88,7 +88,7 @@ spec:
             chmod u+r+x ./bin/commit_and_push.sh
             ./bin/commit_and_push.sh BUILD_STATS "Unit-Test: Add $VERSION release coverage" main
         - image: ghcr.io/jenkins-x/jx-boot:3.2.287
-          name: jx-variables
+          name: jx-variables-2
           resources: {}
           script: |
             #!/usr/bin/env sh
