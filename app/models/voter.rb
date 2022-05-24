@@ -13,6 +13,6 @@ class Voter < ApplicationRecord
   private
 
   def email_format
-    validates_format_of :email, :with => Devise::email_regexp if email.present?
+    validates_format_of :email, with: Devise.email_regexp if email.present?
   end
 end
