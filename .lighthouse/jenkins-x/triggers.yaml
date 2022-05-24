@@ -29,3 +29,9 @@ spec:
     branches:
     - ^main$
     - ^master$
+  - name: release
+    context: "release"
+    source: "release.yaml"
+    branches:
+    - ^main$
+    - ^master$
