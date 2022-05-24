@@ -5,7 +5,8 @@ git checkout -b $1
 git stash pop;
 
 # Move build files before commit
-[ ! -e VERSION ] || mv -v VERSION .. 
+mv -v VERSION .. 
+mv -v .jx/variables.sh ..
 
 git add $4
 git commit -m "$2"
@@ -15,4 +16,5 @@ git checkout --force $3
 git push origin
 
 # Move build files after commit
-[ ! -e ../VERSION ] || mv -v ../VERSION . 
+mv -v ../VERSION . 
+mkdir -v --parents ./.jx; mv -v ../variables.sh ./.jx/variables.sh
