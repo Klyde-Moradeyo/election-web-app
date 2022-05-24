@@ -98,7 +98,6 @@ spec:
           resources: {}
           script: |
             #!/busybox/sh
-            jx gitops variables
             source .jx/variables.sh
             cp /tekton/creds-secrets/tekton-container-registry-auth/.dockerconfigjson /kaniko/.docker/config.json
             #sed -i 's/ENV RAILS_ENV development/ENV RAILS_ENV production/g' $DOCKERFILE_PATH
