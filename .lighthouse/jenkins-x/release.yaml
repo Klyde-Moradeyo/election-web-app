@@ -87,6 +87,12 @@ spec:
             echo "-------- RSPEC | END --------"
             chmod u+r+x ./bin/commit_and_push.sh
             ./bin/commit_and_push.sh BUILD_STATS "Unit-Test: Add $VERSION release coverage" main
+        - image: ghcr.io/jenkins-x/jx-boot:3.2.287
+          name: jx-variables
+          resources: {}
+          script: |
+            #!/usr/bin/env sh
+            jx gitops variables
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}
