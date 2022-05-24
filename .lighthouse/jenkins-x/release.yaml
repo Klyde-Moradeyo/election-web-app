@@ -54,8 +54,6 @@ spec:
           script: |
             #!/bin/bash
             source .jx/variables.sh
-            mv ./.jx ../
-            git reset --hard HEAD
             set -e # Makes terminal exit on error
             apt update
             apt-get install -y postgresql
