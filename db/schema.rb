@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_12_050633) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_12_050634) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_kcache"
   enable_extension "pg_stat_statements"
@@ -39,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_12_050633) do
     t.string "access_token", null: false
     t.integer "expected_voters"
     t.string "voting_type"
+    t.integer "seats"
     t.index ["user_id"], name: "index_ballots_on_user_id"
   end
 
