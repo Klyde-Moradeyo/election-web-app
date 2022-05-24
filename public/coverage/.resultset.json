@@ -1,16 +1,16 @@
 {
   "RSpec": {
     "coverage": {
-      "/workspace/source/spec/models/ballot_result_spec.rb": {
+      "/mnt/d/Repo/election-web-app/spec/models/ballot_result_spec.rb": {
         "lines": [
           1,
           null,
-          1,
-          1,
+          0,
+          0,
           null
         ]
       },
-      "/workspace/source/spec/rails_helper.rb": {
+      "/mnt/d/Repo/election-web-app/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -48,16 +48,14 @@
           0,
           0,
           null,
-          1,
+          0,
           null,
-          1,
-          null,
-          null,
+          0,
           null,
           null,
-          1,
           null,
           null,
+          0,
           null,
           null,
           null,
@@ -73,98 +71,90 @@
           null,
           null,
           null,
-          1,
           null,
           null,
-          1,
+          0,
+          null,
+          null,
+          0,
           null,
           null,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/workspace/source/spec/factories/ballots.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          12,
-          12,
-          12,
-          12,
-          12,
-          null,
-          null
-        ]
-      },
-      "/workspace/source/spec/factories/questions.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          7,
-          7,
-          7,
-          7,
-          7,
-          null,
-          null
-        ]
-      },
-      "/workspace/source/spec/factories/roles.rb": {
-        "lines": [
-          1,
-          1,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null
         ]
       },
-      "/workspace/source/spec/factories/users.rb": {
+      "/mnt/d/Repo/election-web-app/spec/factories/ballots.rb": {
         "lines": [
           1,
           1,
           1,
           1,
-          16,
-          16,
-          16,
-          16,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/workspace/source/app/models/user.rb": {
+      "/mnt/d/Repo/election-web-app/spec/factories/questions.rb": {
         "lines": [
           1,
           1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/factories/roles.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/factories/users.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
           null,
           null,
           1,
@@ -182,123 +172,8 @@
           null,
           1,
           1,
-          1,
-          1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
           null,
           1,
-<<<<<<< Updated upstream
-          1,
-          null,
-          1,
-=======
-=======
-=======
-=======
-=======
->>>>>>> Stashed changes
-          null,
-          1,
-          1,
-=======
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
->>>>>>> Stashed changes
-          null,
-          1,
-=======
->>>>>>> Stashed changes
-          null,
-          1,
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
-          null,
-          1,
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-          null,
-          1,
-          1,
-          null,
-          1,
-=======
->>>>>>> Stashed changes
-          null,
-          1,
->>>>>>> Stashed changes
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-          null,
-          1,
-          1,
-          1,
-=======
-          1,
-=======
->>>>>>> Stashed changes
-          null,
-          1,
-          null,
-          1,
->>>>>>> Stashed changes
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          null,
-=======
->>>>>>> Stashed changes
-          1,
-          0,
-          0,
-=======
-          1,
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-          null,
-=======
-          1,
-          1,
->>>>>>> Stashed changes
-=======
           null,
           1,
           null,
@@ -307,122 +182,16 @@
           1,
           0,
           0,
->>>>>>> Stashed changes
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-<<<<<<< Updated upstream
-          0,
-<<<<<<< Updated upstream
-          null,
-          1,
-          0,
-          0,
           null,
           null,
           null,
           1,
-          0,
-          null,
-          1,
-<<<<<<< Updated upstream
-          0,
-=======
->>>>>>> Stashed changes
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          1,
-          0,
-          0,
-          null,
-=======
->>>>>>> Stashed changes
-          null,
-          null,
-          1,
-          0,
-          null,
-          1,
-          0,
-          0,
-=======
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
->>>>>>> Stashed changes
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          1,
-          0,
-          0,
-=======
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-          1,
-          null,
-          1,
->>>>>>> Stashed changes
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          1,
-          0,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-=======
->>>>>>> Stashed changes
           0,
           null,
           null
         ]
       },
-      "/workspace/source/app/models/application_record.rb": {
+      "/mnt/d/Repo/election-web-app/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -431,7 +200,7 @@
           null
         ]
       },
-      "/workspace/source/app/helpers/application_helper.rb": {
+      "/mnt/d/Repo/election-web-app/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -439,82 +208,73 @@
           null
         ]
       },
-      "/workspace/source/app/helpers/ballot_results_helper.rb": {
+      "/mnt/d/Repo/election-web-app/app/helpers/ballot_results_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/ballots_helper.rb": {
+      "/mnt/d/Repo/election-web-app/app/helpers/ballots_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/guest_voters_helper.rb": {
+      "/mnt/d/Repo/election-web-app/app/helpers/guest_voters_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/home_helper.rb": {
+      "/mnt/d/Repo/election-web-app/app/helpers/home_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/options_helper.rb": {
+      "/mnt/d/Repo/election-web-app/app/helpers/options_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/question_results_helper.rb": {
+      "/mnt/d/Repo/election-web-app/app/helpers/question_results_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/questions_helper.rb": {
+      "/mnt/d/Repo/election-web-app/app/helpers/questions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/registrations_helper.rb": {
+      "/mnt/d/Repo/election-web-app/app/helpers/registrations_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/users_helper.rb": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
+      "/mnt/d/Repo/election-web-app/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/voter_sessions_helper.rb": {
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+      "/mnt/d/Repo/election-web-app/app/helpers/voter_sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/app/helpers/voter_sessions_helper.rb": {
+      "/mnt/d/Repo/election-web-app/app/helpers/voters_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/workspace/source/spec/support/devise.rb": {
+      "/mnt/d/Repo/election-web-app/spec/support/devise.rb": {
         "lines": [
           1,
           1,
@@ -522,790 +282,186 @@
           null
         ]
       },
-      "/workspace/source/spec/support/factory_bot.rb": {
+      "/mnt/d/Repo/election-web-app/spec/support/factory_bot.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/workspace/source/app/models/ballot_result.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/workspace/source/spec/models/ballot_spec.rb": {
+      "/mnt/d/Repo/election-web-app/spec/models/ballot_spec.rb": {
         "lines": [
           1,
           null,
-          1,
+          0,
           null,
-          6,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+          0,
           null,
-          1,
-          1,
+          0,
+          0,
           null,
           null,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
           null,
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           null,
-          1,
-          1,
+          0,
+          0,
+          0,
           null,
->>>>>>> Stashed changes
           null,
-          1,
-          1,
+          0,
+          0,
+          0,
           null,
->>>>>>> Stashed changes
           null,
-          1,
-          1,
+          0,
+          0,
+          0,
           null,
           null,
           null,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          1,
-          2,
+          0,
+          0,
+          0,
           null,
           null
         ]
       },
-      "/workspace/source/app/models/ballot.rb": {
+      "/mnt/d/Repo/election-web-app/spec/models/option_spec.rb": {
         "lines": [
           1,
-          1,
-          1,
-          1,
           null,
-          1,
-          null,
-          null,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-=======
-          null,
-          1,
-          2,
-=======
-          null,
-          1,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          2,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-=======
-          null,
-          1,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
->>>>>>> Stashed changes
-          2,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          2,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
->>>>>>> Stashed changes
-=======
-          1,
->>>>>>> Stashed changes
-          2,
-          2,
-          null,
+          0,
+          0,
           null
         ]
       },
-      "/workspace/source/app/models/ballot.rb": {
+      "/mnt/d/Repo/election-web-app/spec/models/question_result_spec.rb": {
         "lines": [
           1,
-          1,
-          1,
-          1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
-=======
-          null,
-          1,
->>>>>>> Stashed changes
-          null,
-          1,
->>>>>>> Stashed changes
-          null,
-          1,
->>>>>>> Stashed changes
-          null,
-          1,
-<<<<<<< Updated upstream
-          null,
-          null,
-          null,
-          null,
->>>>>>> Stashed changes
-          1,
-          1,
-          1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
-=======
-=======
-          1,
-          null,
-          1,
-          null,
->>>>>>> Stashed changes
-          null,
-          1,
->>>>>>> Stashed changes
-          null,
-          1,
-=======
->>>>>>> Stashed changes
-          null,
-          1,
-          null,
-          1,
-<<<<<<< Updated upstream
-=======
-          null,
-          1,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          null,
-          1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          null,
-          1,
-<<<<<<< Updated upstream
-=======
-          null,
-          null,
->>>>>>> Stashed changes
-          1,
-          1,
-=======
-          1,
-          null,
-<<<<<<< Updated upstream
-          1,
-          null,
->>>>>>> Stashed changes
-          null,
-          1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-          null,
-          1,
-          1,
-          null,
-          1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-=======
-=======
->>>>>>> Stashed changes
-          null,
-          null,
->>>>>>> Stashed changes
-          1,
-          null,
-          1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-=======
-          null,
-          1,
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-          null,
-          1,
-          null,
-<<<<<<< Updated upstream
-          1,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
           null,
           0,
           0,
-          null,
-          null,
           null
         ]
       },
-      "/workspace/source/spec/models/option_spec.rb": {
-        "lines": [
-          1,
-=======
->>>>>>> Stashed changes
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-=======
-          null,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
->>>>>>> Stashed changes
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/workspace/source/spec/models/option_spec.rb": {
+      "/mnt/d/Repo/election-web-app/spec/models/question_spec.rb": {
         "lines": [
           1,
           null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/workspace/source/app/models/option.rb": {
-        "lines": [
-          1,
-          1,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
           null,
           null,
           null,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/workspace/source/spec/models/question_result_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/workspace/source/app/models/question_result.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/workspace/source/spec/models/question_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          7,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          2,
-          2,
+          0,
+          0,
+          0,
           null,
           null,
           null,
           null
         ]
       },
-      "/workspace/source/app/models/question.rb": {
+      "/mnt/d/Repo/election-web-app/spec/models/role_spec.rb": {
         "lines": [
           1,
-          1,
           null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
+          0,
+          0,
           null
         ]
       },
-      "/workspace/source/spec/models/role_spec.rb": {
+      "/mnt/d/Repo/election-web-app/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/workspace/source/app/models/role.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/workspace/source/spec/models/user_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          5,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          null,
-          1,
-          1,
-          null,
-=======
->>>>>>> Stashed changes
-          null,
-          1,
-          1,
-=======
-          null,
-          1,
-          1,
-=======
-          null,
-          1,
-          1,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          1,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          1,
->>>>>>> Stashed changes
-=======
-=======
-          null,
-          1,
-          1,
->>>>>>> Stashed changes
-          null,
-          1,
-          1,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          1,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          1,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          1,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          1,
->>>>>>> Stashed changes
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
->>>>>>> Stashed changes
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          2,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          2,
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-          null,
-          null
-        ]
-      },
-      "/workspace/source/spec/features/users_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-<<<<<<< Updated upstream
-=======
-          null
-        ]
-      },
-      "/workspace/source/app/models/voter.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-          null,
-          null,
-          null,
-          null,
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
-          null,
-          null,
-=======
-          null,
->>>>>>> Stashed changes
-=======
-          null,
->>>>>>> Stashed changes
-=======
-          null,
->>>>>>> Stashed changes
-=======
-          null,
->>>>>>> Stashed changes
-=======
-          null,
->>>>>>> Stashed changes
-=======
-          null,
->>>>>>> Stashed changes
-=======
-          null,
->>>>>>> Stashed changes
-=======
-          null,
->>>>>>> Stashed changes
-=======
-          null,
->>>>>>> Stashed changes
-=======
-          null,
->>>>>>> Stashed changes
-=======
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-<<<<<<< Updated upstream
           0,
           null,
->>>>>>> Stashed changes
-=======
-          null,
-          1,
-          null,
-          1,
           0,
           null,
->>>>>>> Stashed changes
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
           null
         ]
       },
-      "/workspace/source/app/models/stored_voter.rb": {
+      "/mnt/d/Repo/election-web-app/spec/models/voter_spec.rb": {
         "lines": [
           1,
+          null,
+          0,
+          0,
+          null
+        ]
+      },
+      "/mnt/d/Repo/election-web-app/spec/features/users_spec.rb": {
+        "lines": [
           1,
           null,
+          0,
+          0,
           null,
           null,
           null,
-          1,
+          null,
+          null,
+          null,
           null
         ]
       }
     },
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    "timestamp": 1650832664
-=======
-    "timestamp": 1650833711
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650833907
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650834247
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650834474
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650835029
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650835548
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650836237
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650836579
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650836979
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650981963
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650982489
->>>>>>> Stashed changes
-=======
-    "timestamp": 1650982944
->>>>>>> Stashed changes
-=======
-    "timestamp": 1653388650
->>>>>>> Stashed changes
-=======
-    "timestamp": 1653389183
->>>>>>> Stashed changes
+    "timestamp": 1653389334
   }
 }
