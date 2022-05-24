@@ -75,7 +75,13 @@ class BallotsController < ApplicationController
     @voters = @ballot.voters
   end
 
+  # Ballot results
+  def results
+    @ballot = Ballot.find(params[:ballot_id])
+  end
+
   private
+  helper_method :calculate_results
 
   # Use callbacks to share common setup or constraints between actions.
   def set_ballot
@@ -87,4 +93,25 @@ class BallotsController < ApplicationController
     params.require(:ballot).permit(:user_id, :title, :description, :start_date, :end_date,
                                    :show_voter_results, :access_token, :expected_voters, :voting_type)
   end
+
+  def calculate_results(ballot, qst)
+    candidate_matrix = Array.new
+    if ballot.voting_type == "D'Hondt"
+      voters =  ballot.voters.pluck(:id) 
+      option_map = qst.question_results.pluck(:option_id, :voter_id).group_by(&:shift).transform_values(&:flatten) 
+      option_map.each do |key, value| 
+        arr = Array.new
+        out = voters.map{|v_id| value.include?(v_id) ? 1 : 0}
+        
+        arr.push key 
+        arr.push out 
+        candidate_matrix.push arr 
+      end 
+      results = dhondt(candidate_matrix, @ballot.seats)  
+    elsif ballot.voting_type == "Normal"
+      results = qst.question_results.group(:option_id).count
+    end
+    return results
+  end
+  
 end
