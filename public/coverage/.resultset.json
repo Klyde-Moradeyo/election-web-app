@@ -95,11 +95,11 @@
           1,
           1,
           1,
-          12,
-          12,
-          12,
-          12,
-          12,
+          16,
+          16,
+          16,
+          16,
+          16,
           null,
           null
         ]
@@ -133,10 +133,10 @@
           1,
           1,
           1,
-          16,
-          16,
-          16,
-          16,
+          20,
+          20,
+          20,
+          20,
           null,
           null,
           null,
@@ -146,6 +146,18 @@
           null,
           null,
           null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/workspace/source/spec/factories/voter.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          5,
+          5,
           null,
           null,
           null
@@ -565,7 +577,32 @@
           1,
           null,
           1,
+          5,
+          null,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
           null
         ]
       },
@@ -586,7 +623,7 @@
           1,
           null,
           1,
-          0,
+          4,
           null,
           null
         ]
@@ -607,6 +644,6 @@
         ]
       }
     },
-    "timestamp": 1653392802
+    "timestamp": 1653393462
   }
 }
