@@ -74,7 +74,7 @@ spec:
             echo "-------- Migrate Production DB  | END --------"
             chmod u+r+x ./bin/git_merge_and_push.sh
             ./bin/git_merge_and_push.sh BUILD_$SET_VERSION "DB-Migration: Re-generate schema" main "db/schema.rb"
-            export VERSION=$SET_VERSION
+            export VERSION=$SET_VERSION | echo -e "${VERSION}" >> VERSION
         - image: ruby:3.0.3
           name: unit-test 
           resources: {}
