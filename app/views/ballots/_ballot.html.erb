@@ -11,6 +11,7 @@
       <th scope="col">show_voters_results</th>
       <th scope="col">access_token</th>
       <th scope="col">voting_type</th>
+      <th scope="col">seats</th>
       <th scope="col">expected_voters</th>
       <th scope="col">Host</th>
     </tr>
@@ -26,6 +27,7 @@
       <td><%= ballot.show_voter_results %></td>
       <td><%= ballot.access_token %></td>
       <td><%= ballot.voting_type %></td>
+      <td><%= ballot.seats %></td>
       <td><%= ballot.expected_voters %></td>
       <td><%= ballot.host.pluck(:email, :name) %></td>
     </tr>
