@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+  <p><strong>Ballot Title: <%= @ballot.title %></strong></p>
+  <p><strong>Voting Type: <%= @ballot.voting_type%></strong></p>
+  <hr>
+  <% @ballot.questions.each do |question| %>
+    
+    <p><strong><%= question.title %></strong></p>
+    <h5> Result: </h5>
+    <%= calculate_results(@ballot, question)  %>
+    <hr>
+<% end %>

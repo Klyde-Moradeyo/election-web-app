@@ -232,12 +232,6 @@
           null
         ]
       },
-      "/workspace/source/app/helpers/guest_voters_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/workspace/source/app/helpers/home_helper.rb": {
         "lines": [
           1,
@@ -644,6 +638,6 @@
         ]
       }
     },
-    "timestamp": 1653408076
+    "timestamp": 1653409122
   }
 }
