@@ -92,7 +92,8 @@ class BallotsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def ballot_params
     params.require(:ballot).permit(:user_id, :title, :description, :start_date, :end_date,
-                                   :show_voter_results, :access_token, :expected_voters, :voting_type)
+                                   :show_voter_results, :access_token, :expected_voters,
+                                   :voting_type, :seats)
   end
 
   def calculate_results(ballot, qst)
