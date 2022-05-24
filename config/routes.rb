@@ -10,16 +10,36 @@ Rails.application.routes.draw do
   get "/it" => "voter_sessions#entry"
 
   # resources
+  resources :voters
+  get "/voter/sign_in", to: "voters#sign_in"
+  post "/voter/sign_in", to: "voters#sign_in"
+
   resources :home
+  resources :voter_sessions
   resources :users do
     resources :ballots do
       get "/launch" => "ballots#launch"
-      resources :parties, shallow: true
+
+      # Voter Sessions
+      get "/waiting_room" => "voter_sessions#waiting_room"
+      get "/voter/sign_out", to: "voter_sessions#sign_out"
+
+      # Voter User
+      resources :voters, shallow: true
+      get "/voter_list" => "ballots#voters"
+
+      # Ballot Results
       resources :ballot_results, shallow: true
+
+      # Questions
       resources :questions, shallow: true do
         resources :options
         resources :question_results
+        patch "/create_question_results", to: "questions#create_question_results", as: "create_question_results"
       end
     end
   end
+
+  # letter opener web
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end

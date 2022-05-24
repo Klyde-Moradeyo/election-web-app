@@ -3,13 +3,14 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :confirmable
   validates :first_name, :last_name, :email, presence: true
 
   # ==========================
   # RELATIONSHIPS
   # ==========================
-  has_many :stored_voters, dependent: :destroy
+  # has_many :voters, dependent: :destroy
   has_many :ballots, dependent: :destroy, through: :roles, source: :resource, source_type: :Ballot
   has_many :hosted_ballots, -> { where(roles: { name: :host }) }, dependent: :destroy, through: :roles, source: :resource, source_type: :Ballot
   has_many :voter_ballots, -> { where(roles: { name: :voter }) }, dependent: :destroy, through: :roles, source: :resource, source_type: :Ballot

@@ -2,23 +2,28 @@ class Ballot < ApplicationRecord
   validates :title, :start_date, presence: true
   validates :end_date, date: { after_or_equal_to: :start_date }, presence: true
   before_create :generate_token
-
   resourcify
+
+  VOTING_TYPE = ["Popular vote", "Modified Borda count", "D'Hondt"].freeze
 
   # ==========================
   # RELATIONSHIPS
   # ==========================
+  # Users
   belongs_to :user, class_name: "User"
-  has_many :voters, -> { where(roles: { name: :voter }) }, through: :roles, class_name: "User", source: :users
-  has_many :host, -> { where(roles: { name: :host }) }, through: :roles, class_name: "User", source: :users
-  has_many :questions, dependent: :destroy
-  has_many :partys, dependent: :destroy
-  has_many :ballot_results, dependent: :destroy
-  has_many :stored_voters, through: :user
-  has_many :options, through: :questions
-  has_many :question_results, through: :questions
+  has_many :admin, -> { where(roles: { name: :admin }) }, dependent: :destroy, through: :roles, class_name: "User", source: :users
+  has_many :host, -> { where(roles: { name: :host }) }, dependent: :destroy, through: :roles, class_name: "User", source: :users
 
+  has_many :voters, dependent: :destroy
+
+  # Ballot
+  has_many :questions, dependent: :destroy
+  has_many :options, through: :questions, dependent: :destroy
   accepts_nested_attributes_for :questions
+
+  # Results
+  has_many :ballot_results, dependent: :destroy
+  has_many :question_results, dependent: :destroy
 
   protected
 

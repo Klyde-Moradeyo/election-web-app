@@ -3,11 +3,11 @@ require "rails_helper"
 RSpec.describe BallotResultsController, type: :routing do
   describe "routing" do
     it "routes to #index" do
-      expect(get: "/ballot_results").to route_to("ballot_results#index")
+      expect(get: "/users/1/ballots/1/ballot_results").to route_to("ballot_results#index", user_id: "1", ballot_id: "1")
     end
 
     it "routes to #new" do
-      expect(get: "/ballot_results/new").to route_to("ballot_results#new")
+      expect(get: "/users/1/ballots/1/ballot_results/new").to route_to("ballot_results#new", user_id: "1", ballot_id: "1")
     end
 
     it "routes to #show" do
@@ -20,7 +20,7 @@ RSpec.describe BallotResultsController, type: :routing do
 
 
     it "routes to #create" do
-      expect(post: "/ballot_results").to route_to("ballot_results#create")
+      expect(post: "/users/1/ballots/1/ballot_results").to route_to("ballot_results#create", user_id: "1", ballot_id: "1")
     end
 
     it "routes to #update via PUT" do

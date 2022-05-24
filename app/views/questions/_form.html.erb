@@ -39,15 +39,15 @@
     <%= form.check_box :voter_abstain %>
   </div>
 
-  <div>
-  <%= form.fields_for :options do |o| %>
-    <div>
-      <%= o.label "Option", style: "display: block" %>
-      <%= o.text_field :title, placeholder: "Enter Option here" %>
-     <!--<%= o.text_field :description, placeholder: "Enter Option here" %> 
-      <%= o.text_field :party_id, placeholder: "Enter Option here" %> -->
-    </div>
-  <% end %>
+  <div id='options'>
+    <%= form.fields_for :options do |o| %>
+      <div>
+        <%= render "questions/option_fields", :f => o %>
+      </div>
+    <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'add option', form, :options %>
+      </div>
   </div>
 
   <div>

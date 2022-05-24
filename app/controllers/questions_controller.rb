@@ -80,10 +80,12 @@ class QuestionsController < ApplicationController
       # as it will break if/when the `permit` method is changed to use real keyword arguments
       # for has_many assocations the key naming convention is also plural_attributes
       options_attributes: [
+        :id,
         :party_id,
         :title,
         :description,
         :randomize_selection,
+        :_destroy,
       ],
     )
   end

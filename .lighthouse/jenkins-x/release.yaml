@@ -53,13 +53,14 @@ spec:
           resources: {}
           script: |
             #!/bin/bash
-            git reset --hard HEAD
             source .jx/variables.sh
+            git reset --hard HEAD
             set -e # Makes terminal exit on error
             apt update
             apt-get install -y postgresql
             # Standrd Ruby on Rails bundle install
             bundle install --without test
+            SET_VERSION=$VERSION
             unset VERSION
 
             echo "-------- Migrate Staging DB | START --------"
@@ -72,22 +73,20 @@ spec:
             #RACK_ENV=production RAILS_ENV=production bundle exec rake db:migrate
             echo "-------- Migrate Production DB  | END --------"
             chmod u+r+x ./bin/git_merge_and_push.sh
-            ./bin/git_merge_and_push.sh BUILD_$VERSION "DB-Migration: Re-generate schema" main
+            ./bin/git_merge_and_push.sh BUILD_$SET_VERSION "DB-Migration: Re-generate schema" main "db/schema.rb"
         - image: ruby:3.0.3
           name: unit-test 
           resources: {}
           script: |
             #!/bin/bash
             source .jx/variables.sh
-            git reset --hard HEAD
-            [ ! -e public/coverage ] || rm -rf public/coverage # Delete public/coverage if exist
             set -e # Makes terminal exit on error
             bundle install 
             echo "-------- RSPEC | START --------"
             bundle exec rspec spec/models spec/features # spec/requests
             echo "-------- RSPEC | END --------"
             chmod u+r+x ./bin/commit_and_push.sh
-            ./bin/commit_and_push.sh BUILD_STATS "Unit-Test: Add $VERSION release coverage" main
+            ./bin/commit_and_push.sh BUILD_STATS "Unit-Test: Add $VERSION release coverage" main public/coverage
         - image: gcr.io/kaniko-project/executor:v1.6.0-debug
           name: build-container-build
           resources: {}

@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+<p>
+  <strong>Ballot Title:</strong>
+  <%= @ballot.title %>
+<div id="<%= dom_id @ballot %>">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @voters.each do |voter| %>
+        <tr>
+          <td><%= voter.username %></td>
+          <td><%= voter.email %></td>
+          <td><%= voter.password %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+<%= link_to "Back to ballot", user_ballot_path(current_user, @ballot) %>
+</p>

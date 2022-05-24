@@ -1,48 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ElectionWebApp</title>
+    <title>ESA</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+     <!-- stylesheet -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+     
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Javascript -->
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+     <!-- Vendor JS Files -->
+     <%= javascript_tag 'apexcharts/apexcharts.min.js' %>
+     <%= javascript_tag 'chart.js/chart.min.js' %>
+     <%= javascript_tag 'echarts/echarts.min.js' %>
+     <%= javascript_tag 'quill/quill.min.js' %>
+     <%= javascript_tag 'simple-datatables/simple-datatables.js' %>
+     <%= javascript_tag 'tinymce/tinymce.min.js' %>
+     <%= javascript_tag 'php-email-form/validate.js' %>
+    <!-- Template Main JS File -->
+    <%= javascript_tag 'main.js' %>
   </head>
 
   <body>
-    <!-- Nav bar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href=<%= home_index_path %>>Home <span class="sr-only">(current)</span></a>
-          <!-- check for user sign in | Start -->
-          <% if user_signed_in? %>
-            <a class="nav-item nav-link" href="#">Hello, <%= current_user.email %></a>
-            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-
-          <% else %>
-            <%= link_to new_user_session_path do %>
-              <%= link_to "Sign In", new_user_session_path, :controller => "devise/session", :method => "get" %>
-            <% end %>
-          <% end %>
-          <!-- check for user sign in | END -->
-        </div>
-      </div>
-    </nav>
-    <!-- Nav end -->
-    <%= yield %>
+    <%= render partial: 'layouts/partials/header' if user_signed_in? %>
+    <%= render partial: 'layouts/partials/sidebar' if user_signed_in? %>
+    <!-- Render Views -->
+    <main id='<%= user_signed_in? ? 'main' : '' %>'>   <%= yield %>   </main>
+    <!-- Render Views -->
+    <main id='<%= user_signed_in? ? 'main' : '' %>'>  <%= render partial: 'layouts/partials/footer' %> </main>
   </body>
 </html>
