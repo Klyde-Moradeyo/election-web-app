@@ -4,7 +4,7 @@ class Ballot < ApplicationRecord
   before_create :generate_token
   resourcify
 
-  VOTING_TYPE = ["Popular vote", "Modified Borda count", "D'Hondt"].freeze
+  VOTING_TYPE = ["Normal", "Modified Borda count", "D'Hondt"].freeze
 
   # ==========================
   # RELATIONSHIPS

@@ -9,7 +9,8 @@
   <%= link_to "Edit this ballot", edit_user_ballot_path(@ballot) %> |
   <%= link_to "Back to ballots", user_ballots_path %> |
   <%= link_to "Ballot's Voters", user_ballot_voter_list_path(current_user, @ballot) %> |
-  <%= link_to "Launch Ballot", user_ballot_launch_path(:ballot_id => @ballot.id), ballot: @ballot, url: [current_user, @ballot]%> 
+  <%= link_to "Launch Ballot", user_ballot_launch_path(:ballot_id => @ballot.id), ballot: @ballot, url: [current_user, @ballot]%> |
+  <%= link_to "See Results", user_ballot_results_path(:ballot_id => @ballot.id), ballot: @ballot, url: [current_user, @ballot]%>
   <%= button_to "Destroy this ballot", user_ballot_path, method: :delete %>
 </div>
 
