@@ -25,7 +25,8 @@ class VotersController < ApplicationController
   def edit; end
 
   def sign_in
-    voter = Voter.find_by(email: params[:email])
+    voter = Voter.where(:email => params[:email], :password => params[:password]) # Do this first to ensure we have the right voter.
+    voter = Voter.find_by(id: voter)
     if voter && (params[:password] == voter.password)
       ballot = Ballot.find_by(id: voter.ballot_id)
       session[:voter] = voter
