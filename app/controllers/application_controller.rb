@@ -65,7 +65,6 @@ class ApplicationController < ActionController::Base
   # input: seats
   # Number of seats to be assigned
   def dhondt(candidate_matrix, seats)
-    Rails.logger.debug candidate_matrix.inspect
     candidate_seat_matrix = create_result_matrix_dhondt(candidate_matrix)
 
     # tally the results
@@ -82,7 +81,7 @@ class ApplicationController < ActionController::Base
       candidate_result_matrix[winner_index][1] = quot
       Rails.logger.debug { "round: #{a} | winner: #{winner} | val: #{val} | quotient_value: #{quot}" }
     end
-    candidate_seat_matrix
+    candidate_seat_matrix.sort_by(&:last).reverse
   end
 
   def tally_dhondt_results(candidate_matrix)

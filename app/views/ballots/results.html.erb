@@ -3,9 +3,24 @@
   <p><strong>Voting Type: <%= @ballot.voting_type%></strong></p>
   <hr>
   <% @ballot.questions.each do |question| %>
-    
+    <% results = calculate_results(@ballot, question) %>
     <p><strong><%= question.title %></strong></p>
     <h5> Result: </h5>
-    <%= calculate_results(@ballot, question)  %>
+    <table style="width:50%">
+    <tr>
+        <th>Name</th>
+        <th>Seats Won</th>
+    </tr>
+    <% results.each do |option| %>
+    <tr>
+      <td><%= Option.find_by(id: option[0]).title %></td>
+      <td><%= option[1] %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td> TOTAL <td>
+      <td><%= @ballot.seats %></td>
+    </tr>
+   </table>
     <hr>
 <% end %>
