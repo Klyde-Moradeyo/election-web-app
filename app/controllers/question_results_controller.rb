@@ -21,6 +21,8 @@ class QuestionResultsController < ApplicationController
   # POST /question_results or /question_results.json
   def create
     @question_result = QuestionResult.new(question_result_params)
+    @question_result.voter_id = session[:voter]['id']
+    @question_result.ballot_id = session[:voter]['ballot_id']
 
     respond_to do |format|
       if @question_result.save
@@ -29,7 +31,11 @@ class QuestionResultsController < ApplicationController
         end
         format.json { render :show, status: :created, location: @question_result }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        if QuestionResult.where(id: @question_result.voter_id)
+          format.html { redirect_to request.referer, notice: "You have already Voted" }
+        else
+          format.html { redirect_to request.referer, notice: "Error Saving Question" }
+        end
         format.json { render json: @question_result.errors, status: :unprocessable_entity }
       end
     end
