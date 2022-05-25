@@ -21,8 +21,8 @@ class QuestionResultsController < ApplicationController
   # POST /question_results or /question_results.json
   def create
     @question_result = QuestionResult.new(question_result_params)
-    @question_result.voter_id = session[:voter]['id']
-    @question_result.ballot_id = session[:voter]['ballot_id']
+    @question_result.voter_id = session[:voter]["id"]
+    @question_result.ballot_id = session[:voter]["ballot_id"]
 
     respond_to do |format|
       if @question_result.save
