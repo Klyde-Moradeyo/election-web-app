@@ -1,6 +1,4 @@
 <%= form_with model: qst.question_results.build, url: question_question_results_path(qst) do |f| %>
-  <%= f.hidden_field :ballot_id, value: @ballot.id %>
-  <%= f.hidden_field :voter_id, value: @voter.id %>
   <%= f.hidden_field :question_id, value: qst.id %>
 
   <h3> <li> <%= qst.title %></li> </h3>

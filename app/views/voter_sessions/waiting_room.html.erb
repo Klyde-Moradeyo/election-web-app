@@ -6,6 +6,7 @@
       <ol>
         <% @ballot.questions.each do |qst| %>
           <%= render "questions" , qst: qst%>
+          <p style="color: red"><%= notice %></p>
           <hr>
         <% end %>
       </ol>
