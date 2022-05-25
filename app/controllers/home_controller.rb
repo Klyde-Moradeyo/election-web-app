@@ -8,7 +8,7 @@ class HomeController < ApplicationController
       redirect_to users_path
     elsif user_signed_in?
       redirect_to user_ballots_path(current_user.id)
-    elsif defined? session[:voter]["username"]
+    elsif defined? session[:voter]["username"] & Ballot.exists?(id: session[:voter]["ballot_id"])
       @voter = Voter.find_by(username: session[:voter]["username"])
       @ballot = Ballot.find_by(id: @voter.ballot_id)
       redirect_to user_ballot_waiting_room_path(@ballot.user_id, @ballot)
