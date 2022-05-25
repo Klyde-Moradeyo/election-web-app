@@ -45,22 +45,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_12_050634) do
 
   create_table "options", force: :cascade do |t|
     t.bigint "question_id", null: false
-    t.bigint "party_id"
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["party_id"], name: "index_options_on_party_id"
     t.index ["question_id"], name: "index_options_on_question_id"
-  end
-
-  create_table "parties", force: :cascade do |t|
-    t.bigint "ballot_id", null: false
-    t.string "title"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ballot_id"], name: "index_parties_on_ballot_id"
   end
 
   create_table "question_results", force: :cascade do |t|
@@ -160,9 +149,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_12_050634) do
   add_foreign_key "ballot_results", "ballots"
   add_foreign_key "ballot_results", "question_results"
   add_foreign_key "ballots", "users"
-  add_foreign_key "options", "parties"
   add_foreign_key "options", "questions"
-  add_foreign_key "parties", "ballots"
   add_foreign_key "question_results", "ballots"
   add_foreign_key "question_results", "options"
   add_foreign_key "question_results", "questions"
