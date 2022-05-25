@@ -12,40 +12,42 @@
       <%= link_to ('<div class="nav-link collapsed">
         <i class="bi bi-house"></i>
         <span>Overview</span>
-      </div></li>').html_safe   %>
-  </ul>
+      </div>').html_safe, user_ballot_path(current_user.id, @ballot)  %>
   </li>
 
   <li class="nav">
     <%= link_to ('<div class="nav-link collapsed">
       <i class="bi bi-collection"></i>
       <span>Ballot</span>
-    </a>').html_safe  %>
-  </ul>
+    </a>').html_safe, edit_user_ballot_path(current_user.id, @ballot)  %>
   </li>
 
   <li class="nav">
     <%= link_to ('<div class="nav-link collapsed">
       <i class="bi bi-journal-text"></i>
       <span>Questions</span>
-    </a>').html_safe  %>
+    </a>').html_safe, user_ballot_ballot_questions_path(current_user.id, @ballot)  %>
   </li>
 
   <li class="nav">
     <%= link_to ('<div class="nav-link collapsed">
       <i class="bi bi-person-lines-fill"></i>
       <span>Voters</span>
-      </a>').html_safe  %></li>
+    </a>').html_safe, user_ballot_voter_list_path(current_user.id, @ballot)  %>
+  </li>
 
   <li class="nav">
     <%= link_to ('<div class="nav-link collapsed">
       <i class="bi bi-easel"></i>
       <span>Preview</span>
-      </a>').html_safe  %></li></li>
-    
+    </a>').html_safe %>
+  </li>
+
   <li class="nav">
     <%= link_to ('<div class="nav-link collapsed">
       <i class="bi bi-check2-circle"></i>
-      <span>Launch</span>
-      </a>').html_safe  %></li></li>
+      <span>View Results</span>
+    </a>').html_safe, user_ballot_results_path(:ballot_id => @ballot.id), ballot: @ballot, url: [current_user, @ballot] %>
+  </li>
+</ul>
 </aside>
