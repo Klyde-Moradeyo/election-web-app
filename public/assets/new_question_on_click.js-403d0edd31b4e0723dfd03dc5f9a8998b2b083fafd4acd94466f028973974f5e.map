@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../javascript/new_question_on_click.js"],
+  "sourcesContent": ["$(document).on(\"click\",\"#new_question_on_click\",function(){\r\n    $(question_form1).toggle();\r\n  });"],
+  "mappings": ";;AAAA,IAAE,QAAQ,EAAE,GAAG,SAAQ,0BAAyB,WAAU;AACtD,MAAE,cAAc,EAAE,OAAO;AAAA,EAC3B,CAAC;",
+  "names": []
+}
