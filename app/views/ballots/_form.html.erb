@@ -1,10 +1,10 @@
-<%= form_with(model: ballot, url: url) do |form| %>
-  <% if ballot.errors.any? %>
+<%= form_with(model: @ballot, url: url) do |form| %>
+  <% if @ballot.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(ballot.errors.count, "error") %> prohibited this ballot from being saved:</h2>
+      <h2><%= pluralize(@ballot.errors.count, "error") %> prohibited this ballot from being saved:</h2>
 
       <ul>
-        <% ballot.errors.each do |error| %>
+        <% @ballot.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
