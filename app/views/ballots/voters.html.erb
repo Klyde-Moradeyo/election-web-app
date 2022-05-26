@@ -26,7 +26,7 @@
                       <td><%= voter.email %></td>
                       <td><%= voter.username %></td>
                       <td><%= voter.password %></td>
-                      <td><%= @ballot.question_results.voter_result(voter.id).present? %></td>
+                      <td><%= has_voter_voted(@ballot, voter) %></td>
                      </tr>
                      <% end %>
                      </tr>
