@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_12_050634) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_25_190433) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_kcache"
   enable_extension "pg_stat_statements"
@@ -50,6 +50,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_12_050634) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_options_on_question_id"
+  end
+
+  create_table "question_result_ranks", force: :cascade do |t|
+    t.bigint "question_result_id", null: false
+    t.bigint "option_id", null: false
+    t.integer "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_question_result_ranks_on_option_id"
+    t.index ["question_result_id"], name: "index_question_result_ranks_on_question_result_id"
   end
 
   create_table "question_results", force: :cascade do |t|
@@ -150,6 +160,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_12_050634) do
   add_foreign_key "ballot_results", "question_results"
   add_foreign_key "ballots", "users"
   add_foreign_key "options", "questions"
+  add_foreign_key "question_result_ranks", "options"
+  add_foreign_key "question_result_ranks", "question_results"
   add_foreign_key "question_results", "ballots"
   add_foreign_key "question_results", "options"
   add_foreign_key "question_results", "questions"
