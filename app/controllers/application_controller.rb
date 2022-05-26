@@ -71,7 +71,7 @@ class ApplicationController < ActionController::Base
     candidate_result_matrix = tally_dhondt_results(candidate_matrix)
 
     # Assign Seats
-    (1..seats).each do |a|
+    (1..seats).each do |_a|
       winner, val = candidate_result_matrix.max_by(&:last)
       to_find = candidate_seat_matrix.select { |(x, _y)| x == winner }
       winner_index = to_find.filter_map { |i| candidate_seat_matrix.find_index(i) }.min
@@ -79,7 +79,7 @@ class ApplicationController < ActionController::Base
       candidate_seat_matrix[winner_index][1] = candidate_seat_matrix[winner_index][1] + 1
       quot = val / (candidate_seat_matrix[winner_index][1] + 1)
       candidate_result_matrix[winner_index][1] = quot
-      Rails.logger.debug { "round: #{a} | winner: #{winner} | val: #{val} | quotient_value: #{quot}" }
+      # Rails.logger.debug { "round: #{a} | winner: #{winner} | val: #{val} | quotient_value: #{quot}" }
     end
     candidate_seat_matrix.sort_by(&:last).reverse
   end
