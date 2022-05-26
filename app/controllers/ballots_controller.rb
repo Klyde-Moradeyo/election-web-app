@@ -88,6 +88,7 @@ class BallotsController < ApplicationController
   private
 
   helper_method :calculate_results
+  helper_method :has_voter_voted
 
   # Use callbacks to share common setup or constraints between actions.
   def set_ballot
@@ -138,5 +139,10 @@ class BallotsController < ApplicationController
       end
       modified_borda_count(candidate_matrix)
     end
+  end
+
+  def has_voter_voted(ballot, voter)
+    has_v = ballot.question_results.voter_result(voter.id).first
+    return has_v.inspect
   end
 end
