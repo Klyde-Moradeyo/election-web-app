@@ -23,13 +23,14 @@ class QuestionsController < ApplicationController
   # POST /polls/1/questions or /polls/1/questions.json
   def create
     @question = @ballot.questions.new(question_params)
+    request.referer
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to user_ballot_path(current_user.id, @ballot), notice: "Question was successfully created." }
+        format.html { redirect_to request.referer, notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @question }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to request.referer }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
@@ -39,7 +40,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: "Question was successfully updated." }
+        format.html { redirect_to request.referer, notice: "Question was successfully updated." }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,11 +52,11 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1 or /questions/2.json
   def destroy
     # @ballot = Question.find(params[:ballot_id])
-    session[:return_to] ||= request.referer
+    
     @question.destroy
 
     respond_to do |format|
-      format.html { redirect_to session.delete(:return_to), notice: "Question was successfully destroyed." }
+      format.html { redirect_to request.referer, notice: "Question was successfully destroyed." }
       format.json { head :no_content }
     end
   end
