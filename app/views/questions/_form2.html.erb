@@ -30,22 +30,13 @@
                   <strong style="font-size: 85%">Description:</strong>
                   <p class="card"><%= question.description %></p>
                </div>
-               <div class="col-md-1">
+                <div class="col-md-2">
                   <table style="border-collapse: separate;">
                     <tr style="text-align: center; font-size: 80%">
-                      <td>ABSTAIN</td>
+                      <td>RANDOMIZE SELECTION</td>
                     </tr>
                     <tr style="text-align: center;">
-                      <td><%= form.check_box :voter_abstain %></td>
-                    </tr>
-                  </table>
-               </div>
-                <div class="col-md-1">
-                  <table style="border-collapse: separate;">
-                    <tr style="text-align: center; font-size: 80%">
-                      <td>RANDOM</td>
-                    </tr>
-                    <tr style="text-align: center;">
+                      <%= form.hidden_field :voter_abstain %>
                       <td><%= form.check_box :randomize_selection %></td>
                     </tr>
                   </table>
@@ -65,7 +56,7 @@
                </div>
             <% end %>
             <div class='links'>
-               <%= link_to_add_association 'ADD OPTION', form, :options %>
+               <%= link_to_add_association 'ADD MORE OPTIONS', form, :options %>
                <br>
             </div>
          </div>
