@@ -13,12 +13,6 @@ class BallotsController < ApplicationController
     @question = @ballot.questions
   end
 
-  def questions
-    @ballot = Ballot.find(params[:ballot_id])
-    @question = Question.new({ ballot_id: @ballot.id })
-    @question.options.new
-  end
-
   # GET /ballots/new
   def new
     @ballot = Ballot.new
