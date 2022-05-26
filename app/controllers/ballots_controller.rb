@@ -113,10 +113,10 @@ class BallotsController < ApplicationController
     when "Normal"
       qst.question_results.group(:option_id).count
     when "Modified Borda count"
-      @ballot.questions.each do |qst|
+      ballot.questions.each do |qst_b|
         candidate_matrix = []
-        options_count = qst.options.count
-        qst.options.each do |option|
+        options_count = qst_b.options.count
+        qst_b.options.each do |option|
           rank = QuestionResultRank.where(option_id: option.id).map(&:rank)  # getting preference vote per option
           arr = []
           arr.push option.id
