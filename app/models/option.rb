@@ -6,5 +6,7 @@ class Option < ApplicationRecord
   # ==========================
   belongs_to :question
   has_one :ballot, through: :question
-  has_many :question_results
+
+  has_many :question_results, dependent: :destroy
+  has_many :question_result_ranks, dependent: :destroy
 end
