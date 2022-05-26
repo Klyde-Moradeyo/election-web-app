@@ -1,6 +1,6 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 require("jquery");
-
+//= jquery_ujs
 require("@nathanvda/cocoon");
 require("bootstrap");
 require("./main");
