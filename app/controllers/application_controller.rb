@@ -79,7 +79,7 @@ class ApplicationController < ActionController::Base
       candidate_seat_matrix[winner_index][1] = candidate_seat_matrix[winner_index][1] + 1
       quot = val / (candidate_seat_matrix[winner_index][1] + 1)
       candidate_result_matrix[winner_index][1] = quot
-      Rails.logger.debug { "round: #{a} | winner: #{winner} | val: #{val} | quotient_value: #{quot}" }
+      # Rails.logger.debug { "round: #{a} | winner: #{winner} | val: #{val} | quotient_value: #{quot}" }
     end
     candidate_seat_matrix.sort_by(&:last).reverse
   end
