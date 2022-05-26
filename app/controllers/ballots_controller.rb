@@ -109,20 +109,20 @@ class BallotsController < ApplicationController
         arr.push out
         candidate_matrix.push arr
       end
-      results = dhondt(candidate_matrix, @ballot.seats)
+      dhondt(candidate_matrix, @ballot.seats)
     when "Normal"
-      results = qst.question_results.group(:option_id).count
+      qst.question_results.group(:option_id).count
     when "Modified Borda count"
       @ballot.questions.each do |qst| 
         candidate_matrix = Array.new 
         options_count = qst.options.count
         qst.options.each do |option| 
           rank = QuestionResultRank.where(option_id: option.id).map(&:rank)  # getting preference vote per option
-          arr = [] 
+          arr = Array.new
           arr.push option.id 
           arr.push rank 
           rank.each do |key, value| 
-            arr1 = [] 
+            arr1 = Array.new
             (0..options_count-1).each do |i| 
               arr1[i] = i == key-1 ? value : 0 
             end 
@@ -131,7 +131,7 @@ class BallotsController < ApplicationController
           candidate_matrix.push arr 
         end 
       end
-      results = modified_borda_count(candidate_matrix)
+      modified_borda_count(candidate_matrix)
     end
   end
 end
