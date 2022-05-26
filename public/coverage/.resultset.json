@@ -104,6 +104,15 @@
           null
         ]
       },
+      "/workspace/source/spec/factories/question_result_ranks.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/workspace/source/spec/factories/questions.rb": {
         "lines": [
           1,
@@ -415,6 +424,27 @@
           null,
           1,
           1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/workspace/source/spec/models/question_result_rank_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/workspace/source/app/models/question_result_rank.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
           1,
           null
         ]
@@ -439,6 +469,9 @@
           null,
           1,
           1,
+          1,
+          1,
+          null,
           1,
           1,
           null
@@ -639,6 +672,6 @@
         ]
       }
     },
-    "timestamp": 1653580023
+    "timestamp": 1653580787
   }
 }
