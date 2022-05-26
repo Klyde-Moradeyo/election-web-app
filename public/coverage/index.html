@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-26T15:17:51+00:00">2022-05-26T15:17:51+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-26T15:41:06+00:00">2022-05-26T15:41:06+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  93.67%
+  93.7%
 </span>
 
      </span>
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>237</b> relevant lines,
-    <span class="green"><b>222</b> lines covered</span> and
+    <b>238</b> relevant lines,
+    <span class="green"><b>223</b> lines covered</span> and
     <span class="red"><b>15</b> lines missed. </span>
     (<span class="green">
-  93.67%
+  93.7%
 </span>
 )
   </div>
@@ -249,9 +249,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#2cb3d6dd83abe7562b46dfe62def6b315fea0ed0" class="src_link" title="app/models/question_result.rb">app/models/question_result.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">6</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -547,7 +547,7 @@
     <span class="group_name">Models</span>
     (<span class="covered_percent">
       <span class="yellow">
-  83.75%
+  83.95%
 </span>
 
      </span>
@@ -567,11 +567,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>80</b> relevant lines,
-    <span class="green"><b>67</b> lines covered</span> and
+    <b>81</b> relevant lines,
+    <span class="green"><b>68</b> lines covered</span> and
     <span class="red"><b>13</b> lines missed. </span>
     (<span class="yellow">
-  83.75%
+  83.95%
 </span>
 )
   </div>
@@ -652,9 +652,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#2cb3d6dd83abe7562b46dfe62def6b315fea0ed0" class="src_link" title="app/models/question_result.rb">app/models/question_result.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">6</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -2845,8 +2845,8 @@
     
 
     <div class="t-line-summary">
-      <b>6</b> relevant lines.
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>7</b> relevant lines.
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -2880,13 +2880,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  scope :voter_result, -&gt;(voter_id) { where(voter_id: voter_id) }</code>
           </li>
         </div>
       
@@ -2897,7 +2897,7 @@
 
             
 
-            <code class="ruby">  # ==========================</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2908,7 +2908,7 @@
 
             
 
-            <code class="ruby">  # RELATIONSHIPS</code>
+            <code class="ruby">  # ==========================</code>
           </li>
         </div>
       
@@ -2919,18 +2919,18 @@
 
             
 
-            <code class="ruby">  # ==========================</code>
+            <code class="ruby">  # RELATIONSHIPS</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="7">
+            
             
 
             
 
-            <code class="ruby">  belongs_to :question</code>
+            <code class="ruby">  # ==========================</code>
           </li>
         </div>
       
@@ -2941,7 +2941,7 @@
 
             
 
-            <code class="ruby">  belongs_to :ballot</code>
+            <code class="ruby">  belongs_to :question</code>
           </li>
         </div>
       
@@ -2952,7 +2952,7 @@
 
             
 
-            <code class="ruby">  belongs_to :voter</code>
+            <code class="ruby">  belongs_to :ballot</code>
           </li>
         </div>
       
@@ -2963,12 +2963,23 @@
 
             
 
+            <code class="ruby">  belongs_to :voter</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">  belongs_to :option</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
