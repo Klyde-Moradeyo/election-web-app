@@ -33,7 +33,7 @@ Metrics/AbcSize: # Look into this again later
 
 Metrics/ClassLength:
   Description: 'Avoid classes longer than 100 lines of code.'
-  Max: 100
+  Max: 110
   Enabled: true
 
 Metrics/ModuleLength:
@@ -49,12 +49,12 @@ Metrics/ParameterLists:
 Metrics/MethodLength:
   Description: 'Avoid methods longer than 15 lines of code.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#short-methods'
-  Max: 20
+  Max: 40
   Enabled: true
 
 Metrics/BlockLength:
   CountComments: false
-  Max: 15
+  Max: 20
   IgnoredMethods:
     - context
     - describe
@@ -67,10 +67,10 @@ Metrics/BlockLength:
     - group
 
 Metrics/PerceivedComplexity:
-  Max: 10
+  Max: 20
 
 Metrics/CyclomaticComplexity:
-  Max: 10
+  Max: 15
 
 # Style Cops
 

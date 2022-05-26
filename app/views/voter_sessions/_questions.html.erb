@@ -1,14 +1,44 @@
 <%= form_with model: qst.question_results.build, url: question_question_results_path(qst) do |f| %>
+  <% qst_type =  qst.ballot.voting_type %>
+  <% option_length = qst.options.count %>
+  
   <%= f.hidden_field :question_id, value: qst.id %>
+  <% if qst_type ==  "Modified Borda count" %> 
+  <%= f.hidden_field :option_id, value: qst.options.first.id %> 
+  <% end %>
 
-  <h3> <li> <%= qst.title %></li> </h3>
+  <h3> <%= qst.title %></h3>
     <h6> <%= qst.description %> </h6>
     <ul>
-      <% qst.options.each do |opt| %>
-        <%= f.radio_button :option_id, opt.id %>
-        <%= opt.title %> </li>
+    <% if !qst.randomize_selection %>
+      <% qst.options.each do |option| %>
+        <% if qst_type ==  "Modified Borda count" %>
+            <%= f.fields_for :question_result_ranks, f.object.question_result_ranks.build do |rank_f| %>
+              <%= rank_f.hidden_field :option_id, value: option.id %>
+              <%= option.title %> 
+              <%= rank_f.select :rank,  options_for_select((1..option_length).step(1)) %><br>
+            <% end %>
+         <% else %>
+          <%= f.radio_button :option_id, option.id %>
+          <%= option.title %> 
+         <% end %>
       <% end %>
+    <% else %>
+      <% qst.options.shuffle.each do |option| %>
+        <% if qst_type ==  "Modified Borda count" %>
+            <%= f.fields_for :question_result_ranks, f.object.question_result_ranks.build do |rank_f| %>
+              <%= rank_f.hidden_field :option_id, value: option.id %>
+              <%= option.title %> 
+              <%= rank_f.select :rank,  options_for_select((1..option_length).step(1)) %><br>
+            <% end %>
+         <% else %>
+          <%= f.radio_button :option_id, option.id %>
+          <%= option.title %> 
+         <% end %>
+      <% end %>
+    <% end %>
     </ul>
+    
   <div>
     <%= f.submit "Save Answer" %>
   </div>
