@@ -39,25 +39,14 @@
                <div class="col-md-4">
                   <%= form.text_area :description, placeholder: "DESCRIPTION " , class: 'card' %>
                </div>
-               <div class="col-md-1">
+               <div class="col-md-2">
                   <table style="border-collapse: separate;">
                      <tr style="text-align: center; font-size: 80%">
-                        <td>ABSTAIN</td>
+                        <td>RANDOMIZE SELECTION</td>
                      </tr>
                      <tr style="text-align: center;">
                         <td>
-                           <%= form.check_box :voter_abstain %>
-                        </td>
-                     </tr>
-                  </table>
-               </div>
-               <div class="col-md-1">
-                  <table style="border-collapse: separate;">
-                     <tr style="text-align: center; font-size: 80%">
-                        <td>RANDOM</td>
-                     </tr>
-                     <tr style="text-align: center;">
-                        <td>
+                           <%= form.hidden_field :voter_abstain %> <!-- not implemented -->
                            <%= form.check_box :randomize_selection %>
                         </td>
                      </tr>
