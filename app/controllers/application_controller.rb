@@ -95,7 +95,7 @@ class ApplicationController < ActionController::Base
           candidate_sum += result
         end
       end
-      candidate_result_matrix[index][1] = candidate_sum
+      candidate_result_matrix[index][1] = candidate_sum * 100 # multiply by 100 because algorithm wasn't built for a small amount of voters
       candidate_sum = 0
     end
     candidate_result_matrix
