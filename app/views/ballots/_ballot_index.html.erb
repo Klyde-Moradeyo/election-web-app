@@ -1,0 +1,18 @@
+<div id="<%= dom_id ballot %>">
+
+    <tr>
+      <td ><h3><%= ballot.title %></h3> <h6><%=ballot.description%></h6></td>
+      <td style="text-align: center;padding-top: 20px"><h6><%= ballot.start_date.strftime('%m/%d/%Y')%></h6>   <h6><%=ballot.start_date.strftime('%I:%M %p %Z')%></h6></td>
+      <td style="text-align: center;padding-top: 20px"> <h6 ><%= ballot.end_date.strftime('%m/%d/%Y')%></h6>   <h6><%=ballot.end_date.strftime('%I:%M %p %Z')%></h6></td>
+      <td style="text-align: center;padding-top: 25px"><%= link_to user_ballot_path(current_user.id, ballot) do %>
+        <button type="button" class="btn btn-primary">
+               select
+        </button> <br>
+         <%= button_to "Destroy this ballot", user_ballot_path(current_user, ballot), method: :delete %>
+      <% end %>
+      </td>
+     
+    </tr>
+</div>
+
+                     
