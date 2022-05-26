@@ -122,7 +122,7 @@ spec:
             set -e # Makes terminal exit on error
             bundle install 
             echo "-------- RSPEC | START --------"
-            bundle exec rspec spec/models spec/features # spec/requests
+            bundle exec rspec spec/models spec/features spec/routing # spec/requests
             echo "-------- RSPEC | END --------"
             chmod u+r+x ./bin/commit_and_push.sh
             ./bin/commit_and_push.sh BUILD_STATS "Unit-Test: Add $VERSION release coverage" main
