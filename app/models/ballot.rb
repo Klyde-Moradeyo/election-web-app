@@ -33,9 +33,9 @@ class Ballot < ApplicationRecord
       token = "#{time.month}#{rand(111)}#{time.hour}"
       if token.length > 6
         token = token[0...6]
-      elsif token.length < 6
+      elsif token.length != 6
         i = (6 - token.length)
-        i.times { token = "#{token}#{rand(0..9)}" }
+        i.times { token = "#{token}#{rand(11)}" }
       end
       self.access_token = token
       break token unless Ballot.exists?(access_token: token)
