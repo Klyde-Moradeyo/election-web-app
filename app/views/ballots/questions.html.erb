@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag "question" , "data-turbolinks-track"=> true %>
+<%= javascript_include_tag "new_question_on_click" , "data-turbolinks-track"=> true %>
+          <div class="pagetitle">
+               <div class="card-body" style="background-color: #6A87A5;text-align: center;padding: 0 0px 0px 0px;">
+                    <strong>
+                         <h1 class="card-title" style="color:#fff;">Ballot Questions</h1>
+                    </strong>
+               </div>
+               <div class="card">
+                    <div class="card-body" style="background-color: #21507a">
+                         <br>
+                         <h2 style="color:#fff;text-align: center;">
+                              <%= @ballot.title %>
+                         </h2>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-2" style="text-align:center"></div>
+                    <div class="col-md-2" style="text-align:right">
+                         <button type="button" class="btn btn-primary" id="new_question_on_click">
+                              <i class="bi bi-plus"></i> Add
+                         </button>
+                    </div>
+               </div>
+          </div>
+          <div id="question_form1">
+               <%= render "questions/form1" , question: @question, url: [current_user, @ballot, @question] %>
+               <hr>
+               <br>
+          </div>
+          <br>
+          <div class="ballot_questions_edit">
+               <% if @ballot.questions.any? %>
+                    <% @ballot.questions.map do |question| %>
+                         <div id="question-<%=question.id%>">
+                              <div class="row">
+                                   <%= render :partial=> 'questions/form2', :locals => { :question => question, url:
+                                        question} %>
+                              </div>
+                         </div>
+                    <% end %>
+               <% end %>
+          </div>
