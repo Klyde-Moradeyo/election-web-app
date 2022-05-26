@@ -97,15 +97,14 @@ class BallotsController < ApplicationController
   end
 
   def calculate_results(ballot, qst)
-    candidate_matrix = []
+    candidate_matrix = Array.new
     case ballot.voting_type
     when "D'Hondt"
       voters = ballot.voters.pluck(:id)
       option_map = qst.question_results.pluck(:option_id, :voter_id).group_by(&:shift).transform_values(&:flatten)
       option_map.each do |key, value|
-        arr = []
-        out = voters.map { |v_id| value.include?(v_id) ? 1 : 0 }
-
+        arr = Array.new
+        out = voters.map { |voter_id| value.include?(voter_id) ? 1 : 0 }
         arr.push key
         arr.push out
         candidate_matrix.push arr
@@ -113,7 +112,26 @@ class BallotsController < ApplicationController
       results = dhondt(candidate_matrix, @ballot.seats)
     when "Normal"
       results = qst.question_results.group(:option_id).count
+    when "Modified Borda count"
+      @ballot.questions.each do |qst| 
+        candidate_matrix = Array.new 
+        options_count = qst.options.count
+        qst.options.each do |option| 
+          rank = QuestionResultRank.where(option_id: option.id).map(&:rank)  # getting preference vote per option
+          arr = [] 
+          arr.push option.id 
+          arr.push rank 
+          rank.each do |key, value| 
+            arr1 = [] 
+            (0..options_count-1).each do |i| 
+              arr1[i] = i == key-1 ? value : 0 
+            end 
+          end 
+          arr.push 
+          candidate_matrix.push arr 
+        end 
+      end
+      results = modified_borda_count(candidate_matrix)
     end
-    results
   end
 end
