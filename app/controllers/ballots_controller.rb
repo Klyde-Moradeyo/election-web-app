@@ -97,13 +97,13 @@ class BallotsController < ApplicationController
   end
 
   def calculate_results(ballot, qst)
-    candidate_matrix = Array.new
+    candidate_matrix = []
     case ballot.voting_type
     when "D'Hondt"
       voters = ballot.voters.pluck(:id)
       option_map = qst.question_results.pluck(:option_id, :voter_id).group_by(&:shift).transform_values(&:flatten)
       option_map.each do |key, value|
-        arr = Array.new
+        arr = []
         out = voters.map { |voter_id| value.include?(voter_id) ? 1 : 0 }
         arr.push key
         arr.push out
@@ -113,23 +113,23 @@ class BallotsController < ApplicationController
     when "Normal"
       qst.question_results.group(:option_id).count
     when "Modified Borda count"
-      @ballot.questions.each do |qst| 
-        candidate_matrix = Array.new 
+      @ballot.questions.each do |qst|
+        candidate_matrix = []
         options_count = qst.options.count
-        qst.options.each do |option| 
+        qst.options.each do |option|
           rank = QuestionResultRank.where(option_id: option.id).map(&:rank)  # getting preference vote per option
-          arr = Array.new
-          arr.push option.id 
-          arr.push rank 
-          rank.each do |key, value| 
-            arr1 = Array.new
-            (0..options_count-1).each do |i| 
-              arr1[i] = i == key-1 ? value : 0 
-            end 
-          end 
-          arr.push 
-          candidate_matrix.push arr 
-        end 
+          arr = []
+          arr.push option.id
+          arr.push rank
+          rank.each do |key, value|
+            arr1 = []
+            (0..options_count - 1).each do |i|
+              arr1[i] = i == key - 1 ? value : 0
+            end
+          end
+          arr.push
+          candidate_matrix.push arr
+        end
       end
       modified_borda_count(candidate_matrix)
     end
