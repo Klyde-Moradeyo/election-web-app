@@ -1,0 +1,75 @@
+<%= form_with(model: question, url: url) do |form| %>
+   <% if question.errors.any? %>
+      <div style="color: red">
+      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+      <ul>
+            <% question.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+            <% end %>
+      </ul>
+      </div>
+   <% end %> 
+   
+  
+      
+      <div class="card" style="margin-bottom: 5px;">
+         <div class="card-body">
+            <br>
+            <div class="row">
+               <div class="col-md-4">
+                  <h1><%= question.title %></h1>
+                  <h6 style="margin-top: 4px"><%= question.question_type %></h6>
+                  <!-- Form Fields -->
+                  <%= form.hidden_field :ballot_id %>
+                  <%= form.hidden_field :question_type %>
+                  <%= form.hidden_field :title %>
+                  <%= form.hidden_field :description %>
+               </div>
+               <br><br>
+               <div class="col-md-4">
+                  <strong style="font-size: 85%">Description:</strong>
+                  <p class="card"><%= question.description %></p>
+               </div>
+               <div class="col-md-1">
+                  <table style="border-collapse: separate;">
+                    <tr style="text-align: center; font-size: 80%">
+                      <td>ABSTAIN</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                      <td><%= form.check_box :voter_abstain %></td>
+                    </tr>
+                  </table>
+               </div>
+                <div class="col-md-1">
+                  <table style="border-collapse: separate;">
+                    <tr style="text-align: center; font-size: 80%">
+                      <td>RANDOM</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                      <td><%= form.check_box :randomize_selection %></td>
+                    </tr>
+                  </table>
+               </div>
+               <br><br>
+               <div class="col-md-2">
+                  <div><%= form.submit %></div>
+                  <%= link_to "Edit", edit_question_path(question)%> |
+                  
+                  <%= link_to "Delete",  question_path(question) , method: :delete %> 
+               </div>
+            
+            <br>
+            <%= form.fields_for :options do |o| %>
+               <div>
+                  <%= render "questions/option_fields", :f => o %>
+               </div>
+            <% end %>
+            <div class='links'>
+               <%= link_to_add_association 'ADD OPTION', form, :options %>
+               <br>
+            </div>
+         </div>
+      </div>
+   </div>
+   <br>
+   <% end %>

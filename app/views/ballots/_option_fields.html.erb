@@ -1,8 +1,16 @@
 <div class='nested-fields'>
   <div class="field">
-    <%= f.label "Option", style: "display: block" %>
-    <%= f.text_field :title, placeholder: "Enter Option here" %>
-    <!--<%= f.text_field :description, placeholder: "Enter Option here" %> -->
-  </div>
-  <%= link_to_remove_association "remove option", f %>
+    <div class="row">        
+      <div class="col-md-10">
+         <p><%= f.text_field :title, placeholder: "Enter Option here" %></p>
+      </div>
+      <br><br>
+      <div class="col-md-2">
+         <div  class="row" style="margin: auto">
+            <div class="col-md-12" style="display: inline-block">
+                <%= link_to_remove_association ('<i class="bi bi-trash"></i>').html_safe, f, class: "btn btn-danger delete-me", style: "display: inline-block"%>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>

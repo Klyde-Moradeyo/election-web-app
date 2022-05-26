@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :ballots do
       get "/launch" => "ballots#launch"
       get "/results" => "ballots#results"
+      get "/ballot_questions" => "ballots#questions"
 
       # Voter Sessions
       get "/waiting_room" => "voter_sessions#waiting_room"
