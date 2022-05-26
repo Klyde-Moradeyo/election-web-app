@@ -50,7 +50,7 @@ class VotersController < ApplicationController
       if @voter.save
         session[:ballot_id] = @ballot
         session[:voter] = @voter
-        format.html { redirect_to user_ballot_waiting_room_path(@ballot_user_id, @voter.ballot_id)}
+        format.html { redirect_to user_ballot_waiting_room_path(@ballot_user_id, @voter.ballot_id) }
         format.json { render :show, status: :created, location: @voter }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -102,7 +102,6 @@ class VotersController < ApplicationController
 
   def generate_password
     time = Time.zone.now
-    password = "#{time.month}#{(("A".."Z").to_a + ("a".."z").to_a + ("0".."9").to_a).sample(6).join}#{time.hour}"
-    password
+    "#{(('A'..'Z').to_a + ('a'..'z').to_a + ('0'..'9').to_a).sample(3).join}#{time.month}#{time.hour}#{(('A'..'Z').to_a + ('a'..'z').to_a + ('0'..'9').to_a).sample(3).join}"
   end
 end
