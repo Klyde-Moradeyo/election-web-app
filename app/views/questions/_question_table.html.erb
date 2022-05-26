@@ -1,0 +1,9 @@
+<div id="<%= dom_id question %>">
+  <tr style="background-color:#dee2e6">
+      <td ><%= question.title %></td>
+      <td><%= question.question_type %></td>
+      <td><%= question.options.count %></td>
+      <!--  <td><%= question.question_type %></td> -->
+      <td><%= link_to "Edit", edit_question_path(question)%></td>
+  </tr>
+<div>

@@ -10,14 +10,12 @@ class BallotsController < ApplicationController
 
   # GET /ballots/1 or /ballots/1.json
   def show
-    @question = Question.new({ ballot_id: @ballot.id })
-    @question.options.new
+    @question = @ballot.questions
   end
 
   # GET /ballots/new
   def new
     @ballot = Ballot.new
-    # @question = @ballot.questions.build
   end
 
   # GET /ballots/1/edit
