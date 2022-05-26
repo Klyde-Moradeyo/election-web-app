@@ -75,6 +75,13 @@ class BallotsController < ApplicationController
     @voters = @ballot.voters
   end
 
+  # Ballot Question
+  def questions
+    @ballot = Ballot.find(params[:ballot_id])
+    @question = Question.new({ ballot_id: @ballot.id })
+    @question.options.new
+  end
+
   # Ballot results
   def results
     @ballot = Ballot.find(params[:ballot_id])
