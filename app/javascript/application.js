@@ -7,4 +7,4 @@ require("./main");
 require("../assets/stylesheets/main.css");
 import Chart from "chart.js/auto";
 import * as bootstrap from "bootstrap";
-import {} from 'jquery-ujs';
+import {} from "jquery-ujs";
