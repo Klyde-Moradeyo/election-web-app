@@ -142,7 +142,6 @@ class BallotsController < ApplicationController
   end
 
   def has_voter_voted(ballot, voter)
-    has_v = ballot.question_results.voter_result(voter.id).present?
-    return has_v
+    ballot.question_results.voter_result(voter.id).present?
   end
 end
