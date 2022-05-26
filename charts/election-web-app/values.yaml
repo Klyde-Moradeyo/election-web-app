@@ -10,7 +10,7 @@ podsLabels: {}
 deploymentLabels: {}
 image:
   repository: 847399026905.dkr.ecr.eu-west-2.amazonaws.com/surreyfyp/election-web-app
-  tag: 0.0.262
+  tag: 0.0.263
   pullPolicy: IfNotPresent
 # optional list of image pull secrets to use to pull images
 jx:
