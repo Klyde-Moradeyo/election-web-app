@@ -8,12 +8,9 @@
       <td style="text-align: center;padding-top: 25px"><%= link_to user_ballot_path(current_user.id, ballot) do %>
         <button type="button" class="btn btn-primary">
                select
-        </button> <br>
+        </button>
       </td>
-      <td style="text-align: center;padding-top: 25px; width: 15%"><%= link_to ('<button type="button" class="btn btn-primary" style="background-color: #d41515;border-color:#c70000;">
-          delete
-          </button>').html_safe, user_ballot_path(current_user, ballot), method: :delete, data: {confirm: "Delete #{ballot.title}?"}  %>
-          </td>
+
      <% end %> 
     </tr>
 </div>
