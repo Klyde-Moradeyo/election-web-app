@@ -221,3 +221,8 @@ Rails/Validation:
 
 Bundler/OrderedGems:
   Enabled: false
+
+# Naming Cops
+
+Naming/PredicateName:
+  Enabled: false
