@@ -21,20 +21,27 @@
                      </tr>
                   </thead>
                   <tbody>
+               <% if @ballot.voters.any? %>
                     <% @voters.each do |voter| %>
                      <tr>
-                      <td><%= voter.email %></td>
-                      <td><%= voter.username %></td>
-                      <td><%= voter.password %></td>
-                      <td><%= has_voter_voted(@ballot, voter) %></td>
+                        <td><%= voter.email %></td>
+                        <td><%= voter.username %></td>
+                        <td><%= voter.password %></td>
+                        <td><%= has_voter_voted(@ballot, voter) %></td>
                      </tr>
                      <% end %>
-                     </tr>
-                  </tbody>
+               <% else  %>
+                  <tr>
+                     <td> - </td>
+                     <td> - </td>
+                     <td> - </td>
+                     <td> - </td>
+                 </tr>
+               <% end %>
+               </tbody>
                </table>
                <!-- End Table with stripped rows -->
             </div>
          </div>
       </div>
-   </div>
 </section>
