@@ -111,6 +111,6 @@ ltest:
 #   password: <%= ENV["ELECTIONWEBAPP_DATABASE_PASSWORD"] %>
 production:
   <<: *default
-  host: <%= Rails.application.credentials.production_db_host %> 
-  password: <%= Rails.application.credentials.production_db_secret %> 
+  host: Rails.application.credentials.production_db_host
+  password: Rails.application.credentials.production_db_secret
   pool: 5
