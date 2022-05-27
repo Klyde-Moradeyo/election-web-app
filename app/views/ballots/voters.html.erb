@@ -23,14 +23,14 @@
                   <tbody>
                <% if @ballot.voters.any? %>
                     <% @voters.each do |voter| %>
-                     <tr>
-                        <td><%= voter.email %></td>
-                        <td><%= voter.username %></td>
-                        <td><%= voter.password %></td>
-                        <td><%= has_voter_voted(@ballot, voter) %></td>
-                     </tr>
+                        <tr>
+                           <td><%= voter.email %></td>
+                           <td><%= voter.username %></td>
+                           <td><%= voter.password %></td>
+                           <td><%= has_voter_voted(@ballot, voter) %></td>
+                        </tr>
                      <% end %>
-               <% else  %>
+               <% else %>
                   <tr>
                      <td> - </td>
                      <td> - </td>
