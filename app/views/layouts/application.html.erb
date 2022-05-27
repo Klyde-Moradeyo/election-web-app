@@ -35,8 +35,8 @@
     <%= render partial: 'layouts/partials/header' if user_signed_in? %>
     <%= render partial: 'layouts/partials/sidebar' if user_signed_in? && @ballot.try(:id) %>
     <!-- Render Views -->
-    <main id='<%= user_signed_in? ? 'main' : '' %>'>   <%= yield %>   </main>
+    <main id='<%= @ballot? 'main' : '' %>'>   <%= yield %>   </main>
     <!-- Render Views -->
-    <main id='<%= user_signed_in? ? 'main' : '' %>'>  <%= render partial: 'layouts/partials/footer' %> </main>
+    <main id='<%= @ballot ? 'main' : '' %>'>  <%= render partial: 'layouts/partials/footer' %> </main>
   </body>
 </html>
