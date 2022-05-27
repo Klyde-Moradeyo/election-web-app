@@ -11,7 +11,7 @@
         </button>
       </td>
        <td style="text-align: center;padding-top: 25px; width: 15%">
-        <%= button_to "delete", user_ballot_path(current_user, ballot), method: :delete,  :class => "btn btn-primary", :style => "background-color: #d41515;border-color:#c70000;", method: :delete,  data: {confirm: "Delete #{ballot.title}?"} %>
+        <%= button_to "delete", user_ballot_path(current_user, ballot),  :class => "btn btn-primary", :style => "background-color: #d41515;border-color:#c70000;", method: :delete,  data: {confirm: "Delete #{ballot.title}?"} %>
       </td>
      <% end %> 
     </tr>
