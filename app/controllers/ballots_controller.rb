@@ -43,7 +43,7 @@ class BallotsController < ApplicationController
   def update
     respond_to do |format|
       if @ballot.update(ballot_params)
-        format.html { redirect_to user_ballots_url, notice: "Ballot was successfully updated." }
+        format.html { redirect_to user_ballot_url(current_user, @ballot), notice: "Ballot was successfully updated." }
         format.json { render :show, status: :ok, location: @ballot }
       else
         format.html { render :edit, status: :unprocessable_entity }
