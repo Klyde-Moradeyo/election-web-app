@@ -40,7 +40,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to request.referer, notice: "Question was successfully updated." }
+        format.html { redirect_to user_ballot_ballot_questions_path(current_user.id, @question.ballot_id), notice: "Question was successfully updated." }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit, status: :unprocessable_entity }

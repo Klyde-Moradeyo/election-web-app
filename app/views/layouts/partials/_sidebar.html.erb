@@ -49,5 +49,12 @@
       <span>View Results</span>
     </a>').html_safe, user_ballot_results_path(:ballot_id => @ballot.id), ballot: @ballot, url: [current_user, @ballot] %>
   </li>
+
+  <li class="nav">
+    <%= link_to ('<div class="nav-link collapsed">
+      <i class="bi bi-arrow-bar-left"></i>
+      <span>Your Ballots</span>
+    </a>').html_safe, user_ballots_path(current_user.id), ballot: @ballot, url: [current_user, @ballot] %>
+  </li>
 </ul>
 </aside>

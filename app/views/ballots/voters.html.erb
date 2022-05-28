@@ -30,7 +30,7 @@
                            <td><%= voter.password %></td>
                            <td><%= has_voter_voted(@ballot, voter) %></td>
                            <td style="text-align: center;padding-top: 5px; width: 20%">
-                              <%= button_to "delete", voter_path(voter),  :class => "btn btn-primary", :style => "background-color: #d41515;border-color:#c70000;", method: :delete,  data: {confirm: "Delete #{voter.username}?"} %>
+                              <%= button_to "delete", voter_path(voter),  :class => "btn btn-primary", :style => "background-color: #d41515;border-color:#c70000;", method: :delete,  data: {confirm: "remove #{voter.username}?"} %>
                            </td>
                         </tr>
                      <% end %>

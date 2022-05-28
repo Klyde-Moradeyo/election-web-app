@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-6" style="border: black">
               <br>
-              <h4><b>End Date</b><br><%= @ballot.start_date %><h4>
+              <h4><b>End Date</b><br><%= @ballot.end_date %><h4>
             </div>
           </div>
           </div><!--span class="d-none d-lg-block">E.S.A</span-->
@@ -33,7 +33,7 @@
     <% if @ballot.questions.length > 0 %>
       <div>
           <% @ballot.questions.each do |qst| %>
-            <%= render "questions" , qst: qst%>
+            <%= render "questions", qst: qst%>
             <hr>
           <% end %>
       </div>
@@ -43,7 +43,8 @@
       <%= render "waiting_room"%>
     <% end %>
   <% elsif @ballot.end_date < DateTime.now %>
-    <h1> Ballot Expired </h1>
+    <%= render "ballot_end"%>
+
   <% else %>
     <%= render "waiting_room"%>
   <% end %>
