@@ -112,5 +112,5 @@ ltest:
 production:
   <<: *default
   host: <%= Rails.application.credentials.production_db_host %> 
-  password: <%= Rails.application.credentials.production_db_secret %> 
+  password: j1V9FZboUgNnxkpCL1DTANVEaScDB8RPOpnZwEc3W9Gj9T0S0nIqn4xH0VnrrKG3 
   pool: 5
