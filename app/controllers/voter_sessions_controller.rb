@@ -82,6 +82,8 @@ class VoterSessionsController < ApplicationController
 
   private
 
+  helper_method :calculate_results
+
   # Use callbacks to share common setup or constraints between actions.
   def set_voter_session
     @voter_session = VoterSession.find(params[:id])

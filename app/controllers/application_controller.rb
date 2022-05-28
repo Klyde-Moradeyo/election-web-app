@@ -116,4 +116,50 @@ class ApplicationController < ActionController::Base
   # ==========================
   # D'Hondt Algorithm END
   # ==========================
+
+  # ==========================
+  # Create Candidate matrix
+  # ==========================
+  def calculate_results(ballot, qst)
+    candidate_matrix = []
+    case ballot.voting_type
+    when "D'Hondt"
+      voters = ballot.voters.pluck(:id)
+      option_map = qst.question_results.pluck(:option_id, :voter_id).group_by(&:shift).transform_values(&:flatten)
+      option_map.each do |key, value|
+        arr = []
+        out = voters.map { |voter_id| value.include?(voter_id) ? 1 : 0 }
+        arr.push key
+        arr.push out
+        candidate_matrix.push arr
+      end
+      dhondt(candidate_matrix, @ballot.seats)
+    when "Normal"
+      qst.question_results.group(:option_id).count
+    when "Modified Borda count"
+      ballot.questions.each do |qst_b|
+        candidate_matrix = []
+        options_count = qst_b.options.count
+        qst_b.options.each do |option|
+          rank = QuestionResultRank.where(option_id: option.id).map(&:rank)  # getting preference vote per option
+          arr = []
+          arr.push option.id
+          arr.push rank
+          rank.each do |key, value|
+            arr1 = []
+            (0..options_count - 1).each do |i|
+              arr1[i] = i == key - 1 ? value : 0
+            end
+          end
+          arr.push
+          candidate_matrix.push arr
+        end
+      end
+      modified_borda_count(candidate_matrix)
+    end
+  end
+
+  def has_voter_voted(ballot, voter)
+    ballot.question_results.voter_result(voter.id).present?
+  end
 end
