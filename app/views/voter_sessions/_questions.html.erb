@@ -9,7 +9,7 @@
 
   <h3> <%= qst.title %></h3>
     <h6> <%= qst.description %> </h6>
-    <ul>
+
     <% if !qst.randomize_selection %>
       <% qst.options.each do |option| %>
         <% if qst_type ==  "Modified Borda count" %>
@@ -37,7 +37,7 @@
          <% end %>
       <% end %>
     <% end %>
-    </ul>
+
     
   <div>
     <%= f.submit "Save Answer" %>
