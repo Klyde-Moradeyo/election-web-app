@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       get "/ballot_questions" => "ballots#questions"
 
       # Voter Sessions
-      get "/waiting_room" => "voter_sessions#waiting_room"
+      get "/lobby" => "voter_sessions#lobby"
       get "/voter/sign_out", to: "voter_sessions#sign_out"
 
       # Voter User
