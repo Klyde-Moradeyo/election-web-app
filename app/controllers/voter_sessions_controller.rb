@@ -28,7 +28,7 @@ class VoterSessionsController < ApplicationController
     end
   end
 
-  def waiting_room
+  def lobby
     if defined? session[:voter]["username"]
       @voter = Voter.find_by(username: session[:voter]["username"])
     else

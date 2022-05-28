@@ -1,0 +1,50 @@
+<section style="margin: auto;width: 60%;padding: 10px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style="text-align: center">
+        <div class="card-body" style="background-color:#21507a">
+          <br>
+          <h1 style="color: #fff"> <%= if @ballot.start_date <= DateTime.now && @ballot.end_date >= DateTime.now then "#{@ballot.title}" else "#{@ballot.title} - Waiting Room" end %> </h1>
+        </div>
+        <div class="card-body" style="background-color: #6A87A5">
+              <br>
+              <h4 style="color:#fff;text-align: left;text-align: center;"><%= @ballot.description %></h4>
+        </div>
+          <div class="card-body">
+            <div class="row" style="text-align: center;">
+            <div class="col-md-6" style="border: black">
+              <br>
+              <h4><b>Start Date</b> <br> <%= @ballot.start_date %><h4>
+            </div>
+            <div class="col-md-6" style="border: black">
+              <br>
+              <h4><b>End Date</b><br><%= @ballot.start_date %><h4>
+            </div>
+          </div>
+          </div><!--span class="d-none d-lg-block">Election App</span-->
+      </div>
+    </div>
+  </div>
+  <% if @ballot.start_date <= DateTime.now && @ballot.end_date >= DateTime.now %>
+      <div class="row">
+
+        </div>
+      <p style="color: red"><%= notice %></p>
+    <% if @ballot.questions.length > 0 %>
+      <div>
+          <% @ballot.questions.each do |qst| %>
+            <%= render "questions" , qst: qst%>
+            <hr>
+          <% end %>
+      </div>
+  
+    <% else %>
+      <p style="text-align: center"> Cannot Start Ballot with No Questions Present </p>
+      <%= render "waiting_room"%>
+    <% end %>
+  <% elsif @ballot.end_date < DateTime.now %>
+    <h1> Ballot Expired </h1>
+  <% else %>
+    <%= render "waiting_room"%>
+  <% end %>
+</section>

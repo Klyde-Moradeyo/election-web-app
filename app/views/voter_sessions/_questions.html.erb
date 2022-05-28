@@ -1,45 +1,70 @@
-<%= form_with model: qst.question_results.build, url: question_question_results_path(qst) do |f| %>
+
+<%= form_with model: qst.question_results.build, url: question_question_results_path(qst) do |f| %>  
   <% qst_type =  qst.ballot.voting_type %>
   <% option_length = qst.options.count %>
-  
+
   <%= f.hidden_field :question_id, value: qst.id %>
   <% if qst_type ==  "Modified Borda count" %> 
   <%= f.hidden_field :option_id, value: qst.options.first.id %> 
   <% end %>
 
-  <h3> <%= qst.title %></h3>
-    <h6> <%= qst.description %> </h6>
-    <ul>
-    <% if !qst.randomize_selection %>
-      <% qst.options.each do |option| %>
-        <% if qst_type ==  "Modified Borda count" %>
-            <%= f.fields_for :question_result_ranks, f.object.question_result_ranks.build do |rank_f| %>
-              <%= rank_f.hidden_field :option_id, value: option.id %>
-              <%= option.title %> 
-              <%= rank_f.select :rank,  options_for_select((1..option_length).step(1)) %><br>
+  <div class="card">
+    <div class="card-body">
+      <br>
+      <h4 style="text-align: center"><b><%= qst.title %></b></h4>
+      <div class="tab-pane fade pt-3" id="profile-settings"></div>
+      <table class="table datatable" style="text-align: center">
+        <thead>
+          <tr>
+            <td scope="col" style="text-align: left;"><b>Vote Type: <%= @ballot.voting_type %></b></td>
+            <% if qst_type ==  "Modified Borda count" %> 
+              <th scope="col"> Ranked Selection </th>
+            <% else %>
+              <th scope="col"> Single Choice </th>
             <% end %>
-         <% else %>
-          <%= f.radio_button :option_id, option.id %>
-          <%= option.title %> 
-         <% end %>
-      <% end %>
-    <% else %>
-      <% qst.options.shuffle.each do |option| %>
-        <% if qst_type ==  "Modified Borda count" %>
-            <%= f.fields_for :question_result_ranks, f.object.question_result_ranks.build do |rank_f| %>
-              <%= rank_f.hidden_field :option_id, value: option.id %>
-              <%= option.title %> 
-              <%= rank_f.select :rank,  options_for_select((1..option_length).step(1)) %><br>
+          </tr>
+        </thead>
+        <tbody>
+          <% if !qst.randomize_selection %>
+          <% qst.options.each do |option| %>
+              <% if qst_type ==  "Modified Borda count" %>
+                <%= f.fields_for :question_result_ranks, f.object.question_result_ranks.build do |rank_f| %>
+                  <%= rank_f.hidden_field :option_id, value: option.id %>
+                  <tr style="background-color:#dee2e6">
+                    <td style="text-align: left;"><b><%= option.title %> </b></td>
+                    <td><%= rank_f.select :rank,  options_for_select((1..option_length).step(1)) %><br></td>
+                  </tr>
+                <% end %>
+              <% else %>
+                <tr style="background-color:#dee2e6">
+                  <td style="text-align: left;"><b><%= option.title %> </b></td>
+                  <td><%= f.radio_button :option_id, option.id %><br></td>
+                </tr>
+              <% end %>
             <% end %>
-         <% else %>
-          <%= f.radio_button :option_id, option.id %>
-          <%= option.title %> 
-         <% end %>
-      <% end %>
-    <% end %>
-    </ul>
-    
-  <div>
-    <%= f.submit "Save Answer" %>
+          <% else %>
+            <% qst.options.shuffle.each do |option| %>
+              <% if qst_type ==  "Modified Borda count" %>
+                <%= f.fields_for :question_result_ranks, f.object.question_result_ranks.build do |rank_f| %>
+                  <%= rank_f.hidden_field :option_id, value: option.id %>
+                  <tr style="background-color:#dee2e6">
+                    <td style="text-align: left;"><b><%= option.title %> </b></td>
+                    <td><%= rank_f.select :rank,  options_for_select((1..option_length).step(1)) %><br></td>
+                  </tr>
+                <% end %>
+              <% else %>
+                <tr style="background-color:#dee2e6">
+                  <td style="text-align: left;"><b><%= option.title %> </b></td>
+                  <td><%= f.radio_button :option_id, option.id %><br></td>
+                </tr>
+              <% end %>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align: center;">
+      <%= f.submit "Save Answer" %>
+    </div> <br>
   </div>
 <% end %>
