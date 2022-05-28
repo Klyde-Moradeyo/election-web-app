@@ -81,7 +81,7 @@ class VoterSessionsController < ApplicationController
   end
 
   private
-  
+
   helper_method :calculate_results
 
   # Use callbacks to share common setup or constraints between actions.
