@@ -1,48 +1,54 @@
-<!-- Section: Design Block -->
-<section class="text-center text-lg-start">
-  <style>
-    .cascading-right {
-      margin-right: -50px;
-    }
 
-    @media (max-width: 991.98px) {
-      .cascading-right {
-        margin-right: 0;
-      }
-    }
+  <div class="container">
+    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-    body {
-    background-color: #000125;
-    }
-  </style>
+            <div class="d-flex justify-content-center py-4">
+              <div class="logo d-flex align-items-center w-auto">
+                <%= link_to ('<span class="d-none d-lg-block" style="color:  #012970">E.S.A</span>').html_safe, root_path  %>
+              </div>
+            </div><!-- End Logo -->
 
-  <!-- Jumbotron -->
-  <div class="container py-4">
-    <div class="row g-0 align-items-center">
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <h1 class="fw-bold mb-5" style="text-align: center;color:white;">Welcome to E.S.A</h1>
-        <div class="card cascading-right" style="
-            background: hsla(0, 0%, 100%, 0.55);
-            backdrop-filter: blur(30px);
-            ">
-          <div class="card-body p-5 shadow-5 text-center">      
-            <%= form_tag("/voter/sign_in", method: "post") do %>
-              <%= text_field_tag :email, "", class:'form-control', :placeholder => "Email" %>
-              <br>
-              <%= text_field_tag :password, "", class:'form-control', :placeholder => "Password"%>
-              <br>
-              <p><%= submit_tag "Enter", class: 'btn btn-primary btn-block mb-4'%></p>
-               <% end %>
-          </div>
-        </div>
+            <div class="card mb-3">
+
+              <div class="card-body">
+
+                <div class="pt-4 pb-2">
+                  <p class="card-title text-center pb-0 fs-4">VOTER LOGIN</p>
+                </div>
+                <%= form_tag("/voter/sign_in", method: "post") do %>
+
+                  <div class="col-12">
+                    
+                    <div class="input-group has-validation">
+                      <span class="input-group-text" id="inputGroupPrepend">@</span>
+
+                      <%= text_field_tag :email, "", class:'form-control', :placeholder => "Email" %>
+
+                      <div class="invalid-feedback">Please enter your username.</div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="col-12">
+                    <%= text_field_tag :password, "", class:'form-control', :placeholder => "Password"%>
+                    <div class="invalid-feedback">Please enter your password!</div>
+                  </div>
+                  <br>
+                  <div class="col-12">
+                    <p class="small mb-0" >Don't have account? <a href="<%=root_url%>"><b>Enter Ballot Pin<b></a></p>
+                  </div>
+                  <br>
+                  <div class="col-12" style="text-align: center;">
+                    <p><%= submit_tag "Sign In", class: 'btn btn-primary btn-block mb-4'%></p>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                <% end %>
+                </div>
       </div>
-        
-      <div class="col-lg-6 mb-5 mb-lg-0" style="margin:0; padding:5%">
-        <img src="https://images.unsplash.com/photo-1599015298371-9c20a5d9cce8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" class="w-100 rounded-4 shadow-4"
-          alt="" />
-      </div>
-    </div>
+    </section>
   </div>
-  <!-- Jumbotron -->
-</section>
-<!-- Section: Design Block -->
+
