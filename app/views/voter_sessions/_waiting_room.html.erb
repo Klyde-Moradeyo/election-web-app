@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-body">
+    <br>
+    <div class="row" style="text-align: center;">
+      <% @ballot.voters.each do |voter| %>
+      <br>
+      <div class="col-md-4">
+        <%= voter.username %>
+      </div>
+      <br>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="text-align: center;">
+  <div class="card" style="background-color:#21507a">
+    <div class="card-body">
+    <br>
+      <div class="col-md-12" style="text-align: center;color: white;">
+        <b><% if @ballot.show_voter_results %>
+          Results Available after Ballot has concluded
+        <% else %>
+          Results are Hidden by the Host
+        <% end %></b>
+      </div>
+    </div>
+  </div>
+</div>
