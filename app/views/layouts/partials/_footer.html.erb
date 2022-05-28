@@ -9,7 +9,10 @@
         </div>
         <div class="col-md-4">
           <div class="credits">
-            <% if !current_user %>    
+            <% if session[:voter] %>
+              Are you a Voter? 
+              <strong><%= link_to "Sign Out", user_ballot_voter_sign_out_path(@ballot.user_id, @ballot.id) %></strong> 
+            <% elsif !current_user %>    
                 Are you a host? 
                 <strong><%= link_to "Sign In", user_session_path %></strong> 
             <% else %>
