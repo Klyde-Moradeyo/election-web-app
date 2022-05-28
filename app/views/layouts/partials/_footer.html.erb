@@ -11,7 +11,8 @@
           <div class="credits">
             <% if session[:voter] %>
               Are you a Voter? 
-              <strong><%= link_to "Sign Out", user_ballot_voter_sign_out_path(@ballot.user_id, @ballot.id) %></strong> 
+              <% ballot = Ballot.find_by(id: session[:voter]["ballot_id"])%>
+              <strong><%= link_to "Sign Out", user_ballot_voter_sign_out_path(ballot.user_id, ballot.id) %></strong> 
             <% elsif !current_user %>    
                 Are you a host? 
                 <strong><%= link_to "Sign In", user_session_path %></strong> 
