@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ESA</title>
+    <title>E.S.A</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -32,7 +32,7 @@
   </head>
 
   <body>
-    <%= render partial: 'layouts/partials/header' if user_signed_in? %>
+    <%= render partial: 'layouts/partials/header' if user_signed_in? || session[:voter] %>
     <%= render partial: 'layouts/partials/sidebar' if user_signed_in? && @ballot.try(:id) %>
     <!-- Render Views -->
     <main id='<%= user_signed_in? && @ballot? 'main' : '' %>'>   <%= yield %>   </main>
