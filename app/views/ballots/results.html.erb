@@ -1,37 +1,27 @@
-<p style="color: green"><%= notice %></p>
-<p>Note: Voters can only see results after Ballot has expired</p>
-  <% arr = Array.new %>
-  <p><strong>Ballot Title: <%= @ballot.title %></strong></p>
-  <p><strong>Voting Type: <%= @ballot.voting_type%></strong></p>
-  <hr>
+ 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style="text-align: center">
+        <div class="card-body" style="background-color:#21507a">
+          <br>
+          <h1 style="color: #fff"> <%= @ballot.title %> - Results </h1>
+        </div>
+        <div class="card-body" style="background-color: #6A87A5">
+              <br>
+              <h4 style="color:#fff;text-align: left;text-align: center;"><%= @ballot.voting_type %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <% @ballot.questions.each do |question| %>
-    <% results = calculate_results(@ballot, question) %>
-    <p><strong><%= question.title %></strong></p>
-    <h5> Result: </h5>
-    <table style="width:50%">
-    <tr>
-        <th>Name</th>
-        <th><%= if @ballot.voting_type == "D'Hondt" then 'Seats Won' else 'Points' end  %></th>
-    </tr>
-    <% results.each do |option| %>
-    <tr>
-      <td><%= Option.find_by(id: option[0]).title %></td>
-      <td><%= option[1] %></td>
-      <% arr.push option[1] %>
-    </tr>
-    <% end %>
-    <hr>
-    <% if @ballot.voting_type == "D'Hondt" %>>
-    <tr style="border-top:1px solid black">
-      <th>Total Seats</th>
-      <td><%=@ballot.seats%></td>
-    </tr>
+    <% if @ballot.voting_type ==  "Modified Borda count" %>
+      <%= render :partial => 'ballots/results/m_borda_count', :locals =>  { :question => question } %>
+    <% elsif @ballot.voting_type ==  "D'Hondt" %>
+      <%= render :partial => 'ballots/results/dhondt', :locals =>  { :question => question } %>
     <% else %>
-      <tr style="border-top:1px solid black">
-      <th>Total</th>
-      <td><%=arr.sum%></td>
-    </tr>
-    <% end%>
-   </table>
-    <hr>
+      <%= render :partial => 'ballots/results/normal', :locals =>  { :question => question }  %>
+    <% end  %>
+
+
 <% end %>

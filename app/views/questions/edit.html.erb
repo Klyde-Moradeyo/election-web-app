@@ -1,9 +1,13 @@
-<h1>Editing question</h1>
-
-<%= render "form1", question: @question, url:[@question]%>
 
 <br>
+<br>
+<section style="margin: auto;width: 60%;padding: 1px;">
+<%= render "form1", question: @question, url:[@question]%>
 
 <div>
-  <%= link_to "Back to questions", user_ballot_path(current_user.id, @question.ballot_id) %>
+  <%= link_to "Back to questions", user_ballot_ballot_questions_path(current_user.id, @question.ballot_id) %>
 </div>
+</section>
+<br>
+
+
