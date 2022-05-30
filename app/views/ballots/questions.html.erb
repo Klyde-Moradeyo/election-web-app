@@ -26,6 +26,8 @@
                     </div>
                </div>
           </div>
+          <p style="color: green"><%= notice %></p>
+
           <div id="question_form1">
                <%= render "questions/form1" , question: @question, url: [current_user, @ballot, @question] %>
                <hr>
