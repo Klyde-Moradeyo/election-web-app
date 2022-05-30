@@ -1,2 +1,0 @@
-class VoterMailer < ApplicationMailer
-end
