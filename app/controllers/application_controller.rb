@@ -66,12 +66,11 @@ class ApplicationController < ActionController::Base
   # Number of seats to be assigned
   def dhondt(candidate_matrix, seats)
     candidate_seat_matrix = create_result_matrix_dhondt(candidate_matrix)
-    puts candidate_matrix.inspect
     # tally the results
     candidate_result_matrix = tally_dhondt_results(candidate_matrix)
 
     # Assign Seats
-    if !candidate_matrix
+    unless candidate_matrix
       (1..seats).each do |_a|
         winner, val = candidate_result_matrix.max_by(&:last)
         to_find = candidate_seat_matrix.select { |(x, _y)| x == winner }
@@ -79,7 +78,7 @@ class ApplicationController < ActionController::Base
         candidate_seat_matrix[winner_index][1] = candidate_seat_matrix[winner_index][1] + 1
         quot = val / (candidate_seat_matrix[winner_index][1] + 1)
         candidate_result_matrix[winner_index][1] = quot
-        puts { "round: #{a} | winner: #{winner} | val: #{val} | quotient_value: #{quot}" }
+        # puts { "round: #{a} | winner: #{winner} | val: #{val} | quotient_value: #{quot}" }
       end
     end
     candidate_seat_matrix.sort_by(&:last).reverse
