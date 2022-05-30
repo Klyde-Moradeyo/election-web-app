@@ -34,7 +34,7 @@ class VotersController < ApplicationController
       session[:ballot_id] = ballot.id
       redirect_to user_ballot_lobby_path(ballot.user_id, ballot)
     else
-      flash[:danger] = "Invalid email/password combination" # Not quite right!
+      flash[:notice] = "Invalid email/password combination" # Not quite right!
       # redirect_to voter_log_in_path
     end
   end
