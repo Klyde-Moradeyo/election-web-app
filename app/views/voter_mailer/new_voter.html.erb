@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<% ballot = Ballot.find_by(id: @voter.ballot_id) %>
+<h3>Welcome to Ballot: <%= ballot.title %>!</h3>
+<p>
+  Ballot Voting System: <%= ballot.voting_type %> <br>
+  Results Visible: <%= ballot.show_voter_results %> <br>
+  <br>
+  username: <b><%= @voter.username %></b><br>
+  password: <b><%= @voter.password %></b><br>
+  
+</p>
+<p>Thanks you for registering, <br>
+   E.S.A Team<p>
+</body>
+</html>

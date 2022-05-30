@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-30T09:20:59+00:00">2022-05-30T09:20:59+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-30T09:22:36+00:00">2022-05-30T09:22:36+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  65.04%
+  64.95%
 </span>
 
      </span>
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>718</b> relevant lines,
+    <b>719</b> relevant lines,
     <span class="green"><b>467</b> lines covered</span> and
-    <span class="red"><b>251</b> lines missed. </span>
+    <span class="red"><b>252</b> lines missed. </span>
     (<span class="red">
-  65.04%
+  64.95%
 </span>
 )
   </div>
@@ -149,12 +149,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#857cdd765f87be4066dd0cf0b1b92a44eca27179" class="src_link" title="app/controllers/voters_controller.rb">app/controllers/voters_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">28.81 %</td>
-            <td class="cell--number">107</td>
-            <td class="cell--number">59</td>
+            <td class="red strong cell--number t-file__coverage">28.33 %</td>
+            <td class="cell--number">108</td>
+            <td class="cell--number">60</td>
             <td class="cell--number">17</td>
-            <td class="cell--number">42</td>
-            <td class="cell--number">0.29</td>
+            <td class="cell--number">43</td>
+            <td class="cell--number">0.28</td>
             
           </tr>
         
@@ -687,14 +687,14 @@
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
       <span class="red">
-  29.55%
+  29.46%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.3
+         0.29
        </span>
     </span> hits/line
     )
@@ -707,11 +707,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>335</b> relevant lines,
+    <b>336</b> relevant lines,
     <span class="green"><b>99</b> lines covered</span> and
-    <span class="red"><b>236</b> lines missed. </span>
+    <span class="red"><b>237</b> lines missed. </span>
     (<span class="red">
-  29.55%
+  29.46%
 </span>
 )
   </div>
@@ -813,12 +813,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#857cdd765f87be4066dd0cf0b1b92a44eca27179" class="src_link" title="app/controllers/voters_controller.rb">app/controllers/voters_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">28.81 %</td>
-            <td class="cell--number">107</td>
-            <td class="cell--number">59</td>
+            <td class="red strong cell--number t-file__coverage">28.33 %</td>
+            <td class="cell--number">108</td>
+            <td class="cell--number">60</td>
             <td class="cell--number">17</td>
-            <td class="cell--number">42</td>
-            <td class="cell--number">0.29</td>
+            <td class="cell--number">43</td>
+            <td class="cell--number">0.28</td>
             
           </tr>
         
@@ -8123,7 +8123,7 @@
     <h3>app/controllers/voters_controller.rb</h3>
     <h4>
       <span class="red">
-  28.81%
+  28.33%
 </span>
 
       lines covered
@@ -8132,9 +8132,9 @@
     
 
     <div class="t-line-summary">
-      <b>59</b> relevant lines.
+      <b>60</b> relevant lines.
       <span class="green"><b>17</b> lines covered</span> and
-      <span class="red"><b>42</b> lines missed.</span>
+      <span class="red"><b>43</b> lines missed.</span>
     </div>
 
     
@@ -8723,7 +8723,7 @@
 
             
 
-            <code class="ruby">        format.html { redirect_to user_ballot_lobby_path(@ballot_user_id, @voter.ballot_id) }</code>
+            <code class="ruby">        VoterMailer.new_voter(@voter).deliver_now</code>
           </li>
         </div>
       
@@ -8734,29 +8734,29 @@
 
             
 
+            <code class="ruby">        format.html { redirect_to user_ballot_lobby_path(@ballot_user_id, @voter.ballot_id) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="55">
+            
+            
+
+            
+
             <code class="ruby">        format.json { render :show, status: :created, location: @voter }</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="55">
+          <li class="never" data-hits="" data-linenumber="56">
             
             
 
             
 
             <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="56">
-            
-            
-
-            
-
-            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
           </li>
         </div>
       
@@ -8767,18 +8767,18 @@
 
             
 
-            <code class="ruby">        format.json { render json: @voter.errors, status: :unprocessable_entity }</code>
+            <code class="ruby">        format.html { render :new, status: :unprocessable_entity }</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="58">
+          <li class="missed" data-hits="0" data-linenumber="58">
             
             
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">        format.json { render json: @voter.errors, status: :unprocessable_entity }</code>
           </li>
         </div>
       
@@ -8789,7 +8789,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -8800,7 +8800,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -8811,7 +8811,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -8822,12 +8822,23 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
             <code class="ruby">  # PATCH/PUT /voters/1 or /voters/1.json</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="63">
+          <li class="covered" data-hits="1" data-linenumber="64">
             <span class="hits">1</span>
             
 
@@ -8838,24 +8849,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="64">
-            
-            
-
-            
-
-            <code class="ruby">    respond_to do |format|</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="missed" data-hits="0" data-linenumber="65">
             
             
 
             
 
-            <code class="ruby">      if @voter.update(voter_params)</code>
+            <code class="ruby">    respond_to do |format|</code>
           </li>
         </div>
       
@@ -8866,7 +8866,7 @@
 
             
 
-            <code class="ruby">        format.html { redirect_to user_ballot_voters_url(current_user, @ballot), notice: &quot;Voter was successfully updated.&quot; }</code>
+            <code class="ruby">      if @voter.update(voter_params)</code>
           </li>
         </div>
       
@@ -8877,12 +8877,23 @@
 
             
 
+            <code class="ruby">        format.html { redirect_to user_ballot_voters_url(current_user, @ballot), notice: &quot;Voter was successfully updated.&quot; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="68">
+            
+            
+
+            
+
             <code class="ruby">        format.json { render :show, status: :ok, location: @voter }</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="68">
+          <li class="never" data-hits="" data-linenumber="69">
             
             
 
@@ -8893,7 +8904,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="69">
+          <li class="missed" data-hits="0" data-linenumber="70">
             
             
 
@@ -8904,7 +8915,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="70">
+          <li class="missed" data-hits="0" data-linenumber="71">
             
             
 
@@ -8915,7 +8926,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="71">
+          <li class="never" data-hits="" data-linenumber="72">
             
             
 
@@ -8926,24 +8937,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="72">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="never" data-hits="" data-linenumber="73">
             
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -8954,7 +8954,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -8965,12 +8965,23 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="76">
+            
+            
+
+            
+
             <code class="ruby">  # DELETE /voters/1 or /voters/1.json</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="76">
+          <li class="covered" data-hits="1" data-linenumber="77">
             <span class="hits">1</span>
             
 
@@ -8981,7 +8992,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="77">
+          <li class="missed" data-hits="0" data-linenumber="78">
             
             
 
@@ -8992,7 +9003,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="78">
+          <li class="missed" data-hits="0" data-linenumber="79">
             
             
 
@@ -9003,24 +9014,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="79">
+          <li class="never" data-hits="" data-linenumber="80">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="80">
-            
-            
-
-            
-
-            <code class="ruby">    respond_to do |format|</code>
           </li>
         </div>
       
@@ -9031,7 +9031,7 @@
 
             
 
-            <code class="ruby">      format.html { redirect_to session.delete(:return_to), notice: &quot;Voter was successfully destroyed.&quot; }</code>
+            <code class="ruby">    respond_to do |format|</code>
           </li>
         </div>
       
@@ -9042,18 +9042,18 @@
 
             
 
-            <code class="ruby">      format.json { head :no_content }</code>
+            <code class="ruby">      format.html { redirect_to session.delete(:return_to), notice: &quot;Voter was successfully destroyed.&quot; }</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="83">
+          <li class="missed" data-hits="0" data-linenumber="83">
             
             
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      format.json { head :no_content }</code>
           </li>
         </div>
       
@@ -9064,7 +9064,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -9075,12 +9075,23 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="86">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="86">
+          <li class="covered" data-hits="1" data-linenumber="87">
             <span class="hits">1</span>
             
 
@@ -9091,24 +9102,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="87">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
           <li class="never" data-hits="" data-linenumber="88">
             
             
 
             
 
-            <code class="ruby">  # Only allow a list of trusted parameters through.</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -9119,12 +9119,23 @@
 
             
 
+            <code class="ruby">  # Only allow a list of trusted parameters through.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="90">
+            
+            
+
+            
+
             <code class="ruby">  # Use callbacks to share common setup or constraints between actions.</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="90">
+          <li class="covered" data-hits="1" data-linenumber="91">
             <span class="hits">1</span>
             
 
@@ -9135,7 +9146,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="91">
+          <li class="missed" data-hits="0" data-linenumber="92">
             
             
 
@@ -9146,7 +9157,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="92">
+          <li class="never" data-hits="" data-linenumber="93">
             
             
 
@@ -9157,7 +9168,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="93">
+          <li class="never" data-hits="" data-linenumber="94">
             
             
 
@@ -9168,7 +9179,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="94">
+          <li class="covered" data-hits="1" data-linenumber="95">
             <span class="hits">1</span>
             
 
@@ -9179,7 +9190,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="95">
+          <li class="missed" data-hits="0" data-linenumber="96">
             
             
 
@@ -9190,7 +9201,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="96">
+          <li class="never" data-hits="" data-linenumber="97">
             
             
 
@@ -9201,7 +9212,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="97">
+          <li class="never" data-hits="" data-linenumber="98">
             
             
 
@@ -9212,7 +9223,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="98">
+          <li class="covered" data-hits="1" data-linenumber="99">
             <span class="hits">1</span>
             
 
@@ -9223,7 +9234,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="99">
+          <li class="missed" data-hits="0" data-linenumber="100">
             
             
 
@@ -9234,7 +9245,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="100">
+          <li class="missed" data-hits="0" data-linenumber="101">
             
             
 
@@ -9245,7 +9256,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="101">
+          <li class="never" data-hits="" data-linenumber="102">
             
             
 
@@ -9256,7 +9267,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="102">
+          <li class="never" data-hits="" data-linenumber="103">
             
             
 
@@ -9267,7 +9278,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="103">
+          <li class="covered" data-hits="1" data-linenumber="104">
             <span class="hits">1</span>
             
 
@@ -9278,7 +9289,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="104">
+          <li class="missed" data-hits="0" data-linenumber="105">
             
             
 
@@ -9289,7 +9300,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="105">
+          <li class="missed" data-hits="0" data-linenumber="106">
             
             
 
@@ -9300,7 +9311,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="106">
+          <li class="never" data-hits="" data-linenumber="107">
             
             
 
@@ -9311,7 +9322,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="107">
+          <li class="never" data-hits="" data-linenumber="108">
             
             
 
