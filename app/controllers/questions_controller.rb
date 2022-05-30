@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
         format.html { redirect_to request.referer, notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @question }
       else
-        format.html { redirect_to request.referer }
+        format.html { redirect_to request.referer, notice: "Error saving Quesiton. Did you fill required fields?" }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
