@@ -4,7 +4,7 @@
       <div class="card" style="text-align: center">
         <div class="card-body" style="background-color:#21507a">
           <br>
-          <h1 style="color: #fff"> <%= if @ballot.start_date <= DateTime.now && @ballot.end_date >= DateTime.now then "#{@ballot.title}" else "#{@ballot.title} - Waiting Room" end %> </h1>
+          <h1 style="color: #fff"><%= if @ballot.start_date <= DateTime.now && @ballot.end_date >= DateTime.now then "#{@ballot.title}" elsif @ballot.end_date < DateTime.now && @ballot.show_voter_results then "#{@ballot.title} - Results" else "#{@ballot.title} - Waiting Room" end%></h1>  
         </div>
         <div class="card-body" style="background-color: #6A87A5">
               <br>
