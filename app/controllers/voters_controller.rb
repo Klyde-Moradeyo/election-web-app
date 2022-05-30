@@ -34,7 +34,7 @@ class VotersController < ApplicationController
       session[:ballot_id] = ballot.id
       redirect_to user_ballot_lobby_path(ballot.user_id, ballot)
     else
-      flash[:danger] = "Invalid email/password combination" # Not quite right!
+      flash[:notice] = "Invalid email/password combination" # Not quite right!
       # redirect_to voter_log_in_path
     end
   end
@@ -50,6 +50,7 @@ class VotersController < ApplicationController
       if @voter.save
         session[:ballot_id] = @ballot
         session[:voter] = @voter
+        VoterMailer.new_voter(@voter).deliver_now
         format.html { redirect_to user_ballot_lobby_path(@ballot_user_id, @voter.ballot_id) }
         format.json { render :show, status: :created, location: @voter }
       else
