@@ -45,7 +45,7 @@ class VotersController < ApplicationController
     @ballot_user_id = session[:ballot_user_id]
     @voter = Voter.new(voter_params)
     @voter.password = generate_password
-    
+
     respond_to do |format|
       if @voter.save
         session[:ballot_id] = @ballot
