@@ -45,11 +45,12 @@ class VotersController < ApplicationController
     @ballot_user_id = session[:ballot_user_id]
     @voter = Voter.new(voter_params)
     @voter.password = generate_password
-
+    
     respond_to do |format|
       if @voter.save
         session[:ballot_id] = @ballot
         session[:voter] = @voter
+        VoterMailer.new_voter(@voter).deliver_now
         format.html { redirect_to user_ballot_lobby_path(@ballot_user_id, @voter.ballot_id) }
         format.json { render :show, status: :created, location: @voter }
       else
