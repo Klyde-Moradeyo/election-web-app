@@ -36,7 +36,7 @@ Rails.application.routes.draw do
       # Questions
       resources :questions, shallow: true do
         resources :options
-        resources :question_results, except: :update 
+        resources :question_results, except: :update
         patch "/create_question_results", to: "questions#create_question_results", as: "create_question_results"
       end
     end
