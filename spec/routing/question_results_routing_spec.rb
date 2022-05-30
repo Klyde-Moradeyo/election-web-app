@@ -23,13 +23,13 @@ RSpec.describe QuestionResultsController, type: :routing do
       expect(post: "/questions/1/question_results").to route_to("question_results#create", question_id: "1")
     end
 
-    it "routes to #update via PUT" do
-      expect(put: "/question_results/1").to route_to("question_results#update", id: "1")
-    end
+    # it "routes to #update via PUT" do
+    #   expect(put: "/question_results/1").to route_to("question_results#update", id: "1")
+    # end
 
-    it "routes to #update via PATCH" do
-      expect(patch: "/question_results/1").to route_to("question_results#update", id: "1")
-    end
+    # it "routes to #update via PATCH" do
+    #   expect(patch: "/question_results/1").to route_to("question_results#update", id: "1")
+    # end
 
     it "routes to #destroy" do
       expect(delete: "/question_results/1").to route_to("question_results#destroy", id: "1")
