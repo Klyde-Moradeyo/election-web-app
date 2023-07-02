@@ -51,19 +51,19 @@ The application accommodates three types of users with distinct tasks and respon
 2. **Voters**: Voters can participate in a ballot using the Ballot Pin provided by the host. After the Ballot start time has elapsed, the questions page becomes available to Voters. If the Host has granted permission, the results of a ballot would be presented to the voter after the ballot's end date has passed.
 3. **Admin**: The Admin user manages the Host and Voter users inside the application. However, this feature was not implemented due to time constraints.
 
-![High-level use case diagram](./doc/use-case-diagram.png)
+![High-level use case diagram](./doc_assets/use-case-diagram.png)
 
 ## Jenkins X CI/CD
 
 This server utilizes Jenkins X for Continuous Integration (CI) and Continuous Deployment (CD). Jenkins X manages the lifecycle of both infrastructure and cluster resources using GitOps, which helps to keep resources in sync.
 
-![CI/CD Pipeline Implementation for this Project](./doc/ci-cd-pipeline-design.png)
+![CI/CD Pipeline Implementation for this Project](./doc_assets/ci-cd-pipeline-design.png)
 
 ## Jenkins X CI/CD
 
 This server utilizes Jenkins X for Continuous Integration (CI) and Continuous Deployment (CD). Jenkins X manages the lifecycle of both infrastructure and cluster resources using GitOps, which helps to keep resources in sync.
 
-![Jenkins X Architecture](./doc/jenkins-x-architecture.png)
+![Jenkins X Architecture](./doc_assets/jenkins-x-architecture.png)
 
 ### Repositories
 
@@ -77,7 +77,7 @@ There are two key repositories used for the Jenkins X infrastructure:
 
 The application uses a database to persistently store a variety of information. Here is an overview of the database model:
 
-![Database Schema](./doc/database-schema.svg)
+![Database Schema](./doc_assets/database-schema.svg)
 
 ### Entities
 
