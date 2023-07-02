@@ -1,10 +1,10 @@
-# Election Web App (E.S.A)
+# Election Simulation Application (E.S.A)
 
 This project is for the Politics Department at the University of Surrey. The primary objective is to provide an Electoral Simulation Voting Application that demonstrates to students election systems from around the world. This is done in an interactive manner that promotes student engagement and facilitates the understanding of various voting systems.
 
 ## Table of Contents
 
-- [Election Web App (E.S.A)](#election-web-app-esa)
+- [Election Simulation Application (E.S.A)](#election-simulation-application-esa)
   - [Table of Contents](#table-of-contents)
   - [Project Overview](#project-overview)
     - [Election Algorithms](#election-algorithms)
