@@ -2,6 +2,24 @@
 
 This project is for the Politics Department at the University of Surrey. The primary objective is to provide an Electoral Simulation Voting Application that demonstrates to students election systems from around the world. This is done in an interactive manner that promotes student engagement and facilitates the understanding of various voting systems.
 
+## Table of Contents
+
+- [Election Web App (E.S.A)](#election-web-app-esa)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+    - [Election Algorithms](#election-algorithms)
+  - [Features](#features)
+  - [Technologies](#technologies)
+  - [User Types](#user-types)
+  - [Jenkins X CI/CD](#jenkins-x-cicd)
+  - [Jenkins X CI/CD](#jenkins-x-cicd-1)
+    - [Repositories](#repositories)
+  - [Database](#database)
+    - [Entities](#entities)
+    - [Relationships](#relationships)
+  - [License](#license)
+
+
 ## Project Overview
 
 The application presents an Electoral Voting System that performs two major functions:
