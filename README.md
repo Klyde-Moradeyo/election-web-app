@@ -77,7 +77,7 @@ There are two key repositories used for the Jenkins X infrastructure:
 
 The application uses a database to persistently store a variety of information. Here is an overview of the database model:
 
-![Database Schema](./doc_assets/database-schema.svg)
+![Database Schema](./doc_assets/database-schema.png)
 
 ### Entities
 
