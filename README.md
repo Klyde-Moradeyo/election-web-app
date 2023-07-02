@@ -10,10 +10,9 @@ This project is for the Politics Department at the University of Surrey. The pri
     - [Election Algorithms](#election-algorithms)
   - [Features](#features)
   - [Technologies](#technologies)
-  - [User Types](#user-types)
   - [Jenkins X CI/CD](#jenkins-x-cicd)
-  - [Jenkins X CI/CD](#jenkins-x-cicd-1)
     - [Repositories](#repositories)
+  - [User Types](#user-types)
   - [Database](#database)
     - [Entities](#entities)
     - [Relationships](#relationships)
@@ -61,22 +60,6 @@ The porject uses the following technologies:
 - **Amazon EKS**: The managed service where the Kubernetes cluster is running.
 - **Vault**: Secures, stores, and tightly controls access to tokens, passwords, certificates, and other secrets.
 
-## User Types
-
-The application accommodates three types of users with distinct tasks and responsibilities:
-
-1. **Host**: The Host user has the ability to use CRUD modules for the Host, Ballot, Questions, and Options. The Host can see all pertinent information about their ballot, including the Start/End date, Ballot Pin, and Questions currently included in the ballot. The Host can manage the CRUD operations on their Questions and Options.
-2. **Voters**: Voters can participate in a ballot using the Ballot Pin provided by the host. After the Ballot start time has elapsed, the questions page becomes available to Voters. If the Host has granted permission, the results of a ballot would be presented to the voter after the ballot's end date has passed.
-3. **Admin**: The Admin user manages the Host and Voter users inside the application. However, this feature was not implemented due to time constraints.
-
-![High-level use case diagram](./doc_assets/use-case-diagram.png)
-
-## Jenkins X CI/CD
-
-This server utilizes Jenkins X for Continuous Integration (CI) and Continuous Deployment (CD). Jenkins X manages the lifecycle of both infrastructure and cluster resources using GitOps, which helps to keep resources in sync.
-
-![CI/CD Pipeline Implementation for this Project](./doc_assets/ci-cd-pipeline-design.png)
-
 ## Jenkins X CI/CD
 
 This server utilizes Jenkins X for Continuous Integration (CI) and Continuous Deployment (CD). Jenkins X manages the lifecycle of both infrastructure and cluster resources using GitOps, which helps to keep resources in sync.
@@ -90,6 +73,16 @@ There are two key repositories used for the Jenkins X infrastructure:
 1. [jx-infrastructure](https://github.com/Klyde-Moradeyo/jx-infrastructure): This repository uses Terraform to manage the infrastructure needed to run Jenkins X. The cloud resources managed include a Kubernetes cluster, storage buckets for long-term storage of logs, and IAM bindings to manage permissions for applications using cloud resources.
 
 2. [jx-cluster](https://github.com/Klyde-Moradeyo/jx-cluster): This repository installs Jenkins X with Vault. It contains the `helmfile.yaml` file which defines the Helm charts to deploy in the cluster. The infrastructure tends to change rarely, while the cluster git repository changes frequently (e.g., every time you add a new quickstart, import a project, release a project, etc.).
+
+## User Types
+
+The application accommodates three types of users with distinct tasks and responsibilities:
+
+1. **Host**: The Host user has the ability to use CRUD modules for the Host, Ballot, Questions, and Options. The Host can see all pertinent information about their ballot, including the Start/End date, Ballot Pin, and Questions currently included in the ballot. The Host can manage the CRUD operations on their Questions and Options.
+2. **Voters**: Voters can participate in a ballot using the Ballot Pin provided by the host. After the Ballot start time has elapsed, the questions page becomes available to Voters. If the Host has granted permission, the results of a ballot would be presented to the voter after the ballot's end date has passed.
+3. **Admin**: The Admin user manages the Host and Voter users inside the application. However, this feature was not implemented due to time constraints.
+
+![High-level use case diagram](./doc_assets/use-case-diagram.png)
 
 ## Database
 
