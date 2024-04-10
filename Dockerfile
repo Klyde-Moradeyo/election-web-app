@@ -16,6 +16,7 @@ ENV RAILS_LOG_TO_STDOUT true
 
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
+RUN gem install bundler:2.5.7
 RUN bundle config --global frozen 1
 RUN bundle install --without test
 
