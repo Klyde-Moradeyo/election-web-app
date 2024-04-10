@@ -111,6 +111,10 @@ ltest:
 #   password: <%= ENV["ELECTIONWEBAPP_DATABASE_PASSWORD"] %>
 production:
   <<: *default
-  host: <%= Rails.application.credentials.production_db_host %> 
-  password: <%= Rails.application.credentials.production_db_secret %> 
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_test
   pool: 5
+  host: localhost
+  username: myapp
+  password: password1
