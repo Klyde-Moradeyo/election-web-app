@@ -1,30 +1,45 @@
-FROM ruby:3.0.3
+# Stage 1: Build Stage
+FROM ruby:3.0.3 as Builder
 
-ENV PORT 80
-EXPOSE 80
-
-# Ref: https://www.engineyard.com/blog/using-docker-for-rails
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
-RUN apt-get update && \
-    apt-get install -y nodejs mariadb-client postgresql sqlite3 vim --no-install-recommends && \
+# Install Yarn and Node.js
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && \
+    apt-get install -y nodejs yarn mariadb-client postgresql sqlite3 vim --no-install-recommends && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ENV RAILS_ENV development
-ENV RAILS_LOG_TO_STDOUT true
+WORKDIR /usr/src/app
 
-COPY Gemfile /usr/src/app/
-COPY Gemfile.lock /usr/src/app/
-RUN gem install bundler:2.5.7
-RUN bundle config --global frozen 1
-RUN bundle install --without test
+# Installing gems
+COPY Gemfile Gemfile.lock ./
+RUN gem install bundler:2.5.7 && \
+    bundle config --global frozen 1 && \
+    bundle install --without test
 
-COPY . /usr/src/app
+# Copying the app files and precompile assets
+COPY . .
+RUN rails assets:precompile --trace
 
-# uncomment this for production
-# ENV RAILS_ENV production
-# ENV RAILS_SERVE_STATIC_FILES true
-# RUN bundle exec rake DATABASE_URL=postgresql:does_not_exist assets:precompile
+# Stage 2: Runtime Stage
+FROM ruby:3.0.3
+ENV PORT=80 \
+    RAILS_ENV=production \
+    RAILS_LOG_TO_STDOUT=true \
+    RAILS_SERVE_STATIC_FILES=true
+
+EXPOSE 80
+
+# Install runtime dependencies
+RUN apt-get update && \
+    apt-get install -y libpq5 nodejs --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/src/app
+
+# Copy app with precompiled assets and bundle from the Builder stage
+COPY --from=Builder /usr/src/app /usr/src/app
+COPY --from=Builder /usr/local/bundle /usr/local/bundle
 
 CMD ["rails", "server", "-b", "0.0.0.0", "-p", "80"]
