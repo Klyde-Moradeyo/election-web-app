@@ -8,7 +8,6 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - db
       - migration-side-car
     networks:
       - web-app-network
@@ -19,8 +18,6 @@ services:
     image: klydem/election-web-app:latest
     command: /bin/bash -c "rails db:create && rails db:migrate && echo 'Success' && exit 0"
     env_file: .env
-    depends_on:
-      - db
     networks:
       - web-app-network
 
