@@ -109,12 +109,13 @@ ltest:
 #   database: ElectionWebApp_production
 #   username: ElectionWebApp
 #   password: <%= ENV["ELECTIONWEBAPP_DATABASE_PASSWORD"] %>
+
 production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  database: myapp_test
+  database: election_web_app
   pool: 5
-  host: localhost
-  username: myapp
-  password: password1
+  host:  <%= ENV["DB_HOST"] %>
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
