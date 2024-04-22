@@ -3,54 +3,27 @@ version: '3.8'
 services:
   election-web-app:
     container_name: election-web-app
-    build: .
-    volumes:
-      - .:/usr/src/app
+    image: election-web-app:latest
+    env_file: .env
     ports:
       - "80:80"
-    environment:
-      RAILS_ENV: production
-      RAILS_LOG_TO_STDOUT: 'true'
-      DATABASE_URL: postgresql://myapp:password1@db/myapp_test
     depends_on:
       - db
       - migration-side-car
     networks:
-      - myapp-network
-    restart: unless-stopped
-
-  db:
-    container_name: postgres-db
-    image: postgres:bookworm
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: myapp_test
-      POSTGRES_USER: myapp
-      POSTGRES_PASSWORD: password1
-    ports:
-      - "5432:5432"
-    networks:
-      - myapp-network
+      - web-app-network
     restart: unless-stopped
 
   migration-side-car:
     container_name: db-migration-side-car
-    image: ruby:3.0.3
-    command: /bin/bash -c "gem install bundler && (cd /usr/src/app && bundle install && rails db:migrate) && echo 'Success' && exit 0"
-    volumes:
-      - .:/usr/src/app
-    environment:
-      RAILS_ENV: development
-      DATABASE_URL: postgresql://myapp:password1@db/myapp_test
+    image: election-web-app:latest
+    command: /bin/bash -c "rails db:create && rails db:migrate && echo 'Success' && exit 0"
+    env_file: .env
     depends_on:
       - db
     networks:
-      - myapp-network
+      - web-app-network
 
 networks:
-  myapp-network:
+  web-app-network:
     driver: bridge
-
-volumes:
-  pgdata:
