@@ -3,7 +3,7 @@ version: '3.8'
 services:
   election-web-app:
     container_name: election-web-app
-    image: election-web-app:latest
+    image: klydem/election-web-app:latest
     env_file: .env
     ports:
       - "80:80"
@@ -16,7 +16,7 @@ services:
 
   migration-side-car:
     container_name: db-migration-side-car
-    image: election-web-app:latest
+    image: klydem/election-web-app:latest
     command: /bin/bash -c "rails db:create && rails db:migrate && echo 'Success' && exit 0"
     env_file: .env
     depends_on:
